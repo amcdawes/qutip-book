@@ -8,14 +8,14 @@
   <title>Search the site</title>
   <meta name="description" content="        ">
 
-  <link rel="canonical" href="/YOUR%20URL//search">
-  <link rel="alternate" type="application/rss+xml" title="YOUR BOOK NAME" href="/YOUR%20URL//feed.xml">
+  <link rel="canonical" href="http://qutip.amcdawes.com//search">
+  <link rel="alternate" type="application/rss+xml" title="Quantum Mechanics with QuTiP" href="http://qutip.amcdawes.com//feed.xml">
 
-  <meta property="og:url"         content="/YOUR%20URL//search" />
+  <meta property="og:url"         content="http://qutip.amcdawes.com//search" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Search the site" />
 <meta property="og:description" content="        " />
-<meta property="og:image"       content="YOUR%20URL/images/logo/logo.png" />
+<meta property="og:image"       content="http://qutip.amcdawes.com/images/logo/logo.png" />
 
 <meta name="twitter:card" content="summary">
 
@@ -24,28 +24,28 @@
   {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "YOUR URL//search",
+  "mainEntityOfPage": "http://qutip.amcdawes.com//search",
   "headline": "Search the site",
-  "datePublished": "2019-11-12T22:37:10-08:00",
-  "dateModified": "2019-11-12T22:37:10-08:00",
+  "datePublished": "2020-01-09T13:51:09-08:00",
+  "dateModified": "2020-01-09T13:51:09-08:00",
   "description": "        ",
   "author": {
     "@type": "Person",
-    "name": "YOUR AUTHOR NAME"
+    "name": "Andrew M.C. Dawes"
   },
   "publisher": {
     "@type": "Organization",
     "name": "Data 100 at UC Berkeley",
     "logo": {
       "@type": "ImageObject",
-      "url": "YOUR URL/",
+      "url": "http://qutip.amcdawes.com/",
       "width": 60,
       "height": 60
     }
   },
   "image": {
     "@type": "ImageObject",
-    "url": "YOUR URL/",
+    "url": "http://qutip.amcdawes.com/",
     "height": 60,
     "width": 60
   }
@@ -420,7 +420,7 @@ initFunction(initPrint)
 
 <nav id="js-sidebar" class="c-textbook__sidebar">
   <a href="https://jupyterbook.org/"><img src="/images/logo/logo.png" class="textbook_logo" id="sidebar-logo" alt="textbook logo" data-turbolinks-permanent/></a>
-  <h2 class="c-sidebar__title">YOUR BOOK NAME</h2>
+  <h2 class="c-sidebar__title">Quantum Mechanics with QuTiP</h2>
   <ul class="c-sidebar__chapters">
     
       
@@ -454,7 +454,7 @@ initFunction(initPrint)
       
       <li class="c-sidebar__chapter">
         <a class="c-sidebar__entry "
-          href="https://github.com/jupyter/jupyter-book"
+          href="https://github.com/amcdawes/QMlabs"
         >
           
           GitHub repository
@@ -494,7 +494,7 @@ initFunction(initPrint)
         
       
       
-        <li><h2 class="c-sidebar__title">Demo textbook</li>
+        <li><h2 class="c-sidebar__title">Getting started</li>
         
       
       
@@ -619,7 +619,7 @@ initFunction(initPrint)
             "Chapter 1 1.1 Probability 1.1.1 Moments of Measured Data Arrays of data, and their average and sum in python import matplotlib.pyplot as plt from numpy import array, sin, sqrt, dot, outer %matplotlib inline x = array([1,2,3]) x.sum() 6 x.mean() 2.0 The formal definition (and to make sure we match with the book) is to take the sum and divide by the number of items in the sample: x.sum()/len(x) 2.0 Higher order moments Operate on the sample, python does this element-by-element, then do the same thing as above: x**2 array([1, 4, 9]) (x**2).sum() # Note the parenthesis! 14 (x**2).sum()/len(x) 4.666666666666667 It...",
         "categories": [],
         "tags": [],
-        "url": "YOUR%20URL/features/Chapter_1_Mathematical_Preliminaries.html",
+        "url": "http://qutip.amcdawes.com/features/Chapter_1_Mathematical_Preliminaries.html",
         "teaser":null},{
         "title": "Chapter 2",
         
@@ -627,7 +627,7 @@ initFunction(initPrint)
             "2.3 Find the eigenvalues and vectors of J$_\\theta$ for $\\theta$=45 from qutip import * from numpy import cos, sin, pi, deg2rad qm = Qobj([[cos(pi/4)**2,cos(pi/4)*sin(pi/4)],[cos(pi/4)*sin(pi/4),sin(pi/4)**2]]) qm Quantum object: dims = [[2], [2]], shape = (2, 2), type = oper, isherm = True\\begin{equation*}\\left(\\begin{array}{*{11}c}0.500 & 0.500\\\\0.500 & 0.500\\\\\\end{array}\\right)\\end{equation*} qm.eigenstates() (array([ 0., 1.]), array([ Quantum object: dims = [[2], [1]], shape = (2, 1), type = ket Qobj data = [[ 0.70710678] [-0.70710678]], Quantum object: dims = [[2], [1]], shape = (2, 1), type = ket Qobj data = [[-0.70710678] [-0.70710678]]], dtype=object)) from numpy import sqrt, exp 1/sqrt(2) 0.70710678118654746 phi = 1.5 Jphi =...",
         "categories": [],
         "tags": [],
-        "url": "YOUR%20URL/features/Chapter_2_In_Class_Problems.html",
+        "url": "http://qutip.amcdawes.com/features/Chapter_2_In_Class_Problems.html",
         "teaser":null},{
         "title": "Features and customization",
         
@@ -635,7 +635,7 @@ initFunction(initPrint)
             "             Hello world                     ",
         "categories": [],
         "tags": [],
-        "url": "YOUR%20URL/features/features.html",
+        "url": "http://qutip.amcdawes.com/features/features.html",
         "teaser":null},{
         "title": "Markdown files",
         
@@ -643,7 +643,7 @@ initFunction(initPrint)
             "Creating book content The two kinds of files that contain course content are: Jupyter Notebooks Markdown files Each are contained in the content/ folder and referenced from _data/toc.yml. If the file is markdown, it will be copied over with front-matter YAML added so that Jekyll can parse it Sidebars with Jekyll You may notice that there's a sidebar to the right (if your screen is wide enough). These are automatically generated from the headers that are present in your page. The sidebar will automatically capture all 2nd and 3rd level section headers. The best way to designate these headers is...",
         "categories": [],
         "tags": [],
-        "url": "YOUR%20URL/features/markdown.html",
+        "url": "http://qutip.amcdawes.com/features/markdown.html",
         "teaser":null},{
         "title": "Jupyter notebooks",
         
@@ -651,7 +651,7 @@ initFunction(initPrint)
             "Content with notebooks You can also create content with Jupyter Notebooks. The content for the current page is contained in a Jupyter Notebook in the notebooks/ folder of the repository. This means that we can include code blocks and their outputs, and export them to Jekyll markdown. You can find the original notebook for this page at this address Markdown + notebooks As it is markdown, you can embed images, HTML, etc into your posts! You an also $add_{math}$ and $$ math^{blocks} $$or $$ \\begin{align*} \\mbox{mean} la_{tex} \\\\ \\\\ math blocks \\end{align*} $$But make sure you \\$Escape \\$your \\$dollar signs...",
         "categories": [],
         "tags": [],
-        "url": "YOUR%20URL/features/notebooks.html",
+        "url": "http://qutip.amcdawes.com/features/notebooks.html",
         "teaser":null},{
         "title": "Home",
         
@@ -659,7 +659,7 @@ initFunction(initPrint)
             "Books with Jupyter and Jekyll Jupyter Book lets you build an online book using a collection of Jupyter Notebooks and Markdown files. Its output is similar to the excellent Bookdown tool, and adds extra functionality for people running a Jupyter stack. For an example of a book built with Jupyter Book, see the textbook for Data 100 at UC Berkeley. Here are a few features of Jupyter Book All course content is written in markdown and Jupyter Notebooks, stored in notebooks/ The Jupyter Book repo comes packaged with helper scripts to convert these into Jekyll pages (in scripts/) that can...",
         "categories": [],
         "tags": [],
-        "url": "YOUR%20URL/intro.html",
+        "url": "http://qutip.amcdawes.com/intro.html",
         "teaser":null},]
 </script>
             </div>
@@ -671,7 +671,7 @@ initFunction(initPrint)
 </nav>
 
               <footer>
-  <p class="footer">This page was created by <a href="https://github.com/jupyter/jupyter-book/graphs/contributors">The Jupyter Book Community</a></p>
+  <p class="footer">This page was created by Andrew M.C. Dawes</p>
 </footer>
 
             </div>
