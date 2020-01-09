@@ -1,53 +1,13 @@
-# Books with Jupyter and Jekyll
+# Quantum Mechanics with QuTiP
 
-<img src="https://circleci.com/gh/jupyter/jupyter-book.svg?style=svg" class="left">
+## Introduction
 
-Jupyter Book lets you build an online book using a collection of Jupyter Notebooks
-and Markdown files. Its output is similar to the excellent [Bookdown](https://bookdown.org/yihui/bookdown/) tool,
-and adds extra functionality for people running a Jupyter stack.
+This book serves as an introduction to QuTiP and a reference to be used in conjunction with a typical course on quantum mechanics. Where possible, we have indicated overlap with particular chapters of specific textbooks. Hopefully, an early feature will be the ability to select versions of this based on specific texts, although that may not be realistic to implement completely.
 
-For an example of a book built with Jupyter Book, see the [textbook for Data 100](https://www.textbook.ds100.org/) at UC Berkeley.
+## Note to instructors
 
-Here are a few features of Jupyter Book
-
-* All course content is written in markdown and Jupyter Notebooks, stored in `notebooks/`
-* The Jupyter Book repo comes packaged with helper scripts to convert these into Jekyll pages (in `scripts/`) that can be hosted for free on GitHub
-* Pages can have [Binder](https://mybinder.org) or JupyterHub links automatically added for interactivity.
-* The website itself is based on Jekyll, and is highly extensible and can be freely-hosted on GitHub.
-* There are lots of nifty HTML features under-the-hood, such as Turbolinks fast-navigation and
-  click-to-copy in code cells.
-
-## Getting started
-
-To get started, you may be interested in the following links.
-Here are a few links of interest:
-
-* **[Quickstart](features/features)** is a quick demo and overview of Jupyter Book.
-
-* **[The Jupyter Book Guide](guide/01_overview)**
-  will step you through the process of configuring and building your own Jupyter Book.
-
-* **[The Jupyter Book template repo](https://github.com/jupyter/jupyter-book)** is the template
-  repository you'll use as a start for your Jupyter Book.
-
-* **A demo of the Jupyter Book** can be browsed via the sidebar to the left.
-
-## Installation
-
-Here's a brief rundown of how to create your own Jupyter Book using this site. For a more
-complete guide, see [the Jupyter Book guide](guide/01_overview).
-
-* Fork the Jupyter Book template repo
-* Replace the demo notebooks in `content/` with your own notebooks and markdown files.
-* Create a Table of Contents yaml file by editing `_data/toc.yaml`.
-* Generate the Jekyll markdown for your notebooks by running `scripts/generate_book.py`
-* Push your changes to GitHub (or wherever you host your site)!
+We suggest that you browse this book as a supplement to your courses and pull examples, notebooks, calculations etc. that serve to reinforce the concepts you introduce. This is not a standalone reference for learning quantum mechanics, but it is intended to fit into a variety of courses (undergraduate or graduate) and serve as a reference for anyone getting started with QuTiP.
 
 ## Acknowledgements
 
-Jupyter Book was originally created by [Sam Lau][sam] and [Chris Holdgraf][chris]
-with support of the **UC Berkeley Data Science Education Program and the Berkeley
-Institute for Data Science**.
-
-[sam]: http://www.samlau.me/
-[chris]: https://predictablynoisy.com
+Thank you to the developers of QuTiP and the many contributors who continue to maintain the package.

@@ -16,22 +16,24 @@
 
 #######################################################################################
 # Jekyll site settings
-title: YOUR BOOK NAME
-author: YOUR AUTHOR NAME
-email: YOUR EMAIL
+title: Quantum Mechanics with QuTiP
+author: Andrew M.C. Dawes
+email: dawes@pacificu.edu
 description: >-
-  This is an example book built with Jupyter Books.
+  An introduction to QuTiP in the context of quantum mechanics. While not a complete
+  textbook, this book is designed to merge numerical techniques available with QuTiP
+  into a course on quantum mechanics. The content is not tied to a particular textbook
+  but flows well with books that begin from a spin-system perspective.
 
 baseurl: /  # the subpath of your site, e.g. /blog. If there is no subpath for your site, use an empty string ""
-url: YOUR URL                  # the base hostname & protocol for your site, e.g. http://example.com
+url: http://qutip.amcdawes.com                 # the base hostname & protocol for your site, e.g. http://example.com
 
 
 #######################################################################################
 # Jupyter Book settings
 
 # Main page settings
-footer_text: This page was created by <a href="https://github.com/jupyter/jupyter-book/graphs/contributors">The
-  Jupyter Book Community</a>
+footer_text: This page was created by Andrew M.C. Dawes
 
 # Sidebar settings
 show_sidebar: true                # Show the sidebar. Only set to false if your only wish to host a single page.
