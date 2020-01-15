@@ -26,8 +26,8 @@
   "@type": "NewsArticle",
   "mainEntityOfPage": "http://qutip.amcdawes.com//search",
   "headline": "Search the site",
-  "datePublished": "2020-01-09T19:02:38-08:00",
-  "dateModified": "2020-01-09T19:02:38-08:00",
+  "datePublished": "2020-01-14T20:55:06-08:00",
+  "dateModified": "2020-01-14T20:55:06-08:00",
   "description": "        ",
   "author": {
     "@type": "Person",
@@ -557,6 +557,159 @@ initFunction(initPrint)
               </li>
               
             
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/features/Chapter_4_In_Class_Problems.html"
+                >
+                  
+                  Chapter 4
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/features/Chapter_6_Spin.html"
+                >
+                  
+                  Chapter 6
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/features/Chapter_7_Angular_Momentum.html"
+                >
+                  
+                  Chapter 7
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/features/Chapter_8_Two_Photon_States.html"
+                >
+                  
+                  Chapter 8 Two Photon States
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/features/Chapter_8_Alice_and_Bob.html"
+                >
+                  
+                  Chapter 8 Alice and Bob
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/features/Chapter_8A_Density_Matrix.html"
+                >
+                  
+                  Chapter 8A Density Matrix
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/features/Chapter_10_Position_and_Momentum.html"
+                >
+                  
+                  Chapter 10 Position and Momentum
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/features/Chapter_12_SHO.html"
+                >
+                  
+                  Chapter 12 Simple Harmonic Oscillator
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/features/Chapter_13_Hydrogen.html"
+                >
+                  
+                  Chapter 13 Hydrogen
+                </a>
+
+                
+                
+
+              </li>
+              
+            
           </ul>
         
       </li>
@@ -613,6 +766,30 @@ initFunction(initPrint)
 <script>
     // Add the lunr store since we will now search it
     var store = [{
+        "title": "Chapter 10 Position and Momentum",
+        
+        "excerpt":
+            "Chapter 10 - Position and Momentum We can start using sympy to handle symbolic math (integrals and other calculus): from sympy import * init_printing(use_unicode=True) x, y, z = symbols(&#39;x y z&#39;, real=True) a, c = symbols(&#39;a c&#39;, nonzero=True, real=True) integrate? There are two ways to use the integrate function. In one line, like integrate(x,(x,0,1)) or by naming an expression and then integrating it over a range: A = (c*cos((pi*x)/(2.0*a)))**2 A.integrate((x,-a,a),conds='none') We'll use both, at different times. For longer expressions, the second form can be easier to read and write. First, just try the following, then we'll re-create some examples in...",
+        "categories": [],
+        "tags": [],
+        "url": "http://qutip.amcdawes.com/features/Chapter_10_Position_and_Momentum.html",
+        "teaser":null},{
+        "title": "Chapter 12 Simple Harmonic Oscillator",
+        
+        "excerpt":
+            "Chapter 12 - Simple Harmonic Oscillator Several examples that make use of the built-in Simple Harmonic Oscillator tools: from numpy import sqrt,linspace,exp from qutip import * import matplotlib.pyplot as plt %matplotlib inline N = 40 # size of the Hilbert space. # N needs to be large enough that matrix is not truncated a = destroy(N) n = a.dag()*a Define a coherent state with $\\alpha = 2:$ psi = coherent(N,1) psi Quantum object: dims = [[40], [1]], shape = (40, 1), type = ket\\begin{equation*}\\left(\\begin{array}{*{11}c}0.607\\\\0.607\\\\0.429\\\\0.248\\\\0.124\\\\\\vdots\\\\0.0\\\\0.0\\\\0.0\\\\0.0\\\\0.0\\\\\\end{array}\\right)\\end{equation*} Expectation value $\\langle n\\rangle$: psi.dag()*n*psi Quantum object: dims = [[1], [1]], shape = (1, 1), type...",
+        "categories": [],
+        "tags": [],
+        "url": "http://qutip.amcdawes.com/features/Chapter_12_SHO.html",
+        "teaser":null},{
+        "title": "Chapter 13 Hydrogen",
+        
+        "excerpt":
+            "Hydrogen functions Start with some imports fro Symbolic Python library: from sympy.physics.hydrogen import R_nl from sympy.functions.special.spherical_harmonics import Ynm from sympy import * Define some variables, radial, polar, azimuthal, time, and two frequencies: var(&quot;r theta phi t w1 w2&quot;) (r, theta, phi, t, w1, w2) Look at a few of the radial equations and the spherical harmonics Notice that instead of Ylm the name is Ynm... the arguments to the function are still the quantum numbers l and m R_nl(1, 0, r, 1) # the n = 1, l = 0 radial function $\\displaystyle 2 e^{- r}$ Ynm(0,0,theta,phi).expand(func=True) # the l...",
+        "categories": [],
+        "tags": [],
+        "url": "http://qutip.amcdawes.com/features/Chapter_13_Hydrogen.html",
+        "teaser":null},{
         "title": "Chapter 1",
         
         "excerpt":
@@ -629,6 +806,54 @@ initFunction(initPrint)
         "tags": [],
         "url": "http://qutip.amcdawes.com/features/Chapter_2_In_Class_Problems.html",
         "teaser":null},{
+        "title": "Chapter 4",
+        
+        "excerpt":
+            "Chapter 4 in-class problems Using what you learned in Lab, answer questions 4.7, 4.8, 4.10, 4.11, 4.12, and 4.13 from numpy import sqrt, pi, cos, sin from qutip import * Remember, these states are represented in the HV basis: H = Qobj([[1],[0]]) V = Qobj([[0],[1]]) P45 = Qobj([[1/sqrt(2)],[1/sqrt(2)]]) M45 = Qobj([[1/sqrt(2)],[-1/sqrt(2)]]) R = Qobj([[1/sqrt(2)],[-1j/sqrt(2)]]) L = Qobj([[1/sqrt(2)],[1j/sqrt(2)]]) The sim_transform function creates the matrix $\\bar{\\mathbf{S}}$ that can convert from one basis to another. As an example, it will create the tranform matrix to convert from HV to ±45 if you run: Shv45 = sim_transform(H,V,P45,M45) # creates the matrix Shv45 Then you...",
+        "categories": [],
+        "tags": [],
+        "url": "http://qutip.amcdawes.com/features/Chapter_4_In_Class_Problems.html",
+        "teaser":null},{
+        "title": "Chapter 6",
+        
+        "excerpt":
+            "Chapter 6 - Spin A few new operators (or new names for the same ones!) The three axes, x, y, z spin components can be measured with $SA_x$, $SA_y$, and $SA_z$ devices. We'll use $\\hbar=1$ for numerical results, this is fairly standard practice, but can be tricky to remember. from numpy import sin,cos,pi,sqrt from qutip import * pz = Qobj([[1],[0]]) mz = Qobj([[0],[1]]) px = Qobj([[1/sqrt(2)],[1/sqrt(2)]]) mx = Qobj([[1/sqrt(2)],[-1/sqrt(2)]]) py = Qobj([[1/sqrt(2)],[1j/sqrt(2)]]) my = Qobj([[1/sqrt(2)],[-1j/sqrt(2)]]) Sx = 1/2.0*sigmax() Sy = 1/2.0*sigmay() Sz = 1/2.0*sigmaz() py Quantum object: dims = [[2], [1]], shape = (2, 1), type = ket\\begin{equation*}\\left(\\begin{array}{*{11}c}0.707\\\\0.707j\\\\\\end{array}\\right)\\end{equation*} Example: determine...",
+        "categories": [],
+        "tags": [],
+        "url": "http://qutip.amcdawes.com/features/Chapter_6_Spin.html",
+        "teaser":null},{
+        "title": "Chapter 7",
+        
+        "excerpt":
+            "Chapter 7 - Angular Momentum We'll use $\\hbar=1$ for numerical results, this is fairly standard practice, but can be tricky to remember. from numpy import sin,cos,pi,sqrt from qutip import * pz = Qobj([[1],[0]]) mz = Qobj([[0],[1]]) px = Qobj([[1/sqrt(2)],[1/sqrt(2)]]) mx = Qobj([[1/sqrt(2)],[-1/sqrt(2)]]) py = Qobj([[1/sqrt(2)],[1j/sqrt(2)]]) my = Qobj([[1/sqrt(2)],[-1j/sqrt(2)]]) Sx = 1/2.0*sigmax() Sy = 1/2.0*sigmay() Sz = 1/2.0*sigmaz() Splus = Sx + 1j*Sy Sminus = Sx - 1j*Sy Splus*mz Quantum object: dims = [[2], [1]], shape = [2, 1], type = ket\\begin{equation*}\\left(\\begin{array}{*{11}c}1.0\\\\0.0\\\\\\end{array}\\right)\\end{equation*} Splus*pz Quantum object: dims = [[2], [1]], shape = [2, 1], type = ket\\begin{equation*}\\left(\\begin{array}{*{11}c}0.0\\\\0.0\\\\\\end{array}\\right)\\end{equation*} Sminus*pz Quantum object: dims =...",
+        "categories": [],
+        "tags": [],
+        "url": "http://qutip.amcdawes.com/features/Chapter_7_Angular_Momentum.html",
+        "teaser":null},{
+        "title": "Chapter 8A Density Matrix",
+        
+        "excerpt":
+            "from numpy import sqrt from qutip import * H = Qobj([[1],[0]]) V = Qobj([[0],[1]]) Example 8.A.1: psi = 1/sqrt(2)*tensor(H,H) + 1/sqrt(2)*tensor(V,V) psi Quantum object: dims = [[2, 2], [1, 1]], shape = [4, 1], type = ket\\begin{equation*}\\left(\\begin{array}{*{11}c}0.707\\\\0.0\\\\0.0\\\\0.707\\\\\\end{array}\\right)\\end{equation*} rho_ent = psi*psi.dag() (rho_ent*rho_ent).tr() 0.9999999999999996 rho_mix = 0.5*tensor(H,H)*tensor(H,H).dag() + 0.5*tensor(V,V)*tensor(V,V).dag() (rho_mix*rho_mix).tr() 0.5 Example 8.A.2 Remember the 45 states: P45 = Qobj([[1/sqrt(2)],[1/sqrt(2)]]) M45 = Qobj([[1/sqrt(2)],[-1/sqrt(2)]]) Create the projection operator for $|+45,+45\\rangle$ Proj_4545 = tensor(P45,P45)*tensor(P45,P45).dag() (Proj_4545*rho_mix).tr() (0.2499999999999999+0j) Create projection operator for $|+45\\rangle_i$ Proj_45i = tensor(qeye(2),P45)*tensor(qeye(2),P45).dag() (Proj_45i*rho_mix).tr() (0.4999999999999999+0j) 0.25/0.5 0.5 Extend the example for the pure (superposition) state (Proj_4545*rho_ent).tr() / (Proj_45i*rho_ent).tr() (0.9999999999999998+0j) The photons are entanlged...",
+        "categories": [],
+        "tags": [],
+        "url": "http://qutip.amcdawes.com/features/Chapter_8A_Density_Matrix.html",
+        "teaser":null},{
+        "title": "Chapter 8 Alice and Bob",
+        
+        "excerpt":
+            "Chapter 8 - Local Realism with Alice and Bob from numpy import sin,cos,pi,sqrt,angle,exp,deg2rad,arange,rad2deg import matplotlib.pyplot as plt from qutip import * %matplotlib inline H = Qobj([[1],[0]]) V = Qobj([[0],[1]]) First define the projection operator for a state at angle $\\theta$: def P(theta): &quot;&quot;&quot;The projection operator for a state at angle theta&quot;&quot;&quot; theta_ket = cos(theta)*H + sin(theta)*V return theta_ket*theta_ket.dag() Create the projection operators for each of the angles, two for Alice, two for Bob Pa1 = P(deg2rad(19)) Pa2 = P(deg2rad(-35)) Pb1 = P(deg2rad(-19)) Pb2 = P(deg2rad(35)) Create the state $\\big|\\psi\\big\\rangle = \\sqrt{0.2} \\big|H,H\\big\\rangle + \\sqrt{0.8} \\big|V,V\\big\\rangle$: psi=sqrt(0.2)*tensor(H,H) + sqrt(0.8)*tensor(V,V) Now, find...",
+        "categories": [],
+        "tags": [],
+        "url": "http://qutip.amcdawes.com/features/Chapter_8_Alice_and_Bob.html",
+        "teaser":null},{
+        "title": "Chapter 8 Two Photon States",
+        
+        "excerpt":
+            "from qutip import * from numpy import sqrt H = basis(2,0) V = basis(2,1) p45 = 1/sqrt(2)*(H + V) m45 = 1/sqrt(2)*(H - V) R = 1/sqrt(2)*(H - 1j*V) L = 1/sqrt(2)*(H + 1j*V) hh = tensor(H,H) hv = tensor(H,V) vh = tensor(V,H) vv = tensor(V,V) vv Quantum object: dims = [[2, 2], [1, 1]], shape = (4, 1), type = ket\\begin{equation*}\\left(\\begin{array}{*{11}c}0.0\\\\0.0\\\\0.0\\\\1.0\\\\\\end{array}\\right)\\end{equation*} # Show these are all orthogonal: hh.dag()*hv Quantum object: dims = [[1], [1]], shape = (1, 1), type = bra\\begin{equation*}\\left(\\begin{array}{*{11}c}0.0\\\\\\end{array}\\right)\\end{equation*} vh.dag()*hv Quantum object: dims = [[1], [1]], shape = (1, 1), type = bra\\begin{equation*}\\left(\\begin{array}{*{11}c}0.0\\\\\\end{array}\\right)\\end{equation*} qeye(2) Quantum object: dims...",
+        "categories": [],
+        "tags": [],
+        "url": "http://qutip.amcdawes.com/features/Chapter_8_Two_Photon_States.html",
+        "teaser":null},{
         "title": "Features and customization",
         
         "excerpt":
@@ -636,22 +861,6 @@ initFunction(initPrint)
         "categories": [],
         "tags": [],
         "url": "http://qutip.amcdawes.com/features/features.html",
-        "teaser":null},{
-        "title": "Markdown files",
-        
-        "excerpt":
-            "Creating book content The two kinds of files that contain course content are: Jupyter Notebooks Markdown files Each are contained in the content/ folder and referenced from _data/toc.yml. If the file is markdown, it will be copied over with front-matter YAML added so that Jekyll can parse it Sidebars with Jekyll You may notice that there's a sidebar to the right (if your screen is wide enough). These are automatically generated from the headers that are present in your page. The sidebar will automatically capture all 2nd and 3rd level section headers. The best way to designate these headers is...",
-        "categories": [],
-        "tags": [],
-        "url": "http://qutip.amcdawes.com/features/markdown.html",
-        "teaser":null},{
-        "title": "Jupyter notebooks",
-        
-        "excerpt":
-            "Content with notebooks You can also create content with Jupyter Notebooks. The content for the current page is contained in a Jupyter Notebook in the notebooks/ folder of the repository. This means that we can include code blocks and their outputs, and export them to Jekyll markdown. You can find the original notebook for this page at this address Markdown + notebooks As it is markdown, you can embed images, HTML, etc into your posts! You an also $add_{math}$ and $$ math^{blocks} $$or $$ \\begin{align*} \\mbox{mean} la_{tex} \\\\ \\\\ math blocks \\end{align*} $$But make sure you \\$Escape \\$your \\$dollar signs...",
-        "categories": [],
-        "tags": [],
-        "url": "http://qutip.amcdawes.com/features/notebooks.html",
         "teaser":null},{
         "title": "Home",
         
