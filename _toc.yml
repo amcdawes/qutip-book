@@ -23,7 +23,7 @@
 
 # Top-level page
 - title: Home
-  url: /intro
+  file: /intro
   not_numbered: true
 
 # External link
@@ -44,40 +44,40 @@
 
 # A chapter w/ a collection of sections beneath it
 - title: Features and customization
-  url: /features/features
+  file: /features/features
   not_numbered: true
   expand_sections: true
   sections:
   - title: Chapter 1
-    url: /features/Chapter_1_Mathematical_Preliminaries
+    file: /features/Chapter_1_Mathematical_Preliminaries
     not_numbered: true
   - title: Chapter 2
-    url: /features/Chapter_2_In_Class_Problems
+    file: /features/Chapter_2_In_Class_Problems
     not_numbered: true
   - title: Chapter 4
-    url: /features/Chapter_4_In_Class_Problems
+    file: /features/Chapter_4_In_Class_Problems
     not_numbered: true
   - title: Chapter 6
-    url: /features/Chapter_6_Spin
+    file: /features/Chapter_6_Spin
     not_numbered: true
   - title: Chapter 7
-    url: /features/Chapter_7_Angular_Momentum
+    file: /features/Chapter_7_Angular_Momentum
     not_numbered: true
   - title: Chapter 8 Two Photon States
-    url: /features/Chapter_8_Two_Photon_States
+    file: /features/Chapter_8_Two_Photon_States
     not_numbered: true
   - title: Chapter 8 Alice and Bob
-    url: /features/Chapter_8_Alice_and_Bob
+    file: /features/Chapter_8_Alice_and_Bob
     not_numbered: true
   - title: Chapter 8A Density Matrix
-    url: /features/Chapter_8A_Density_Matrix
+    file: /features/Chapter_8A_Density_Matrix
     not_numbered: true
   - title: Chapter 10 Position and Momentum
-    url: /features/Chapter_10_Position_and_Momentum
+    file: /features/Chapter_10_Position_and_Momentum
     not_numbered: true
   - title: Chapter 12 Simple Harmonic Oscillator
-    url: /features/Chapter_12_SHO
+    file: /features/Chapter_12_SHO
     not_numbered: true
   - title: Chapter 13 Hydrogen
-    url: /features/Chapter_13_Hydrogen
+    file: /features/Chapter_13_Hydrogen
     not_numbered: true
