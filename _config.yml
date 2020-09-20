@@ -27,7 +27,11 @@ description: >-
 
 #######################################################################################
 # Jupyter Book settings
+exclude_patterns: [README*]
 
+execute:
+  execute_notebooks: cache
+  
 # Main page settings
 footer_text: This page was created by Andrew M.C. Dawes
 

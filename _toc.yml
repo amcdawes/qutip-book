@@ -1,83 +1,14 @@
-# This file contains the order and numbering for all sections in the book.
-#
-# It is a sample TOC file to help you get started. Fill it out with entries
-# for your own content.
-#
-# Each entry has the following schema:
-#
-# - title: mytitle   # Title of chapter or section
-#   url: /myurl  # URL of section relative to the /content/ folder.
-#   sections:  # Contains a list of more entries that make up the chapter's sections
-#   not_numbered: true  # if the section shouldn't have a number in the sidebar
-#     (e.g. Introduction or appendices)
-#   expand_sections: true  # if you'd like the sections of this chapter to always
-#     be expanded in the sidebar.
-#   external: true  # Whether the URL is an external link or points to content in the book
-#
-# Below are some special values that trigger specific behavior:
-# - search: true  # Will provide a link to a search page
-# - divider: true  # Will insert a divider in the sidebar
-# - header: My Header  # Will insert a header with no link in the sidebar
-#
-# See the links below for an example.
-
-# Top-level page
-- title: Home
-  file: /intro
-  not_numbered: true
-
-# External link
-- title: GitHub repository
-  url: https://github.com/amcdawes/QMlabs
-  external: true
-  not_numbered: true
-
-# Adds a searchbar link
-- title: Search
-  search: true
-
-# Divider for meta-pages and content page
-- divider: true
-
-# Add a header and sample content section
-- header: Getting started
-
 # A chapter w/ a collection of sections beneath it
-- title: Features and customization
-  file: /features/features
-  not_numbered: true
-  expand_sections: true
+- file: features/features
   sections:
-  - title: Chapter 1
-    file: /features/Chapter_1_Mathematical_Preliminaries
-    not_numbered: true
-  - title: Chapter 2
-    file: /features/Chapter_2_In_Class_Problems
-    not_numbered: true
-  - title: Chapter 4
-    file: /features/Chapter_4_In_Class_Problems
-    not_numbered: true
-  - title: Chapter 6
-    file: /features/Chapter_6_Spin
-    not_numbered: true
-  - title: Chapter 7
-    file: /features/Chapter_7_Angular_Momentum
-    not_numbered: true
-  - title: Chapter 8 Two Photon States
-    file: /features/Chapter_8_Two_Photon_States
-    not_numbered: true
-  - title: Chapter 8 Alice and Bob
-    file: /features/Chapter_8_Alice_and_Bob
-    not_numbered: true
-  - title: Chapter 8A Density Matrix
-    file: /features/Chapter_8A_Density_Matrix
-    not_numbered: true
-  - title: Chapter 10 Position and Momentum
-    file: /features/Chapter_10_Position_and_Momentum
-    not_numbered: true
-  - title: Chapter 12 Simple Harmonic Oscillator
-    file: /features/Chapter_12_SHO
-    not_numbered: true
-  - title: Chapter 13 Hydrogen
-    file: /features/Chapter_13_Hydrogen
-    not_numbered: true
+  - file: features/Chapter_1_Mathematical_Preliminaries
+  - file: features/Chapter_2_In_Class_Problems
+  - file: features/Chapter_4_In_Class_Problems
+  - file: features/Chapter_6_Spin
+  - file: features/Chapter_7_Angular_Momentum
+  - file: features/Chapter_8_Two_Photon_States
+  - file: features/Chapter_8_Alice_and_Bob
+  - file: features/Chapter_8A_Density_Matrix
+  - file: features/Chapter_10_Position_and_Momentum
+  - file: features/Chapter_12_SHO
+  - file: features/Chapter_13_Hydrogen
