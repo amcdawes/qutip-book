@@ -85,8 +85,8 @@
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
     <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="features.html">
-   Title of book
+  <a class="reference internal" href="intro.html">
+   Quantum Mechanics with QuTiP
   </a>
  </li>
 </ul>
@@ -98,15 +98,12 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Chapter_2_In_Class_Problems.html">
-   2.3 Find the eigenvalues and vectors of J
-   <span class="math notranslate nohighlight">
-    \(_\theta\)
-   </span>
-   for
-   <span class="math notranslate nohighlight">
-    \(\theta\)
-   </span>
-   =45
+   Chapter 2 in-class problems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lab_2_Quantum_States_Solutions.html">
+   Quantum states
   </a>
  </li>
  <li class="toctree-l1">
@@ -126,7 +123,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Chapter_8_Two_Photon_States.html">
-   Entangled states
+   Chapter 8 - Two-photon States
   </a>
  </li>
  <li class="toctree-l1">
@@ -135,18 +132,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Chapter_8_Alice_and_Bob.html#solution">
-   Solution
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="Chapter_8A_Density_Matrix.html">
-   Example 8.A.1:
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Chapter_8A_Density_Matrix.html#example-8-a-2">
-   Example 8.A.2
+   Ch 8 - Examples
   </a>
  </li>
  <li class="toctree-l1">
@@ -161,7 +148,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Chapter_13_Hydrogen.html">
-   Hydrogen functions
+   Ch 13 - Hydrogen functions
   </a>
  </li>
 </ul>
@@ -420,7 +407,7 @@ $<span class="math notranslate nohighlight">\(H= - \mathbf{\mu}\cdot \mathbf{B} 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x10e8841d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7ffcf7478390&gt;
 </pre></div>
 </div>
 <img alt="../_images/Lab_7_Time_Evolution_10_1.png" src="../_images/Lab_7_Time_Evolution_10_1.png" />
@@ -445,7 +432,7 @@ $<span class="math notranslate nohighlight">\(H= - \mathbf{\mu}\cdot \mathbf{B} 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x110972fd0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7ffcf7649f10&gt;
 </pre></div>
 </div>
 <img alt="../_images/Lab_7_Time_Evolution_13_1.png" src="../_images/Lab_7_Time_Evolution_13_1.png" />
@@ -475,7 +462,7 @@ $<span class="math notranslate nohighlight">\(H= - \mathbf{\mu}\cdot \mathbf{B} 
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">expect_op</span> <span class="o">=</span> <span class="n">tensor</span><span class="p">(</span><span class="n">mz</span><span class="p">,</span><span class="n">pz</span><span class="p">)</span><span class="o">*</span><span class="n">tensor</span><span class="p">(</span><span class="n">mz</span><span class="p">,</span><span class="n">pz</span><span class="p">)</span><span class="o">.</span><span class="n">dag</span><span class="p">()</span>
-<span class="n">result3</span> <span class="o">=</span> <span class="n">sesolve</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">psi</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">expect_op</span><span class="p">)</span>
+<span class="n">result3</span> <span class="o">=</span> <span class="n">sesolve</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">psi</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="p">[</span><span class="n">expect_op</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -491,7 +478,7 @@ $<span class="math notranslate nohighlight">\(H= - \mathbf{\mu}\cdot \mathbf{B} 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x110b6a978&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7ffcf790aed0&gt;
 </pre></div>
 </div>
 <img alt="../_images/Lab_7_Time_Evolution_20_1.png" src="../_images/Lab_7_Time_Evolution_20_1.png" />
@@ -529,7 +516,7 @@ $<span class="math notranslate nohighlight">\(H= - \mathbf{\mu}\cdot \mathbf{B} 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x110b866d8&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7ffcf7b6ba90&gt;
 </pre></div>
 </div>
 <img alt="../_images/Lab_7_Time_Evolution_26_1.png" src="../_images/Lab_7_Time_Evolution_26_1.png" />
@@ -592,7 +579,7 @@ We then solve for a certain amount of time after the state starts in \)</span>|\
 <p>The next line calls a Schrödinger equation solver (<code class="docutils literal notranslate"><span class="pre">sesolve</span></code>). The arguments are the Hamiltonian, the starting state <span class="math notranslate nohighlight">\(\lvert+z\rangle\)</span> (<code class="docutils literal notranslate"><span class="pre">pz</span></code>), the time values, a list of operators, and the arguments to the function <code class="docutils literal notranslate"><span class="pre">H_t</span></code>. <code class="docutils literal notranslate"><span class="pre">sesolve</span></code> returns many things, but the <code class="docutils literal notranslate"><span class="pre">expect</span></code> method is most useful, it gives the expectation values of the four operators in the operator list. Notice the fourth operator is the <span class="math notranslate nohighlight">\(\lvert-z\rangle\)</span> projection operator. It’s expectation value is <span class="math notranslate nohighlight">\(P(\lvert-z\rangle,t)\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result5</span> <span class="o">=</span> <span class="n">sesolve</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">pz</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="p">[</span><span class="n">Sx</span><span class="p">,</span> <span class="n">Sy</span><span class="p">,</span> <span class="n">Sz</span><span class="p">,</span> <span class="n">mz</span><span class="o">*</span><span class="n">mz</span><span class="o">.</span><span class="n">dag</span><span class="p">()],</span><span class="n">args</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result5</span> <span class="o">=</span> <span class="n">sesolve</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">pz</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="p">[</span><span class="n">Sx</span><span class="p">,</span> <span class="n">Sy</span><span class="p">,</span> <span class="n">Sz</span><span class="p">,</span> <span class="n">mz</span><span class="o">*</span><span class="n">mz</span><span class="o">.</span><span class="n">dag</span><span class="p">()])</span>
 <span class="n">sx</span><span class="p">,</span> <span class="n">sy</span><span class="p">,</span> <span class="n">sz</span><span class="p">,</span> <span class="n">Pmz</span> <span class="o">=</span> <span class="n">result5</span><span class="o">.</span><span class="n">expect</span>
 </pre></div>
 </div>
@@ -623,7 +610,7 @@ We then solve for a certain amount of time after the state starts in \)</span>|\
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0,0.5,&#39;$P(-z, t)$&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;$P(-z, t)$&#39;)
 </pre></div>
 </div>
 <img alt="../_images/Lab_7_Time_Evolution_37_1.png" src="../_images/Lab_7_Time_Evolution_37_1.png" />
@@ -669,7 +656,7 @@ We then solve for a certain amount of time after the state starts in \)</span>|\
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result6</span> <span class="o">=</span> <span class="n">sesolve</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">pz</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="p">[</span><span class="n">Sx</span><span class="p">,</span> <span class="n">Sy</span><span class="p">,</span> <span class="n">Sz</span><span class="p">,</span> <span class="n">mz</span><span class="o">*</span><span class="n">mz</span><span class="o">.</span><span class="n">dag</span><span class="p">()],</span><span class="n">args</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result6</span> <span class="o">=</span> <span class="n">sesolve</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">pz</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="p">[</span><span class="n">Sx</span><span class="p">,</span> <span class="n">Sy</span><span class="p">,</span> <span class="n">Sz</span><span class="p">,</span> <span class="n">mz</span><span class="o">*</span><span class="n">mz</span><span class="o">.</span><span class="n">dag</span><span class="p">()])</span>
 <span class="n">sx</span><span class="p">,</span> <span class="n">sy</span><span class="p">,</span> <span class="n">sz</span><span class="p">,</span> <span class="n">Pz</span> <span class="o">=</span> <span class="n">result6</span><span class="o">.</span><span class="n">expect</span>
 </pre></div>
 </div>
@@ -686,7 +673,7 @@ We then solve for a certain amount of time after the state starts in \)</span>|\
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0,0.5,&#39;$P(-z, t)$&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;$P(-z, t)$&#39;)
 </pre></div>
 </div>
 <img alt="../_images/Lab_7_Time_Evolution_45_1.png" src="../_images/Lab_7_Time_Evolution_45_1.png" />

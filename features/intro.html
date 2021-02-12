@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>&lt;no title&gt; &#8212; Quantum Mechanics with QuTiP</title>
+    <title>Quantum Mechanics with QuTiP &#8212; Quantum Mechanics with QuTiP</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -56,6 +56,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Chapter 1" href="Chapter_1_Mathematical_Preliminaries.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -84,8 +85,8 @@
 </form>
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
     <ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="intro.html">
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="#">
    Quantum Mechanics with QuTiP
   </a>
  </li>
@@ -191,9 +192,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/features/Schrodinger_Eqn.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/features/intro.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
+                data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -211,36 +212,10 @@
 
         <!-- Launch buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/features/Schrodinger_Eqn.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
     </div>
 
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
-        
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> Contents
-        </div>
-        <nav id="bd-toc-nav">
-            <ul class="simple nav section-nav flex-column">
-</ul>
-
-        </nav>
         
     </div>
 </div>
@@ -249,105 +224,14 @@
         
               <div>
                 
-  <div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pylab</span> inline
-<span class="kn">from</span> <span class="nn">qutip</span> <span class="kn">import</span> <span class="o">*</span>
-</pre></div>
+  <div class="section" id="quantum-mechanics-with-qutip">
+<h1>Quantum Mechanics with QuTiP<a class="headerlink" href="#quantum-mechanics-with-qutip" title="Permalink to this headline">¶</a></h1>
+<p>Welcome! This book is designed to be an introduction to QuTiP for anyone that is relatively new to numerical quantum mechanics (or new to quantum mechanics in general). This isn’t a complete guide to the subject, but we aim to provide enough context to help you bridge a conceptual and theoretical foundation to a numerical/computational understanding of quantum mechanics.</p>
+<p>This is very much a work in progress, and there are a lot of rough edges. We try to maintain examples so they run with current versions of relevant software. Usually this means the latest release of QuTiP (4.5.1 at this last update).</p>
+<p>As they are made available, book chapters will be listed here. Please stay tuned for updates.</p>
+<div class="toctree-wrapper compound">
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Populating the interactive namespace from numpy and matplotlib
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pz</span> <span class="o">=</span> <span class="n">Qobj</span><span class="p">([[</span><span class="mi">1</span><span class="p">],[</span><span class="mi">0</span><span class="p">]])</span>
-<span class="n">mz</span> <span class="o">=</span> <span class="n">Qobj</span><span class="p">([[</span><span class="mi">0</span><span class="p">],[</span><span class="mi">1</span><span class="p">]])</span>
-<span class="n">px</span> <span class="o">=</span> <span class="n">Qobj</span><span class="p">([[</span><span class="mi">1</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)],[</span><span class="mi">1</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)]])</span>
-<span class="n">mx</span> <span class="o">=</span> <span class="n">Qobj</span><span class="p">([[</span><span class="mi">1</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)],[</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)]])</span>
-<span class="n">py</span> <span class="o">=</span> <span class="n">Qobj</span><span class="p">([[</span><span class="mi">1</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)],[</span><span class="mi">1</span><span class="n">j</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)]])</span>
-<span class="n">my</span> <span class="o">=</span> <span class="n">Qobj</span><span class="p">([[</span><span class="mi">1</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)],[</span><span class="o">-</span><span class="mi">1</span><span class="n">j</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)]])</span>
-<span class="n">Sx</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mf">2.0</span><span class="o">*</span><span class="n">sigmax</span><span class="p">()</span>
-<span class="n">Sy</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mf">2.0</span><span class="o">*</span><span class="n">sigmay</span><span class="p">()</span>
-<span class="n">Sz</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mf">2.0</span><span class="o">*</span><span class="n">sigmaz</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Schrödinger solver</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">H</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.2</span><span class="o">*</span><span class="n">sigmaz</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">e_list</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">sigmax</span><span class="p">()</span>  <span class="c1"># list of expectation values to calculate</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t_list</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>  <span class="c1"># list of times to evaluate</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi</span> <span class="o">=</span> <span class="n">px</span>  <span class="c1"># initial state</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">sesolve</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">psi</span><span class="p">,</span> <span class="n">t_list</span><span class="p">,</span> <span class="n">e_list</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">expect</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1087f83d0&gt;]
-</pre></div>
-</div>
-<img alt="../_images/Schrodinger_Eqn_8_1.png" src="../_images/Schrodinger_Eqn_8_1.png" />
-</div>
-</div>
-<p><span class="math notranslate nohighlight">\(&lt;\hat{S}_x&gt;\)</span> average oscillates - this is QM “precession”</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result2</span> <span class="o">=</span> <span class="n">sesolve</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">pz</span><span class="p">,</span> <span class="n">t_list</span><span class="p">,</span> <span class="n">e_list</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">result2</span><span class="o">.</span><span class="n">expect</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x108f27a10&gt;]
-</pre></div>
-</div>
-<img alt="../_images/Schrodinger_Eqn_11_1.png" src="../_images/Schrodinger_Eqn_11_1.png" />
-</div>
-</div>
-<p>Sx averages to zero at all times for a +Z state in a Bz field.</p>
 
     <script type="text/x-thebe-config">
     {
@@ -377,6 +261,7 @@
     
     <div class='prev-next-bottom'>
         
+    <a class='right-next' id="next-link" href="Chapter_1_Mathematical_Preliminaries.html" title="next page">Chapter 1</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

@@ -56,8 +56,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Example 8.A.1:" href="Chapter_8A_Density_Matrix.html" />
-    <link rel="prev" title="Entangled states" href="Chapter_8_Two_Photon_States.html" />
+    <link rel="next" title="Ch 8 - Examples" href="Chapter_8A_Density_Matrix.html" />
+    <link rel="prev" title="Chapter 8 - Two-photon States" href="Chapter_8_Two_Photon_States.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -87,8 +87,8 @@
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
     <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="features.html">
-   Title of book
+  <a class="reference internal" href="intro.html">
+   Quantum Mechanics with QuTiP
   </a>
  </li>
 </ul>
@@ -100,15 +100,12 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Chapter_2_In_Class_Problems.html">
-   2.3 Find the eigenvalues and vectors of J
-   <span class="math notranslate nohighlight">
-    \(_\theta\)
-   </span>
-   for
-   <span class="math notranslate nohighlight">
-    \(\theta\)
-   </span>
-   =45
+   Chapter 2 in-class problems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lab_2_Quantum_States_Solutions.html">
+   Quantum states
   </a>
  </li>
  <li class="toctree-l1">
@@ -128,7 +125,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Chapter_8_Two_Photon_States.html">
-   Entangled states
+   Chapter 8 - Two-photon States
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -137,18 +134,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="#solution">
-   Solution
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="Chapter_8A_Density_Matrix.html">
-   Example 8.A.1:
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Chapter_8A_Density_Matrix.html#example-8-a-2">
-   Example 8.A.2
+   Ch 8 - Examples
   </a>
  </li>
  <li class="toctree-l1">
@@ -163,7 +150,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Chapter_13_Hydrogen.html">
-   Hydrogen functions
+   Ch 13 - Hydrogen functions
   </a>
  </li>
 </ul>
@@ -253,17 +240,12 @@
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Chapter 8 - Local Realism
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#with-alice-and-bob">
+   with Alice and Bob
   </a>
   <ul class="nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#with-alice-and-bob">
-     with Alice and Bob
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#what-if-the-state-was-just-h-h-rangle">
      What if the state was just
      <span class="math notranslate nohighlight">
@@ -272,29 +254,27 @@
      ?
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#a-mixed-state-instead-of-the-pure-entangled-state">
      A mixed state instead of the pure (entangled state).
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#now-repeat-with-the-pure-state-but-using-density-matrix-techniques">
      Now repeat with the pure state but using density matrix techniques.
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#explore-the-angles-in-more-detail">
      Explore the angles in more detail:
     </a>
    </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#solution">
-   Solution
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#solution">
+     Solution
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#challenge">
      Challenge:
     </a>
@@ -440,9 +420,8 @@
 </div>
 </div>
 <p>This is what we described in class.</p>
-</div>
 <div class="section" id="what-if-the-state-was-just-h-h-rangle">
-<h2>What if the state was just <span class="math notranslate nohighlight">\(|H,H\rangle\)</span>?<a class="headerlink" href="#what-if-the-state-was-just-h-h-rangle" title="Permalink to this headline">¶</a></h2>
+<h3>What if the state was just <span class="math notranslate nohighlight">\(|H,H\rangle\)</span>?<a class="headerlink" href="#what-if-the-state-was-just-h-h-rangle" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi2</span><span class="o">=</span><span class="n">tensor</span><span class="p">(</span><span class="n">H</span><span class="p">,</span><span class="n">H</span><span class="p">)</span>
@@ -504,7 +483,7 @@
 <p>This is harder to interpret, but we clearly have different probabilities. Finally, check if we had used a mixed state:</p>
 </div>
 <div class="section" id="a-mixed-state-instead-of-the-pure-entangled-state">
-<h2>A mixed state instead of the pure (entangled state).<a class="headerlink" href="#a-mixed-state-instead-of-the-pure-entangled-state" title="Permalink to this headline">¶</a></h2>
+<h3>A mixed state instead of the pure (entangled state).<a class="headerlink" href="#a-mixed-state-instead-of-the-pure-entangled-state" title="Permalink to this headline">¶</a></h3>
 <p>Here we have to use the density matrix (since a <code class="docutils literal notranslate"><span class="pre">ket</span></code> cannot describe a mixed state). First some background:
 QuTiP has a function that gives the density matrix from a <code class="docutils literal notranslate"><span class="pre">ket</span></code> state: <code class="docutils literal notranslate"><span class="pre">ket2dm</span></code>.</p>
 <div class="cell docutils container">
@@ -574,7 +553,7 @@ QuTiP has a function that gives the density matrix from a <code class="docutils 
 <p>We see that  <span class="math notranslate nohighlight">\(P(\theta_{B2},\theta_{A2}) &gt;  P(\theta_{B1},\theta_{A1})\)</span> as we said in class for a state that obeys realism.</p>
 </div>
 <div class="section" id="now-repeat-with-the-pure-state-but-using-density-matrix-techniques">
-<h2>Now repeat with the pure state but using density matrix techniques.<a class="headerlink" href="#now-repeat-with-the-pure-state-but-using-density-matrix-techniques" title="Permalink to this headline">¶</a></h2>
+<h3>Now repeat with the pure state but using density matrix techniques.<a class="headerlink" href="#now-repeat-with-the-pure-state-but-using-density-matrix-techniques" title="Permalink to this headline">¶</a></h3>
 <p>This isn’t going to tell us anything new, but it shows how to work with the density matrix if you already know the <code class="docutils literal notranslate"><span class="pre">ket</span></code> state.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -644,7 +623,7 @@ QuTiP has a function that gives the density matrix from a <code class="docutils 
 <p>These all agree (as they should).</p>
 </div>
 <div class="section" id="explore-the-angles-in-more-detail">
-<h2>Explore the angles in more detail:<a class="headerlink" href="#explore-the-angles-in-more-detail" title="Permalink to this headline">¶</a></h2>
+<h3>Explore the angles in more detail:<a class="headerlink" href="#explore-the-angles-in-more-detail" title="Permalink to this headline">¶</a></h3>
 <p>Why these angles, 19 and 35?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -705,9 +684,8 @@ QuTiP has a function that gives the density matrix from a <code class="docutils 
 </div>
 <p>So only 19 and 35 work. Now, can you derive 19 and 35 given only the state <span class="math notranslate nohighlight">\(|\psi\rangle\)</span>? Try the first plot, i.e. calculate the joint probability <span class="math notranslate nohighlight">\(P(\theta_A,\theta_B)\)</span></p>
 </div>
-</div>
 <div class="section" id="solution">
-<h1>Solution<a class="headerlink" href="#solution" title="Permalink to this headline">¶</a></h1>
+<h3>Solution<a class="headerlink" href="#solution" title="Permalink to this headline">¶</a></h3>
 <p>Using the state, write the projection operators for a two photon state with angles <span class="math notranslate nohighlight">\(\theta_A\)</span> and <span class="math notranslate nohighlight">\(\theta_B\)</span>. First, recall $<span class="math notranslate nohighlight">\(\big|\theta_i\big\rangle = \cos\theta_i\big|H\big\rangle + \sin\theta_i\big|V\big\rangle.\)</span><span class="math notranslate nohighlight">\( Next, form the two-photon state: \)</span><span class="math notranslate nohighlight">\(\big|\theta_A,\theta_B\big\rangle = \big|\theta_A\big\rangle \otimes \big|\theta_B\big\rangle = \left(\cos\theta_A\big|H\big\rangle + \sin\theta_A\big|V\big\rangle\right) \otimes \left(\cos\theta_B\big|H\big\rangle + \sin\theta_B\big|V\big\rangle\right)\)</span><span class="math notranslate nohighlight">\(
 which we can reduce to:
 \)</span><span class="math notranslate nohighlight">\(=\cos\theta_A\cos\theta_B\big|H,H\big\rangle + \cos\theta_A\sin\theta_B\big|H,V\big\rangle + \sin\theta_A\cos\theta_B\big|V,H\big\rangle + \sin\theta_A\sin\theta_B\big|V,V\big\rangle.\)</span><span class="math notranslate nohighlight">\(
@@ -732,8 +710,9 @@ Plot is shown below for \)</span>\theta_A = -\theta_B$ and it agrees perfectly w
 <img alt="../_images/Chapter_8_Alice_and_Bob_50_1.png" src="../_images/Chapter_8_Alice_and_Bob_50_1.png" />
 </div>
 </div>
+</div>
 <div class="section" id="challenge">
-<h2>Challenge:<a class="headerlink" href="#challenge" title="Permalink to this headline">¶</a></h2>
+<h3>Challenge:<a class="headerlink" href="#challenge" title="Permalink to this headline">¶</a></h3>
 <p>If we change the state to <span class="math notranslate nohighlight">\(\big|\psi\big\rangle = \sqrt{0.8} \big|H,H\big\rangle + \sqrt{0.2} \big|V,V\big\rangle\)</span>, the two angles that work for this state.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -776,6 +755,7 @@ Plot is shown below for \)</span>\theta_A = -\theta_B$ and it agrees perfectly w
 </div>
 </div>
 </div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -805,8 +785,8 @@ Plot is shown below for \)</span>\theta_A = -\theta_B$ and it agrees perfectly w
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="Chapter_8_Two_Photon_States.html" title="previous page">Entangled states</a>
-    <a class='right-next' id="next-link" href="Chapter_8A_Density_Matrix.html" title="next page">Example 8.A.1:</a>
+    <a class='left-prev' id="prev-link" href="Chapter_8_Two_Photon_States.html" title="previous page">Chapter 8 - Two-photon States</a>
+    <a class='right-next' id="next-link" href="Chapter_8A_Density_Matrix.html" title="next page">Ch 8 - Examples</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

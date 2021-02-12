@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Example 8.A.1: &#8212; Quantum Mechanics with QuTiP</title>
+    <title>Ch 8 - Examples &#8212; Quantum Mechanics with QuTiP</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -87,8 +87,8 @@
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
     <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="features.html">
-   Title of book
+  <a class="reference internal" href="intro.html">
+   Quantum Mechanics with QuTiP
   </a>
  </li>
 </ul>
@@ -100,15 +100,12 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Chapter_2_In_Class_Problems.html">
-   2.3 Find the eigenvalues and vectors of J
-   <span class="math notranslate nohighlight">
-    \(_\theta\)
-   </span>
-   for
-   <span class="math notranslate nohighlight">
-    \(\theta\)
-   </span>
-   =45
+   Chapter 2 in-class problems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lab_2_Quantum_States_Solutions.html">
+   Quantum states
   </a>
  </li>
  <li class="toctree-l1">
@@ -128,7 +125,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Chapter_8_Two_Photon_States.html">
-   Entangled states
+   Chapter 8 - Two-photon States
   </a>
  </li>
  <li class="toctree-l1">
@@ -136,19 +133,9 @@
    Chapter 8 - Local Realism
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Chapter_8_Alice_and_Bob.html#solution">
-   Solution
-  </a>
- </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Example 8.A.1:
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="#example-8-a-2">
-   Example 8.A.2
+   Ch 8 - Examples
   </a>
  </li>
  <li class="toctree-l1">
@@ -163,7 +150,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Chapter_13_Hydrogen.html">
-   Hydrogen functions
+   Ch 13 - Hydrogen functions
   </a>
  </li>
 </ul>
@@ -253,17 +240,17 @@
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-8-a-1">
    Example 8.A.1:
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#example-8-a-2">
    Example 8.A.2
   </a>
   <ul class="nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#extend-the-example-for-the-pure-superposition-state">
      Extend the example for the pure (superposition) state
     </a>
@@ -281,7 +268,9 @@
         
               <div>
                 
-  <div class="cell docutils container">
+  <div class="section" id="ch-8-examples">
+<h1>Ch 8 - Examples<a class="headerlink" href="#ch-8-examples" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">sqrt</span>
 <span class="kn">from</span> <span class="nn">qutip</span> <span class="kn">import</span> <span class="o">*</span>
@@ -298,7 +287,7 @@
 </div>
 </div>
 <div class="section" id="example-8-a-1">
-<h1>Example 8.A.1:<a class="headerlink" href="#example-8-a-1" title="Permalink to this headline">¶</a></h1>
+<h2>Example 8.A.1:<a class="headerlink" href="#example-8-a-1" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">tensor</span><span class="p">(</span><span class="n">H</span><span class="p">,</span><span class="n">H</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">tensor</span><span class="p">(</span><span class="n">V</span><span class="p">,</span><span class="n">V</span><span class="p">)</span>
@@ -351,7 +340,7 @@
 </div>
 </div>
 <div class="section" id="example-8-a-2">
-<h1>Example 8.A.2<a class="headerlink" href="#example-8-a-2" title="Permalink to this headline">¶</a></h1>
+<h2>Example 8.A.2<a class="headerlink" href="#example-8-a-2" title="Permalink to this headline">¶</a></h2>
 <p>Remember the 45 states:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -414,7 +403,7 @@
 </div>
 </div>
 <div class="section" id="extend-the-example-for-the-pure-superposition-state">
-<h2>Extend the example for the pure (superposition) state<a class="headerlink" href="#extend-the-example-for-the-pure-superposition-state" title="Permalink to this headline">¶</a></h2>
+<h3>Extend the example for the pure (superposition) state<a class="headerlink" href="#extend-the-example-for-the-pure-superposition-state" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">Proj_4545</span><span class="o">*</span><span class="n">rho_ent</span><span class="p">)</span><span class="o">.</span><span class="n">tr</span><span class="p">()</span> <span class="o">/</span> <span class="p">(</span><span class="n">Proj_45i</span><span class="o">*</span><span class="n">rho_ent</span><span class="p">)</span><span class="o">.</span><span class="n">tr</span><span class="p">()</span>
@@ -428,6 +417,7 @@
 </div>
 </div>
 <p>The photons are entanlged and therefore show perfect correlation even in the +45 measurements.</p>
+</div>
 </div>
 </div>
 
