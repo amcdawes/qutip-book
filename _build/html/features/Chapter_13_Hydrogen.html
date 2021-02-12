@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hydrogen functions &#8212; Quantum Mechanics with QuTiP</title>
+    <title>Ch 13 - Hydrogen functions &#8212; Quantum Mechanics with QuTiP</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -86,8 +86,8 @@
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
     <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="features.html">
-   Title of book
+  <a class="reference internal" href="intro.html">
+   Quantum Mechanics with QuTiP
   </a>
  </li>
 </ul>
@@ -99,15 +99,12 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Chapter_2_In_Class_Problems.html">
-   2.3 Find the eigenvalues and vectors of J
-   <span class="math notranslate nohighlight">
-    \(_\theta\)
-   </span>
-   for
-   <span class="math notranslate nohighlight">
-    \(\theta\)
-   </span>
-   =45
+   Chapter 2 in-class problems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lab_2_Quantum_States_Solutions.html">
+   Quantum states
   </a>
  </li>
  <li class="toctree-l1">
@@ -127,7 +124,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Chapter_8_Two_Photon_States.html">
-   Entangled states
+   Chapter 8 - Two-photon States
   </a>
  </li>
  <li class="toctree-l1">
@@ -136,18 +133,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Chapter_8_Alice_and_Bob.html#solution">
-   Solution
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="Chapter_8A_Density_Matrix.html">
-   Example 8.A.1:
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Chapter_8A_Density_Matrix.html#example-8-a-2">
-   Example 8.A.2
+   Ch 8 - Examples
   </a>
  </li>
  <li class="toctree-l1">
@@ -162,7 +149,7 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Hydrogen functions
+   Ch 13 - Hydrogen functions
   </a>
  </li>
 </ul>
@@ -301,8 +288,8 @@
         
               <div>
                 
-  <div class="section" id="hydrogen-functions">
-<h1>Hydrogen functions<a class="headerlink" href="#hydrogen-functions" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="ch-13-hydrogen-functions">
+<h1>Ch 13 - Hydrogen functions<a class="headerlink" href="#ch-13-hydrogen-functions" title="Permalink to this headline">¶</a></h1>
 <p>Start with some imports fro Symbolic Python library:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -459,7 +446,1261 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">expect2</span> <span class="o">=</span> <span class="n">integrate</span><span class="p">(</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span> <span class="p">(</span><span class="n">r</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span> <span class="o">*</span> <span class="n">psi</span><span class="o">*</span><span class="n">psi_conj</span><span class="p">,(</span><span class="n">r</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">oo</span><span class="p">),(</span><span class="n">theta</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">pi</span><span class="p">),(</span><span class="n">phi</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">outer</span> <span class="o">=</span> <span class="p">(</span><span class="n">psi</span><span class="o">*</span><span class="n">psi_conj</span><span class="p">)</span><span class="o">.</span><span class="n">simplify</span><span class="p">()</span>
+<span class="n">outer</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{\left(\sqrt{2} r e^{r + 1.0 i t w_{1}} \cos{\left(\theta \right)} + 8 e^{\frac{r}{2} + i t w_{2}}\right) \left(\sqrt{2} r e^{r + 1.0 i t w_{2}} \cos{\left(\theta \right)} + 8 e^{\frac{r}{2} + i t w_{1}}\right) e^{- 3 r - 1.0 i t w_{1} - 1.0 i t w_{2}}}{128 \pi}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">expect2</span> <span class="o">=</span> <span class="n">integrate</span><span class="p">(</span> <span class="p">(</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">r</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)))</span> <span class="o">*</span> <span class="n">outer</span><span class="p">,(</span><span class="n">r</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">oo</span><span class="p">),(</span><span class="n">theta</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">pi</span><span class="p">),(</span><span class="n">phi</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">21</span><span class="o">-</span><span class="mi">6</span><span class="n">f9a6373e168</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">expect2</span> <span class="o">=</span> <span class="n">integrate</span><span class="p">(</span> <span class="p">(</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">r</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)))</span> <span class="o">*</span> <span class="n">outer</span><span class="p">,(</span><span class="n">r</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">oo</span><span class="p">),(</span><span class="n">theta</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">pi</span><span class="p">),(</span><span class="n">phi</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">))</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/integrals/integrals.py</span> in <span class="ni">integrate</span><span class="nt">(meijerg, conds, risch, heurisch, manual, *args, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1542</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1543</span>     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">integral</span><span class="p">,</span> <span class="n">Integral</span><span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">1544</span>         <span class="k">return</span> <span class="n">integral</span><span class="o">.</span><span class="n">doit</span><span class="p">(</span><span class="o">**</span><span class="n">doit_flags</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1545</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1546</span>         <span class="n">new_args</span> <span class="o">=</span> <span class="p">[</span><span class="n">a</span><span class="o">.</span><span class="n">doit</span><span class="p">(</span><span class="o">**</span><span class="n">doit_flags</span><span class="p">)</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">Integral</span><span class="p">)</span> <span class="k">else</span> <span class="n">a</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/integrals/integrals.py</span> in <span class="ni">doit</span><span class="nt">(self, **hints)</span>
+<span class="g g-Whitespace">    </span><span class="mi">480</span>         <span class="k">if</span> <span class="n">reps</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">481</span>             <span class="n">undo</span> <span class="o">=</span> <span class="p">{</span><span class="n">v</span><span class="p">:</span> <span class="n">k</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">reps</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+<span class="ne">--&gt; </span><span class="mi">482</span>             <span class="n">did</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">xreplace</span><span class="p">(</span><span class="n">reps</span><span class="p">)</span><span class="o">.</span><span class="n">doit</span><span class="p">(</span><span class="o">**</span><span class="n">hints</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">483</span>             <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">did</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">tuple</span><span class="p">:</span>  <span class="c1"># when separate=True</span>
+<span class="g g-Whitespace">    </span><span class="mi">484</span>                 <span class="n">did</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">([</span><span class="n">i</span><span class="o">.</span><span class="n">xreplace</span><span class="p">(</span><span class="n">undo</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">did</span><span class="p">])</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/integrals/integrals.py</span> in <span class="ni">doit</span><span class="nt">(self, **hints)</span>
+<span class="g g-Whitespace">    </span><span class="mi">592</span>                 <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">593</span>                     <span class="n">antideriv</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_eval_integral</span><span class="p">(</span>
+<span class="ne">--&gt; </span><span class="mi">594</span>                         <span class="n">function</span><span class="p">,</span> <span class="n">xab</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="o">**</span><span class="n">eval_kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">595</span>                     <span class="k">if</span> <span class="n">antideriv</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">meijerg</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">596</span>                         <span class="n">ret</span> <span class="o">=</span> <span class="n">try_meijerg</span><span class="p">(</span><span class="n">function</span><span class="p">,</span> <span class="n">xab</span><span class="p">)</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/integrals/integrals.py</span> in <span class="ni">_eval_integral</span><span class="nt">(self, f, x, meijerg, risch, manual, heurisch, conds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">928</span>             <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">929</span>                 <span class="n">result</span><span class="p">,</span> <span class="n">i</span> <span class="o">=</span> <span class="n">risch_integrate</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">separate_integral</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="ne">--&gt; </span><span class="mi">930</span>                     <span class="n">conds</span><span class="o">=</span><span class="n">conds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">931</span>             <span class="k">except</span> <span class="ne">NotImplementedError</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">932</span>                 <span class="k">pass</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/integrals/risch.py</span> in <span class="ni">risch_integrate</span><span class="nt">(f, x, extension, handle_first, separate_integral, rewrite_complex, conds)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1746</span>             <span class="k">continue</span>
+<span class="g g-Whitespace">   </span><span class="mi">1747</span> 
+<span class="ne">-&gt; </span><span class="mi">1748</span>         <span class="n">fa</span><span class="p">,</span> <span class="n">fd</span> <span class="o">=</span> <span class="n">fa</span><span class="o">.</span><span class="n">cancel</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span> <span class="n">include</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1749</span>         <span class="k">if</span> <span class="n">case</span> <span class="o">==</span> <span class="s1">&#39;exp&#39;</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1750</span>             <span class="n">ans</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">integrate_hyperexponential</span><span class="p">(</span><span class="n">fa</span><span class="p">,</span> <span class="n">fd</span><span class="p">,</span> <span class="n">DE</span><span class="p">,</span> <span class="n">conds</span><span class="o">=</span><span class="n">conds</span><span class="p">)</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/polytools.py</span> in <span class="ni">cancel</span><span class="nt">(f, g, include)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3763</span> 
+<span class="g g-Whitespace">   </span><span class="mi">3764</span>         <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="s1">&#39;cancel&#39;</span><span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">3765</span>             <span class="n">result</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">cancel</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">include</span><span class="o">=</span><span class="n">include</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3766</span>         <span class="k">else</span><span class="p">:</span>  <span class="c1"># pragma: no cover</span>
+<span class="g g-Whitespace">   </span><span class="mi">3767</span>             <span class="k">raise</span> <span class="n">OperationNotSupported</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="s1">&#39;cancel&#39;</span><span class="p">)</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/polyclasses.py</span> in <span class="ni">cancel</span><span class="nt">(f, g, include)</span>
+<span class="g g-Whitespace">    </span><span class="mi">692</span> 
+<span class="g g-Whitespace">    </span><span class="mi">693</span>         <span class="k">if</span> <span class="n">include</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">694</span>             <span class="n">F</span><span class="p">,</span> <span class="n">G</span> <span class="o">=</span> <span class="n">dmp_cancel</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">lev</span><span class="p">,</span> <span class="n">dom</span><span class="p">,</span> <span class="n">include</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">695</span>         <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">696</span>             <span class="n">cF</span><span class="p">,</span> <span class="n">cG</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span> <span class="n">G</span> <span class="o">=</span> <span class="n">dmp_cancel</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">lev</span><span class="p">,</span> <span class="n">dom</span><span class="p">,</span> <span class="n">include</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dmp_cancel</span><span class="nt">(f, g, u, K, include)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1865</span>         <span class="n">cp</span><span class="p">,</span> <span class="n">cq</span> <span class="o">=</span> <span class="n">K</span><span class="o">.</span><span class="n">one</span><span class="p">,</span> <span class="n">K</span><span class="o">.</span><span class="n">one</span>
+<span class="g g-Whitespace">   </span><span class="mi">1866</span> 
+<span class="ne">-&gt; </span><span class="mi">1867</span>     <span class="n">_</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">q</span> <span class="o">=</span> <span class="n">dmp_inner_gcd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1868</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1869</span>     <span class="k">if</span> <span class="n">K0</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dmp_inner_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1579</span>     <span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1580</span><span class="sd">     if not u:</span>
+<span class="ne">-&gt; </span><span class="mi">1581</span><span class="sd">         return dup_inner_gcd(f, g, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1582</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1583</span><span class="sd">     J, (f, g) = dmp_multi_deflate((f, g), u, K)</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dup_inner_gcd</span><span class="nt">(f, g, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1511</span><span class="sd">                 pass</span>
+<span class="g g-Whitespace">   </span><span class="mi">1512</span><span class="sd"> </span>
+<span class="ne">-&gt; </span><span class="mi">1513</span><span class="sd">         return dup_ff_prs_gcd(f, g, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1514</span><span class="sd">     else:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1515</span><span class="sd">         if K.is_ZZ and query(&#39;USE_HEU_GCD&#39;):</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dup_ff_prs_gcd</span><span class="nt">(f, g, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1026</span><span class="sd">         return result</span>
+<span class="g g-Whitespace">   </span><span class="mi">1027</span><span class="sd"> </span>
+<span class="ne">-&gt; </span><span class="mi">1028</span><span class="sd">     h = dup_subresultants(f, g, K)[-1]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1029</span><span class="sd">     h = dup_monic(h, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1030</span><span class="sd"> </span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dup_subresultants</span><span class="nt">(f, g, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">401</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">402</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">403</span>     <span class="k">return</span> <span class="n">dup_inner_subresultants</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">K</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">404</span> 
+<span class="g g-Whitespace">    </span><span class="mi">405</span> 
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dup_inner_subresultants</span><span class="nt">(f, g, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">371</span>         <span class="n">b</span> <span class="o">=</span> <span class="o">-</span><span class="n">lc</span> <span class="o">*</span> <span class="n">c</span><span class="o">**</span><span class="n">d</span>
+<span class="g g-Whitespace">    </span><span class="mi">372</span> 
+<span class="ne">--&gt; </span><span class="mi">373</span>         <span class="n">h</span> <span class="o">=</span> <span class="n">dup_prem</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">374</span>         <span class="n">h</span> <span class="o">=</span> <span class="n">dup_quo_ground</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">375</span> 
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/densearith.py</span> in <span class="ni">dup_prem</span><span class="nt">(f, g, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1084</span>         <span class="n">R</span> <span class="o">=</span> <span class="n">dup_mul_ground</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">lc_g</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1085</span>         <span class="n">G</span> <span class="o">=</span> <span class="n">dup_mul_term</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">lc_r</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1086</span>         <span class="n">r</span> <span class="o">=</span> <span class="n">dup_sub</span><span class="p">(</span><span class="n">R</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1087</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1088</span>         <span class="n">_dr</span><span class="p">,</span> <span class="n">dr</span> <span class="o">=</span> <span class="n">dr</span><span class="p">,</span> <span class="n">dup_degree</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/densearith.py</span> in <span class="ni">dup_sub</span><span class="nt">(f, g, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">611</span> 
+<span class="g g-Whitespace">    </span><span class="mi">612</span>     <span class="k">if</span> <span class="n">df</span> <span class="o">==</span> <span class="n">dg</span><span class="p">:</span>
+<span class="nn">--&gt; 613         return dup_strip([ a - b for a, b</span> in <span class="ni">zip</span><span class="nt">(f, g) ])</span>
+<span class="g g-Whitespace">    </span><span class="mi">614</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">615</span>         <span class="n">k</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">df</span> <span class="o">-</span> <span class="n">dg</span><span class="p">)</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/densearith.py</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
+<span class="g g-Whitespace">    </span><span class="mi">611</span> 
+<span class="g g-Whitespace">    </span><span class="mi">612</span>     <span class="k">if</span> <span class="n">df</span> <span class="o">==</span> <span class="n">dg</span><span class="p">:</span>
+<span class="nn">--&gt; 613         return dup_strip([ a - b for a, b</span> in <span class="ni">zip</span><span class="nt">(f, g) ])</span>
+<span class="g g-Whitespace">    </span><span class="mi">614</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">615</span>         <span class="n">k</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">df</span> <span class="o">-</span> <span class="n">dg</span><span class="p">)</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/domains/expressiondomain.py</span> in <span class="ni">__sub__</span><span class="nt">(f, g)</span>
+<span class="g g-Whitespace">     </span><span class="mi">77</span> 
+<span class="g g-Whitespace">     </span><span class="mi">78</span>             <span class="k">if</span> <span class="n">g</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">79</span>                 <span class="k">return</span> <span class="n">f</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">ex</span> <span class="o">-</span> <span class="n">g</span><span class="o">.</span><span class="n">ex</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">80</span>             <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">81</span>                 <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/domains/expressiondomain.py</span> in <span class="ni">simplify</span><span class="nt">(f, ex)</span>
+<span class="g g-Whitespace">     </span><span class="mi">48</span> 
+<span class="g g-Whitespace">     </span><span class="mi">49</span>         <span class="k">def</span> <span class="nf">simplify</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">ex</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">50</span>             <span class="k">return</span> <span class="n">f</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span><span class="n">ex</span><span class="o">.</span><span class="n">cancel</span><span class="p">()</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="o">**</span><span class="n">eflags</span><span class="p">))</span>
+<span class="g g-Whitespace">     </span><span class="mi">51</span> 
+<span class="g g-Whitespace">     </span><span class="mi">52</span>         <span class="k">def</span> <span class="fm">__abs__</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/core/expr.py</span> in <span class="ni">cancel</span><span class="nt">(self, *gens, **args)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3682</span>         <span class="sd">&quot;&quot;&quot;See the cancel function in sympy.polys&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">3683</span>         <span class="kn">from</span> <span class="nn">sympy.polys</span> <span class="kn">import</span> <span class="n">cancel</span>
+<span class="ne">-&gt; </span><span class="mi">3684</span>         <span class="k">return</span> <span class="n">cancel</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">gens</span><span class="p">,</span> <span class="o">**</span><span class="n">args</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3685</span> 
+<span class="g g-Whitespace">   </span><span class="mi">3686</span>     <span class="k">def</span> <span class="nf">invert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="o">*</span><span class="n">gens</span><span class="p">,</span> <span class="o">**</span><span class="n">args</span><span class="p">):</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/polytools.py</span> in <span class="ni">cancel</span><span class="nt">(f, *gens, **args)</span>
+<span class="g g-Whitespace">   </span><span class="mi">6715</span>             <span class="k">return</span> <span class="n">f</span><span class="o">.</span><span class="n">xreplace</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">reps</span><span class="p">))</span>
+<span class="g g-Whitespace">   </span><span class="mi">6716</span> 
+<span class="ne">-&gt; </span><span class="mi">6717</span>     <span class="n">c</span><span class="p">,</span> <span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">Q</span><span class="p">)</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">F</span><span class="o">.</span><span class="n">cancel</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">6718</span>     <span class="k">if</span> <span class="n">opt</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;polys&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="s1">&#39;gens&#39;</span> <span class="ow">in</span> <span class="n">opt</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">6719</span>         <span class="n">opt</span><span class="p">[</span><span class="s1">&#39;gens&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">R</span><span class="o">.</span><span class="n">symbols</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/rings.py</span> in <span class="ni">cancel</span><span class="nt">(self, g)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2215</span> 
+<span class="g g-Whitespace">   </span><span class="mi">2216</span>         <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">domain</span><span class="o">.</span><span class="n">is_Field</span> <span class="ow">and</span> <span class="n">domain</span><span class="o">.</span><span class="n">has_assoc_Ring</span><span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">2217</span>             <span class="n">_</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">q</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">cofactors</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2218</span> 
+<span class="g g-Whitespace">   </span><span class="mi">2219</span>             <span class="k">if</span> <span class="n">q</span><span class="o">.</span><span class="n">is_negative</span><span class="p">:</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/rings.py</span> in <span class="ni">cofactors</span><span class="nt">(f, g)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2131</span> 
+<span class="g g-Whitespace">   </span><span class="mi">2132</span>         <span class="n">J</span><span class="p">,</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">)</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">deflate</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">2133</span>         <span class="n">h</span><span class="p">,</span> <span class="n">cff</span><span class="p">,</span> <span class="n">cfg</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">_gcd</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2134</span> 
+<span class="g g-Whitespace">   </span><span class="mi">2135</span>         <span class="k">return</span> <span class="p">(</span><span class="n">h</span><span class="o">.</span><span class="n">inflate</span><span class="p">(</span><span class="n">J</span><span class="p">),</span> <span class="n">cff</span><span class="o">.</span><span class="n">inflate</span><span class="p">(</span><span class="n">J</span><span class="p">),</span> <span class="n">cfg</span><span class="o">.</span><span class="n">inflate</span><span class="p">(</span><span class="n">J</span><span class="p">))</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/rings.py</span> in <span class="ni">_gcd</span><span class="nt">(f, g)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2166</span>             <span class="k">return</span> <span class="n">f</span><span class="o">.</span><span class="n">_gcd_ZZ</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2167</span>         <span class="k">else</span><span class="p">:</span> <span class="c1"># TODO: don&#39;t use dense representation (port PRS algorithms)</span>
+<span class="ne">-&gt; </span><span class="mi">2168</span>             <span class="k">return</span> <span class="n">ring</span><span class="o">.</span><span class="n">dmp_inner_gcd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2169</span> 
+<span class="g g-Whitespace">   </span><span class="mi">2170</span>     <span class="k">def</span> <span class="nf">_gcd_ZZ</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">):</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/compatibility.py</span> in <span class="ni">dmp_inner_gcd</span><span class="nt">(self, f, g)</span>
+<span class="g g-Whitespace">    </span><span class="mi">654</span>         <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">from_dense</span><span class="p">(</span><span class="n">H</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">from_dense</span><span class="p">(</span><span class="n">F</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">from_dense</span><span class="p">(</span><span class="n">G</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">655</span>     <span class="k">def</span> <span class="nf">dmp_inner_gcd</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">656</span>         <span class="n">H</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span> <span class="n">G</span> <span class="o">=</span> <span class="n">dmp_inner_gcd</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">to_dense</span><span class="p">(</span><span class="n">f</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">to_dense</span><span class="p">(</span><span class="n">g</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">ngens</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">domain</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">657</span>         <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">from_dense</span><span class="p">(</span><span class="n">H</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">from_dense</span><span class="p">(</span><span class="n">F</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">from_dense</span><span class="p">(</span><span class="n">G</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">658</span>     <span class="k">def</span> <span class="nf">dup_gcd</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">):</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dmp_inner_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1582</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1583</span>     <span class="n">J</span><span class="p">,</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">)</span> <span class="o">=</span> <span class="n">dmp_multi_deflate</span><span class="p">((</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">),</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1584</span>     <span class="n">h</span><span class="p">,</span> <span class="n">cff</span><span class="p">,</span> <span class="n">cfg</span> <span class="o">=</span> <span class="n">_dmp_inner_gcd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1585</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1586</span>     <span class="k">return</span> <span class="p">(</span><span class="n">dmp_inflate</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">J</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">),</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">_dmp_inner_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1555</span>                 <span class="k">pass</span>
+<span class="g g-Whitespace">   </span><span class="mi">1556</span> 
+<span class="ne">-&gt; </span><span class="mi">1557</span>         <span class="k">return</span> <span class="n">dmp_rr_prs_gcd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1558</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1559</span> 
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dmp_rr_prs_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1058</span>         <span class="k">return</span> <span class="n">dup_rr_prs_gcd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1059</span> 
+<span class="ne">-&gt; </span><span class="mi">1060</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">_dmp_rr_trivial_gcd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1061</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1062</span>     <span class="k">if</span> <span class="n">result</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">_dmp_rr_trivial_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">909</span>         <span class="k">return</span> <span class="n">dmp_one</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">),</span> <span class="n">f</span><span class="p">,</span> <span class="n">g</span>
+<span class="g g-Whitespace">    </span><span class="mi">910</span>     <span class="k">elif</span> <span class="n">query</span><span class="p">(</span><span class="s1">&#39;USE_SIMPLIFY_GCD&#39;</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">911</span>         <span class="k">return</span> <span class="n">_dmp_simplify_gcd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">912</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">913</span>         <span class="k">return</span> <span class="kc">None</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">_dmp_simplify_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">949</span>         <span class="k">if</span> <span class="ow">not</span> <span class="n">df</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">950</span>             <span class="n">F</span> <span class="o">=</span> <span class="n">dmp_LC</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">951</span>             <span class="n">G</span> <span class="o">=</span> <span class="n">dmp_content</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">952</span>         <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">953</span>             <span class="n">F</span> <span class="o">=</span> <span class="n">dmp_content</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dmp_content</span><span class="nt">(f, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1791</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1792</span>     <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">f</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+<span class="ne">-&gt; </span><span class="mi">1793</span>         <span class="n">cont</span> <span class="o">=</span> <span class="n">dmp_gcd</span><span class="p">(</span><span class="n">cont</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1794</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1795</span>         <span class="k">if</span> <span class="n">dmp_one_p</span><span class="p">(</span><span class="n">cont</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">K</span><span class="p">):</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dmp_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1623</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1624</span>     <span class="sd">&quot;&quot;&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1625</span><span class="sd">     return dmp_inner_gcd(f, g, u, K)[0]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1626</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1627</span><span class="sd"> </span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dmp_inner_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1582</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1583</span><span class="sd">     J, (f, g) = dmp_multi_deflate((f, g), u, K)</span>
+<span class="ne">-&gt; </span><span class="mi">1584</span><span class="sd">     h, cff, cfg = _dmp_inner_gcd(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1585</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1586</span><span class="sd">     return (dmp_inflate(h, J, u, K),</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">_dmp_inner_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1555</span><span class="sd">                 pass</span>
+<span class="g g-Whitespace">   </span><span class="mi">1556</span><span class="sd"> </span>
+<span class="ne">-&gt; </span><span class="mi">1557</span><span class="sd">         return dmp_rr_prs_gcd(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1558</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1559</span><span class="sd"> </span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dmp_rr_prs_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1058</span><span class="sd">         return dup_rr_prs_gcd(f, g, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1059</span><span class="sd"> </span>
+<span class="ne">-&gt; </span><span class="mi">1060</span><span class="sd">     result = _dmp_rr_trivial_gcd(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1061</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1062</span><span class="sd">     if result is not None:</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">_dmp_rr_trivial_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">909</span><span class="sd">         return dmp_one(u, K), f, g</span>
+<span class="g g-Whitespace">    </span><span class="mi">910</span><span class="sd">     elif query(&#39;USE_SIMPLIFY_GCD&#39;):</span>
+<span class="ne">--&gt; </span><span class="mi">911</span><span class="sd">         return _dmp_simplify_gcd(f, g, u, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">912</span><span class="sd">     else:</span>
+<span class="g g-Whitespace">    </span><span class="mi">913</span><span class="sd">         return None</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">_dmp_simplify_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">949</span><span class="sd">         if not df:</span>
+<span class="g g-Whitespace">    </span><span class="mi">950</span><span class="sd">             F = dmp_LC(f, K)</span>
+<span class="ne">--&gt; </span><span class="mi">951</span><span class="sd">             G = dmp_content(g, u, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">952</span><span class="sd">         else:</span>
+<span class="g g-Whitespace">    </span><span class="mi">953</span><span class="sd">             F = dmp_content(f, u, K)</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dmp_content</span><span class="nt">(f, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1791</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1792</span><span class="sd">     for c in f[1:]:</span>
+<span class="ne">-&gt; </span><span class="mi">1793</span><span class="sd">         cont = dmp_gcd(cont, c, v, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1794</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1795</span><span class="sd">         if dmp_one_p(cont, v, K):</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dmp_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1623</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1624</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1625</span>     <span class="k">return</span> <span class="n">dmp_inner_gcd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1626</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1627</span> 
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dmp_inner_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1582</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1583</span>     <span class="n">J</span><span class="p">,</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">)</span> <span class="o">=</span> <span class="n">dmp_multi_deflate</span><span class="p">((</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">),</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1584</span>     <span class="n">h</span><span class="p">,</span> <span class="n">cff</span><span class="p">,</span> <span class="n">cfg</span> <span class="o">=</span> <span class="n">_dmp_inner_gcd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1585</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1586</span>     <span class="k">return</span> <span class="p">(</span><span class="n">dmp_inflate</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">J</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">),</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">_dmp_inner_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1555</span>                 <span class="k">pass</span>
+<span class="g g-Whitespace">   </span><span class="mi">1556</span> 
+<span class="ne">-&gt; </span><span class="mi">1557</span>         <span class="k">return</span> <span class="n">dmp_rr_prs_gcd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1558</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1559</span> 
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dmp_rr_prs_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1058</span>         <span class="k">return</span> <span class="n">dup_rr_prs_gcd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1059</span> 
+<span class="ne">-&gt; </span><span class="mi">1060</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">_dmp_rr_trivial_gcd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1061</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1062</span>     <span class="k">if</span> <span class="n">result</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">_dmp_rr_trivial_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">909</span>         <span class="k">return</span> <span class="n">dmp_one</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">),</span> <span class="n">f</span><span class="p">,</span> <span class="n">g</span>
+<span class="g g-Whitespace">    </span><span class="mi">910</span>     <span class="k">elif</span> <span class="n">query</span><span class="p">(</span><span class="s1">&#39;USE_SIMPLIFY_GCD&#39;</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">911</span>         <span class="k">return</span> <span class="n">_dmp_simplify_gcd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">912</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">913</span>         <span class="k">return</span> <span class="kc">None</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">_dmp_simplify_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">949</span>         <span class="k">if</span> <span class="ow">not</span> <span class="n">df</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">950</span>             <span class="n">F</span> <span class="o">=</span> <span class="n">dmp_LC</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">951</span>             <span class="n">G</span> <span class="o">=</span> <span class="n">dmp_content</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">952</span>         <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">953</span>             <span class="n">F</span> <span class="o">=</span> <span class="n">dmp_content</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dmp_content</span><span class="nt">(f, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1791</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1792</span>     <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">f</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+<span class="ne">-&gt; </span><span class="mi">1793</span>         <span class="n">cont</span> <span class="o">=</span> <span class="n">dmp_gcd</span><span class="p">(</span><span class="n">cont</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1794</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1795</span>         <span class="k">if</span> <span class="n">dmp_one_p</span><span class="p">(</span><span class="n">cont</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">K</span><span class="p">):</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dmp_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1623</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1624</span>     <span class="sd">&quot;&quot;&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1625</span><span class="sd">     return dmp_inner_gcd(f, g, u, K)[0]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1626</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1627</span><span class="sd"> </span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dmp_inner_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1582</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1583</span><span class="sd">     J, (f, g) = dmp_multi_deflate((f, g), u, K)</span>
+<span class="ne">-&gt; </span><span class="mi">1584</span><span class="sd">     h, cff, cfg = _dmp_inner_gcd(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1585</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1586</span><span class="sd">     return (dmp_inflate(h, J, u, K),</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">_dmp_inner_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1555</span><span class="sd">                 pass</span>
+<span class="g g-Whitespace">   </span><span class="mi">1556</span><span class="sd"> </span>
+<span class="ne">-&gt; </span><span class="mi">1557</span><span class="sd">         return dmp_rr_prs_gcd(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1558</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1559</span><span class="sd"> </span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dmp_rr_prs_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1058</span><span class="sd">         return dup_rr_prs_gcd(f, g, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1059</span><span class="sd"> </span>
+<span class="ne">-&gt; </span><span class="mi">1060</span><span class="sd">     result = _dmp_rr_trivial_gcd(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1061</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1062</span><span class="sd">     if result is not None:</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">_dmp_rr_trivial_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">909</span><span class="sd">         return dmp_one(u, K), f, g</span>
+<span class="g g-Whitespace">    </span><span class="mi">910</span><span class="sd">     elif query(&#39;USE_SIMPLIFY_GCD&#39;):</span>
+<span class="ne">--&gt; </span><span class="mi">911</span><span class="sd">         return _dmp_simplify_gcd(f, g, u, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">912</span><span class="sd">     else:</span>
+<span class="g g-Whitespace">    </span><span class="mi">913</span><span class="sd">         return None</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">_dmp_simplify_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">949</span><span class="sd">         if not df:</span>
+<span class="g g-Whitespace">    </span><span class="mi">950</span><span class="sd">             F = dmp_LC(f, K)</span>
+<span class="ne">--&gt; </span><span class="mi">951</span><span class="sd">             G = dmp_content(g, u, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">952</span><span class="sd">         else:</span>
+<span class="g g-Whitespace">    </span><span class="mi">953</span><span class="sd">             F = dmp_content(f, u, K)</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dmp_content</span><span class="nt">(f, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1791</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1792</span><span class="sd">     for c in f[1:]:</span>
+<span class="ne">-&gt; </span><span class="mi">1793</span><span class="sd">         cont = dmp_gcd(cont, c, v, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1794</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1795</span><span class="sd">         if dmp_one_p(cont, v, K):</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dmp_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1623</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1624</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1625</span>     <span class="k">return</span> <span class="n">dmp_inner_gcd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1626</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1627</span> 
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dmp_inner_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1582</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1583</span>     <span class="n">J</span><span class="p">,</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">)</span> <span class="o">=</span> <span class="n">dmp_multi_deflate</span><span class="p">((</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">),</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1584</span>     <span class="n">h</span><span class="p">,</span> <span class="n">cff</span><span class="p">,</span> <span class="n">cfg</span> <span class="o">=</span> <span class="n">_dmp_inner_gcd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1585</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1586</span>     <span class="k">return</span> <span class="p">(</span><span class="n">dmp_inflate</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">J</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">),</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">_dmp_inner_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1555</span>                 <span class="k">pass</span>
+<span class="g g-Whitespace">   </span><span class="mi">1556</span> 
+<span class="ne">-&gt; </span><span class="mi">1557</span>         <span class="k">return</span> <span class="n">dmp_rr_prs_gcd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1558</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1559</span> 
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dmp_rr_prs_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1058</span>         <span class="k">return</span> <span class="n">dup_rr_prs_gcd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1059</span> 
+<span class="ne">-&gt; </span><span class="mi">1060</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">_dmp_rr_trivial_gcd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1061</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1062</span>     <span class="k">if</span> <span class="n">result</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">_dmp_rr_trivial_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">909</span>         <span class="k">return</span> <span class="n">dmp_one</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">),</span> <span class="n">f</span><span class="p">,</span> <span class="n">g</span>
+<span class="g g-Whitespace">    </span><span class="mi">910</span>     <span class="k">elif</span> <span class="n">query</span><span class="p">(</span><span class="s1">&#39;USE_SIMPLIFY_GCD&#39;</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">911</span>         <span class="k">return</span> <span class="n">_dmp_simplify_gcd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">912</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">913</span>         <span class="k">return</span> <span class="kc">None</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">_dmp_simplify_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">949</span>         <span class="k">if</span> <span class="ow">not</span> <span class="n">df</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">950</span>             <span class="n">F</span> <span class="o">=</span> <span class="n">dmp_LC</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">951</span>             <span class="n">G</span> <span class="o">=</span> <span class="n">dmp_content</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">952</span>         <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">953</span>             <span class="n">F</span> <span class="o">=</span> <span class="n">dmp_content</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dmp_content</span><span class="nt">(f, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1791</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1792</span>     <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">f</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+<span class="ne">-&gt; </span><span class="mi">1793</span>         <span class="n">cont</span> <span class="o">=</span> <span class="n">dmp_gcd</span><span class="p">(</span><span class="n">cont</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1794</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1795</span>         <span class="k">if</span> <span class="n">dmp_one_p</span><span class="p">(</span><span class="n">cont</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">K</span><span class="p">):</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dmp_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1623</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1624</span>     <span class="sd">&quot;&quot;&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1625</span><span class="sd">     return dmp_inner_gcd(f, g, u, K)[0]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1626</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1627</span><span class="sd"> </span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dmp_inner_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1582</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1583</span><span class="sd">     J, (f, g) = dmp_multi_deflate((f, g), u, K)</span>
+<span class="ne">-&gt; </span><span class="mi">1584</span><span class="sd">     h, cff, cfg = _dmp_inner_gcd(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1585</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1586</span><span class="sd">     return (dmp_inflate(h, J, u, K),</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">_dmp_inner_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1555</span><span class="sd">                 pass</span>
+<span class="g g-Whitespace">   </span><span class="mi">1556</span><span class="sd"> </span>
+<span class="ne">-&gt; </span><span class="mi">1557</span><span class="sd">         return dmp_rr_prs_gcd(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1558</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1559</span><span class="sd"> </span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dmp_rr_prs_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1058</span><span class="sd">         return dup_rr_prs_gcd(f, g, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1059</span><span class="sd"> </span>
+<span class="ne">-&gt; </span><span class="mi">1060</span><span class="sd">     result = _dmp_rr_trivial_gcd(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1061</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1062</span><span class="sd">     if result is not None:</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">_dmp_rr_trivial_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">909</span><span class="sd">         return dmp_one(u, K), f, g</span>
+<span class="g g-Whitespace">    </span><span class="mi">910</span><span class="sd">     elif query(&#39;USE_SIMPLIFY_GCD&#39;):</span>
+<span class="ne">--&gt; </span><span class="mi">911</span><span class="sd">         return _dmp_simplify_gcd(f, g, u, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">912</span><span class="sd">     else:</span>
+<span class="g g-Whitespace">    </span><span class="mi">913</span><span class="sd">         return None</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">_dmp_simplify_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">949</span><span class="sd">         if not df:</span>
+<span class="g g-Whitespace">    </span><span class="mi">950</span><span class="sd">             F = dmp_LC(f, K)</span>
+<span class="ne">--&gt; </span><span class="mi">951</span><span class="sd">             G = dmp_content(g, u, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">952</span><span class="sd">         else:</span>
+<span class="g g-Whitespace">    </span><span class="mi">953</span><span class="sd">             F = dmp_content(f, u, K)</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dmp_content</span><span class="nt">(f, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1791</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1792</span><span class="sd">     for c in f[1:]:</span>
+<span class="ne">-&gt; </span><span class="mi">1793</span><span class="sd">         cont = dmp_gcd(cont, c, v, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1794</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1795</span><span class="sd">         if dmp_one_p(cont, v, K):</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dmp_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1623</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1624</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1625</span>     <span class="k">return</span> <span class="n">dmp_inner_gcd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1626</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1627</span> 
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dmp_inner_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1582</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1583</span>     <span class="n">J</span><span class="p">,</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">)</span> <span class="o">=</span> <span class="n">dmp_multi_deflate</span><span class="p">((</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">),</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1584</span>     <span class="n">h</span><span class="p">,</span> <span class="n">cff</span><span class="p">,</span> <span class="n">cfg</span> <span class="o">=</span> <span class="n">_dmp_inner_gcd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1585</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1586</span>     <span class="k">return</span> <span class="p">(</span><span class="n">dmp_inflate</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">J</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">),</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">_dmp_inner_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1555</span>                 <span class="k">pass</span>
+<span class="g g-Whitespace">   </span><span class="mi">1556</span> 
+<span class="ne">-&gt; </span><span class="mi">1557</span>         <span class="k">return</span> <span class="n">dmp_rr_prs_gcd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1558</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1559</span> 
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dmp_rr_prs_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1058</span>         <span class="k">return</span> <span class="n">dup_rr_prs_gcd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1059</span> 
+<span class="ne">-&gt; </span><span class="mi">1060</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">_dmp_rr_trivial_gcd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1061</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1062</span>     <span class="k">if</span> <span class="n">result</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">_dmp_rr_trivial_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">909</span>         <span class="k">return</span> <span class="n">dmp_one</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">),</span> <span class="n">f</span><span class="p">,</span> <span class="n">g</span>
+<span class="g g-Whitespace">    </span><span class="mi">910</span>     <span class="k">elif</span> <span class="n">query</span><span class="p">(</span><span class="s1">&#39;USE_SIMPLIFY_GCD&#39;</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">911</span>         <span class="k">return</span> <span class="n">_dmp_simplify_gcd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">912</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">913</span>         <span class="k">return</span> <span class="kc">None</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">_dmp_simplify_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">949</span>         <span class="k">if</span> <span class="ow">not</span> <span class="n">df</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">950</span>             <span class="n">F</span> <span class="o">=</span> <span class="n">dmp_LC</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">951</span>             <span class="n">G</span> <span class="o">=</span> <span class="n">dmp_content</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">952</span>         <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">953</span>             <span class="n">F</span> <span class="o">=</span> <span class="n">dmp_content</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dmp_content</span><span class="nt">(f, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1791</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1792</span>     <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">f</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+<span class="ne">-&gt; </span><span class="mi">1793</span>         <span class="n">cont</span> <span class="o">=</span> <span class="n">dmp_gcd</span><span class="p">(</span><span class="n">cont</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1794</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1795</span>         <span class="k">if</span> <span class="n">dmp_one_p</span><span class="p">(</span><span class="n">cont</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">K</span><span class="p">):</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dmp_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1623</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1624</span>     <span class="sd">&quot;&quot;&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1625</span><span class="sd">     return dmp_inner_gcd(f, g, u, K)[0]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1626</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1627</span><span class="sd"> </span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dmp_inner_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1582</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1583</span><span class="sd">     J, (f, g) = dmp_multi_deflate((f, g), u, K)</span>
+<span class="ne">-&gt; </span><span class="mi">1584</span><span class="sd">     h, cff, cfg = _dmp_inner_gcd(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1585</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1586</span><span class="sd">     return (dmp_inflate(h, J, u, K),</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">_dmp_inner_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1555</span><span class="sd">                 pass</span>
+<span class="g g-Whitespace">   </span><span class="mi">1556</span><span class="sd"> </span>
+<span class="ne">-&gt; </span><span class="mi">1557</span><span class="sd">         return dmp_rr_prs_gcd(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1558</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1559</span><span class="sd"> </span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dmp_rr_prs_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1058</span><span class="sd">         return dup_rr_prs_gcd(f, g, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1059</span><span class="sd"> </span>
+<span class="ne">-&gt; </span><span class="mi">1060</span><span class="sd">     result = _dmp_rr_trivial_gcd(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1061</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1062</span><span class="sd">     if result is not None:</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">_dmp_rr_trivial_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">909</span><span class="sd">         return dmp_one(u, K), f, g</span>
+<span class="g g-Whitespace">    </span><span class="mi">910</span><span class="sd">     elif query(&#39;USE_SIMPLIFY_GCD&#39;):</span>
+<span class="ne">--&gt; </span><span class="mi">911</span><span class="sd">         return _dmp_simplify_gcd(f, g, u, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">912</span><span class="sd">     else:</span>
+<span class="g g-Whitespace">    </span><span class="mi">913</span><span class="sd">         return None</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">_dmp_simplify_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">949</span><span class="sd">         if not df:</span>
+<span class="g g-Whitespace">    </span><span class="mi">950</span><span class="sd">             F = dmp_LC(f, K)</span>
+<span class="ne">--&gt; </span><span class="mi">951</span><span class="sd">             G = dmp_content(g, u, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">952</span><span class="sd">         else:</span>
+<span class="g g-Whitespace">    </span><span class="mi">953</span><span class="sd">             F = dmp_content(f, u, K)</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dmp_content</span><span class="nt">(f, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1791</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1792</span><span class="sd">     for c in f[1:]:</span>
+<span class="ne">-&gt; </span><span class="mi">1793</span><span class="sd">         cont = dmp_gcd(cont, c, v, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1794</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1795</span><span class="sd">         if dmp_one_p(cont, v, K):</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dmp_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1623</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1624</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1625</span>     <span class="k">return</span> <span class="n">dmp_inner_gcd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1626</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1627</span> 
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dmp_inner_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1582</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1583</span>     <span class="n">J</span><span class="p">,</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">)</span> <span class="o">=</span> <span class="n">dmp_multi_deflate</span><span class="p">((</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">),</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1584</span>     <span class="n">h</span><span class="p">,</span> <span class="n">cff</span><span class="p">,</span> <span class="n">cfg</span> <span class="o">=</span> <span class="n">_dmp_inner_gcd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1585</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1586</span>     <span class="k">return</span> <span class="p">(</span><span class="n">dmp_inflate</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">J</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">),</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">_dmp_inner_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1555</span>                 <span class="k">pass</span>
+<span class="g g-Whitespace">   </span><span class="mi">1556</span> 
+<span class="ne">-&gt; </span><span class="mi">1557</span>         <span class="k">return</span> <span class="n">dmp_rr_prs_gcd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1558</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1559</span> 
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dmp_rr_prs_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1058</span>         <span class="k">return</span> <span class="n">dup_rr_prs_gcd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1059</span> 
+<span class="ne">-&gt; </span><span class="mi">1060</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">_dmp_rr_trivial_gcd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1061</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1062</span>     <span class="k">if</span> <span class="n">result</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">_dmp_rr_trivial_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">909</span>         <span class="k">return</span> <span class="n">dmp_one</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">),</span> <span class="n">f</span><span class="p">,</span> <span class="n">g</span>
+<span class="g g-Whitespace">    </span><span class="mi">910</span>     <span class="k">elif</span> <span class="n">query</span><span class="p">(</span><span class="s1">&#39;USE_SIMPLIFY_GCD&#39;</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">911</span>         <span class="k">return</span> <span class="n">_dmp_simplify_gcd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">912</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">913</span>         <span class="k">return</span> <span class="kc">None</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">_dmp_simplify_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">949</span>         <span class="k">if</span> <span class="ow">not</span> <span class="n">df</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">950</span>             <span class="n">F</span> <span class="o">=</span> <span class="n">dmp_LC</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">951</span>             <span class="n">G</span> <span class="o">=</span> <span class="n">dmp_content</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">952</span>         <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">953</span>             <span class="n">F</span> <span class="o">=</span> <span class="n">dmp_content</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dmp_content</span><span class="nt">(f, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1791</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1792</span>     <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">f</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+<span class="ne">-&gt; </span><span class="mi">1793</span>         <span class="n">cont</span> <span class="o">=</span> <span class="n">dmp_gcd</span><span class="p">(</span><span class="n">cont</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1794</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1795</span>         <span class="k">if</span> <span class="n">dmp_one_p</span><span class="p">(</span><span class="n">cont</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">K</span><span class="p">):</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dmp_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1623</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1624</span>     <span class="sd">&quot;&quot;&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1625</span><span class="sd">     return dmp_inner_gcd(f, g, u, K)[0]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1626</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1627</span><span class="sd"> </span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dmp_inner_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1582</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1583</span><span class="sd">     J, (f, g) = dmp_multi_deflate((f, g), u, K)</span>
+<span class="ne">-&gt; </span><span class="mi">1584</span><span class="sd">     h, cff, cfg = _dmp_inner_gcd(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1585</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1586</span><span class="sd">     return (dmp_inflate(h, J, u, K),</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">_dmp_inner_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1555</span><span class="sd">                 pass</span>
+<span class="g g-Whitespace">   </span><span class="mi">1556</span><span class="sd"> </span>
+<span class="ne">-&gt; </span><span class="mi">1557</span><span class="sd">         return dmp_rr_prs_gcd(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1558</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1559</span><span class="sd"> </span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dmp_rr_prs_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1058</span><span class="sd">         return dup_rr_prs_gcd(f, g, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1059</span><span class="sd"> </span>
+<span class="ne">-&gt; </span><span class="mi">1060</span><span class="sd">     result = _dmp_rr_trivial_gcd(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1061</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1062</span><span class="sd">     if result is not None:</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">_dmp_rr_trivial_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">909</span><span class="sd">         return dmp_one(u, K), f, g</span>
+<span class="g g-Whitespace">    </span><span class="mi">910</span><span class="sd">     elif query(&#39;USE_SIMPLIFY_GCD&#39;):</span>
+<span class="ne">--&gt; </span><span class="mi">911</span><span class="sd">         return _dmp_simplify_gcd(f, g, u, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">912</span><span class="sd">     else:</span>
+<span class="g g-Whitespace">    </span><span class="mi">913</span><span class="sd">         return None</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">_dmp_simplify_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">949</span><span class="sd">         if not df:</span>
+<span class="g g-Whitespace">    </span><span class="mi">950</span><span class="sd">             F = dmp_LC(f, K)</span>
+<span class="ne">--&gt; </span><span class="mi">951</span><span class="sd">             G = dmp_content(g, u, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">952</span><span class="sd">         else:</span>
+<span class="g g-Whitespace">    </span><span class="mi">953</span><span class="sd">             F = dmp_content(f, u, K)</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dmp_content</span><span class="nt">(f, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1791</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1792</span><span class="sd">     for c in f[1:]:</span>
+<span class="ne">-&gt; </span><span class="mi">1793</span><span class="sd">         cont = dmp_gcd(cont, c, v, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1794</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1795</span><span class="sd">         if dmp_one_p(cont, v, K):</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dmp_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1623</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1624</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1625</span>     <span class="k">return</span> <span class="n">dmp_inner_gcd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1626</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1627</span> 
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dmp_inner_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1582</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1583</span>     <span class="n">J</span><span class="p">,</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">)</span> <span class="o">=</span> <span class="n">dmp_multi_deflate</span><span class="p">((</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">),</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1584</span>     <span class="n">h</span><span class="p">,</span> <span class="n">cff</span><span class="p">,</span> <span class="n">cfg</span> <span class="o">=</span> <span class="n">_dmp_inner_gcd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1585</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1586</span>     <span class="k">return</span> <span class="p">(</span><span class="n">dmp_inflate</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">J</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">),</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">_dmp_inner_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1555</span>                 <span class="k">pass</span>
+<span class="g g-Whitespace">   </span><span class="mi">1556</span> 
+<span class="ne">-&gt; </span><span class="mi">1557</span>         <span class="k">return</span> <span class="n">dmp_rr_prs_gcd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1558</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1559</span> 
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dmp_rr_prs_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1058</span>         <span class="k">return</span> <span class="n">dup_rr_prs_gcd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1059</span> 
+<span class="ne">-&gt; </span><span class="mi">1060</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">_dmp_rr_trivial_gcd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1061</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1062</span>     <span class="k">if</span> <span class="n">result</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">_dmp_rr_trivial_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">909</span>         <span class="k">return</span> <span class="n">dmp_one</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">),</span> <span class="n">f</span><span class="p">,</span> <span class="n">g</span>
+<span class="g g-Whitespace">    </span><span class="mi">910</span>     <span class="k">elif</span> <span class="n">query</span><span class="p">(</span><span class="s1">&#39;USE_SIMPLIFY_GCD&#39;</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">911</span>         <span class="k">return</span> <span class="n">_dmp_simplify_gcd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">912</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">913</span>         <span class="k">return</span> <span class="kc">None</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">_dmp_simplify_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">955</span> 
+<span class="g g-Whitespace">    </span><span class="mi">956</span>     <span class="n">v</span> <span class="o">=</span> <span class="n">u</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="ne">--&gt; </span><span class="mi">957</span>     <span class="n">h</span> <span class="o">=</span> <span class="n">dmp_gcd</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">958</span> 
+<span class="g g-Whitespace">    </span><span class="mi">959</span>     <span class="n">cff</span> <span class="o">=</span> <span class="p">[</span> <span class="n">dmp_quo</span><span class="p">(</span><span class="n">cf</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span> <span class="k">for</span> <span class="n">cf</span> <span class="ow">in</span> <span class="n">f</span> <span class="p">]</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dmp_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1623</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1624</span>     <span class="sd">&quot;&quot;&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1625</span><span class="sd">     return dmp_inner_gcd(f, g, u, K)[0]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1626</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1627</span><span class="sd"> </span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dmp_inner_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1582</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1583</span><span class="sd">     J, (f, g) = dmp_multi_deflate((f, g), u, K)</span>
+<span class="ne">-&gt; </span><span class="mi">1584</span><span class="sd">     h, cff, cfg = _dmp_inner_gcd(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1585</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1586</span><span class="sd">     return (dmp_inflate(h, J, u, K),</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">_dmp_inner_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1555</span><span class="sd">                 pass</span>
+<span class="g g-Whitespace">   </span><span class="mi">1556</span><span class="sd"> </span>
+<span class="ne">-&gt; </span><span class="mi">1557</span><span class="sd">         return dmp_rr_prs_gcd(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1558</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1559</span><span class="sd"> </span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dmp_rr_prs_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1058</span><span class="sd">         return dup_rr_prs_gcd(f, g, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1059</span><span class="sd"> </span>
+<span class="ne">-&gt; </span><span class="mi">1060</span><span class="sd">     result = _dmp_rr_trivial_gcd(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1061</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1062</span><span class="sd">     if result is not None:</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">_dmp_rr_trivial_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">909</span><span class="sd">         return dmp_one(u, K), f, g</span>
+<span class="g g-Whitespace">    </span><span class="mi">910</span><span class="sd">     elif query(&#39;USE_SIMPLIFY_GCD&#39;):</span>
+<span class="ne">--&gt; </span><span class="mi">911</span><span class="sd">         return _dmp_simplify_gcd(f, g, u, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">912</span><span class="sd">     else:</span>
+<span class="g g-Whitespace">    </span><span class="mi">913</span><span class="sd">         return None</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">_dmp_simplify_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">955</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">956</span><span class="sd">     v = u - 1</span>
+<span class="ne">--&gt; </span><span class="mi">957</span><span class="sd">     h = dmp_gcd(F, G, v, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">958</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">959</span><span class="sd">     cff = [ dmp_quo(cf, h, v, K) for cf in f ]</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dmp_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1623</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1624</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1625</span>     <span class="k">return</span> <span class="n">dmp_inner_gcd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1626</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1627</span> 
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dmp_inner_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1582</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1583</span>     <span class="n">J</span><span class="p">,</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">)</span> <span class="o">=</span> <span class="n">dmp_multi_deflate</span><span class="p">((</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">),</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1584</span>     <span class="n">h</span><span class="p">,</span> <span class="n">cff</span><span class="p">,</span> <span class="n">cfg</span> <span class="o">=</span> <span class="n">_dmp_inner_gcd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1585</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1586</span>     <span class="k">return</span> <span class="p">(</span><span class="n">dmp_inflate</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">J</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">),</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">_dmp_inner_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1555</span>                 <span class="k">pass</span>
+<span class="g g-Whitespace">   </span><span class="mi">1556</span> 
+<span class="ne">-&gt; </span><span class="mi">1557</span>         <span class="k">return</span> <span class="n">dmp_rr_prs_gcd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1558</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1559</span> 
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dmp_rr_prs_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1058</span>         <span class="k">return</span> <span class="n">dup_rr_prs_gcd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1059</span> 
+<span class="ne">-&gt; </span><span class="mi">1060</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">_dmp_rr_trivial_gcd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1061</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1062</span>     <span class="k">if</span> <span class="n">result</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">_dmp_rr_trivial_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">909</span>         <span class="k">return</span> <span class="n">dmp_one</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">),</span> <span class="n">f</span><span class="p">,</span> <span class="n">g</span>
+<span class="g g-Whitespace">    </span><span class="mi">910</span>     <span class="k">elif</span> <span class="n">query</span><span class="p">(</span><span class="s1">&#39;USE_SIMPLIFY_GCD&#39;</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">911</span>         <span class="k">return</span> <span class="n">_dmp_simplify_gcd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">912</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">913</span>         <span class="k">return</span> <span class="kc">None</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">_dmp_simplify_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">955</span> 
+<span class="g g-Whitespace">    </span><span class="mi">956</span>     <span class="n">v</span> <span class="o">=</span> <span class="n">u</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="ne">--&gt; </span><span class="mi">957</span>     <span class="n">h</span> <span class="o">=</span> <span class="n">dmp_gcd</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">958</span> 
+<span class="g g-Whitespace">    </span><span class="mi">959</span>     <span class="n">cff</span> <span class="o">=</span> <span class="p">[</span> <span class="n">dmp_quo</span><span class="p">(</span><span class="n">cf</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span> <span class="k">for</span> <span class="n">cf</span> <span class="ow">in</span> <span class="n">f</span> <span class="p">]</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dmp_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1623</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1624</span>     <span class="sd">&quot;&quot;&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1625</span><span class="sd">     return dmp_inner_gcd(f, g, u, K)[0]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1626</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1627</span><span class="sd"> </span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dmp_inner_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1582</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1583</span><span class="sd">     J, (f, g) = dmp_multi_deflate((f, g), u, K)</span>
+<span class="ne">-&gt; </span><span class="mi">1584</span><span class="sd">     h, cff, cfg = _dmp_inner_gcd(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1585</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1586</span><span class="sd">     return (dmp_inflate(h, J, u, K),</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">_dmp_inner_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1555</span><span class="sd">                 pass</span>
+<span class="g g-Whitespace">   </span><span class="mi">1556</span><span class="sd"> </span>
+<span class="ne">-&gt; </span><span class="mi">1557</span><span class="sd">         return dmp_rr_prs_gcd(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1558</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1559</span><span class="sd"> </span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dmp_rr_prs_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1058</span><span class="sd">         return dup_rr_prs_gcd(f, g, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1059</span><span class="sd"> </span>
+<span class="ne">-&gt; </span><span class="mi">1060</span><span class="sd">     result = _dmp_rr_trivial_gcd(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1061</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1062</span><span class="sd">     if result is not None:</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">_dmp_rr_trivial_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">909</span><span class="sd">         return dmp_one(u, K), f, g</span>
+<span class="g g-Whitespace">    </span><span class="mi">910</span><span class="sd">     elif query(&#39;USE_SIMPLIFY_GCD&#39;):</span>
+<span class="ne">--&gt; </span><span class="mi">911</span><span class="sd">         return _dmp_simplify_gcd(f, g, u, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">912</span><span class="sd">     else:</span>
+<span class="g g-Whitespace">    </span><span class="mi">913</span><span class="sd">         return None</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">_dmp_simplify_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">955</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">956</span><span class="sd">     v = u - 1</span>
+<span class="ne">--&gt; </span><span class="mi">957</span><span class="sd">     h = dmp_gcd(F, G, v, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">958</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">959</span><span class="sd">     cff = [ dmp_quo(cf, h, v, K) for cf in f ]</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dmp_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1623</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1624</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1625</span>     <span class="k">return</span> <span class="n">dmp_inner_gcd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1626</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1627</span> 
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dmp_inner_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1582</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1583</span>     <span class="n">J</span><span class="p">,</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">)</span> <span class="o">=</span> <span class="n">dmp_multi_deflate</span><span class="p">((</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">),</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1584</span>     <span class="n">h</span><span class="p">,</span> <span class="n">cff</span><span class="p">,</span> <span class="n">cfg</span> <span class="o">=</span> <span class="n">_dmp_inner_gcd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1585</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1586</span>     <span class="k">return</span> <span class="p">(</span><span class="n">dmp_inflate</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">J</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">),</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">_dmp_inner_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1555</span>                 <span class="k">pass</span>
+<span class="g g-Whitespace">   </span><span class="mi">1556</span> 
+<span class="ne">-&gt; </span><span class="mi">1557</span>         <span class="k">return</span> <span class="n">dmp_rr_prs_gcd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1558</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1559</span> 
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dmp_rr_prs_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1058</span>         <span class="k">return</span> <span class="n">dup_rr_prs_gcd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1059</span> 
+<span class="ne">-&gt; </span><span class="mi">1060</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">_dmp_rr_trivial_gcd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1061</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1062</span>     <span class="k">if</span> <span class="n">result</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">_dmp_rr_trivial_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">909</span>         <span class="k">return</span> <span class="n">dmp_one</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">),</span> <span class="n">f</span><span class="p">,</span> <span class="n">g</span>
+<span class="g g-Whitespace">    </span><span class="mi">910</span>     <span class="k">elif</span> <span class="n">query</span><span class="p">(</span><span class="s1">&#39;USE_SIMPLIFY_GCD&#39;</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">911</span>         <span class="k">return</span> <span class="n">_dmp_simplify_gcd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">912</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">913</span>         <span class="k">return</span> <span class="kc">None</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">_dmp_simplify_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">955</span> 
+<span class="g g-Whitespace">    </span><span class="mi">956</span>     <span class="n">v</span> <span class="o">=</span> <span class="n">u</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="ne">--&gt; </span><span class="mi">957</span>     <span class="n">h</span> <span class="o">=</span> <span class="n">dmp_gcd</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">958</span> 
+<span class="g g-Whitespace">    </span><span class="mi">959</span>     <span class="n">cff</span> <span class="o">=</span> <span class="p">[</span> <span class="n">dmp_quo</span><span class="p">(</span><span class="n">cf</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span> <span class="k">for</span> <span class="n">cf</span> <span class="ow">in</span> <span class="n">f</span> <span class="p">]</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dmp_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1623</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1624</span>     <span class="sd">&quot;&quot;&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1625</span><span class="sd">     return dmp_inner_gcd(f, g, u, K)[0]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1626</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1627</span><span class="sd"> </span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dmp_inner_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1582</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1583</span><span class="sd">     J, (f, g) = dmp_multi_deflate((f, g), u, K)</span>
+<span class="ne">-&gt; </span><span class="mi">1584</span><span class="sd">     h, cff, cfg = _dmp_inner_gcd(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1585</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1586</span><span class="sd">     return (dmp_inflate(h, J, u, K),</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">_dmp_inner_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1555</span><span class="sd">                 pass</span>
+<span class="g g-Whitespace">   </span><span class="mi">1556</span><span class="sd"> </span>
+<span class="ne">-&gt; </span><span class="mi">1557</span><span class="sd">         return dmp_rr_prs_gcd(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1558</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1559</span><span class="sd"> </span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dmp_rr_prs_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1058</span><span class="sd">         return dup_rr_prs_gcd(f, g, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1059</span><span class="sd"> </span>
+<span class="ne">-&gt; </span><span class="mi">1060</span><span class="sd">     result = _dmp_rr_trivial_gcd(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1061</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1062</span><span class="sd">     if result is not None:</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">_dmp_rr_trivial_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">909</span><span class="sd">         return dmp_one(u, K), f, g</span>
+<span class="g g-Whitespace">    </span><span class="mi">910</span><span class="sd">     elif query(&#39;USE_SIMPLIFY_GCD&#39;):</span>
+<span class="ne">--&gt; </span><span class="mi">911</span><span class="sd">         return _dmp_simplify_gcd(f, g, u, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">912</span><span class="sd">     else:</span>
+<span class="g g-Whitespace">    </span><span class="mi">913</span><span class="sd">         return None</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">_dmp_simplify_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">955</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">956</span><span class="sd">     v = u - 1</span>
+<span class="ne">--&gt; </span><span class="mi">957</span><span class="sd">     h = dmp_gcd(F, G, v, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">958</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">959</span><span class="sd">     cff = [ dmp_quo(cf, h, v, K) for cf in f ]</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dmp_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1623</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1624</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1625</span>     <span class="k">return</span> <span class="n">dmp_inner_gcd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1626</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1627</span> 
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dmp_inner_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1582</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1583</span>     <span class="n">J</span><span class="p">,</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">)</span> <span class="o">=</span> <span class="n">dmp_multi_deflate</span><span class="p">((</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">),</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1584</span>     <span class="n">h</span><span class="p">,</span> <span class="n">cff</span><span class="p">,</span> <span class="n">cfg</span> <span class="o">=</span> <span class="n">_dmp_inner_gcd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1585</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1586</span>     <span class="k">return</span> <span class="p">(</span><span class="n">dmp_inflate</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">J</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">),</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">_dmp_inner_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1555</span>                 <span class="k">pass</span>
+<span class="g g-Whitespace">   </span><span class="mi">1556</span> 
+<span class="ne">-&gt; </span><span class="mi">1557</span>         <span class="k">return</span> <span class="n">dmp_rr_prs_gcd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1558</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1559</span> 
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dmp_rr_prs_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1058</span>         <span class="k">return</span> <span class="n">dup_rr_prs_gcd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1059</span> 
+<span class="ne">-&gt; </span><span class="mi">1060</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">_dmp_rr_trivial_gcd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1061</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1062</span>     <span class="k">if</span> <span class="n">result</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">_dmp_rr_trivial_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">909</span>         <span class="k">return</span> <span class="n">dmp_one</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">),</span> <span class="n">f</span><span class="p">,</span> <span class="n">g</span>
+<span class="g g-Whitespace">    </span><span class="mi">910</span>     <span class="k">elif</span> <span class="n">query</span><span class="p">(</span><span class="s1">&#39;USE_SIMPLIFY_GCD&#39;</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">911</span>         <span class="k">return</span> <span class="n">_dmp_simplify_gcd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">912</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">913</span>         <span class="k">return</span> <span class="kc">None</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">_dmp_simplify_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">955</span> 
+<span class="g g-Whitespace">    </span><span class="mi">956</span>     <span class="n">v</span> <span class="o">=</span> <span class="n">u</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="ne">--&gt; </span><span class="mi">957</span>     <span class="n">h</span> <span class="o">=</span> <span class="n">dmp_gcd</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">958</span> 
+<span class="g g-Whitespace">    </span><span class="mi">959</span>     <span class="n">cff</span> <span class="o">=</span> <span class="p">[</span> <span class="n">dmp_quo</span><span class="p">(</span><span class="n">cf</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span> <span class="k">for</span> <span class="n">cf</span> <span class="ow">in</span> <span class="n">f</span> <span class="p">]</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dmp_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1623</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1624</span>     <span class="sd">&quot;&quot;&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1625</span><span class="sd">     return dmp_inner_gcd(f, g, u, K)[0]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1626</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1627</span><span class="sd"> </span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dmp_inner_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1582</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1583</span><span class="sd">     J, (f, g) = dmp_multi_deflate((f, g), u, K)</span>
+<span class="ne">-&gt; </span><span class="mi">1584</span><span class="sd">     h, cff, cfg = _dmp_inner_gcd(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1585</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1586</span><span class="sd">     return (dmp_inflate(h, J, u, K),</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">_dmp_inner_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1555</span><span class="sd">                 pass</span>
+<span class="g g-Whitespace">   </span><span class="mi">1556</span><span class="sd"> </span>
+<span class="ne">-&gt; </span><span class="mi">1557</span><span class="sd">         return dmp_rr_prs_gcd(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1558</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1559</span><span class="sd"> </span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dmp_rr_prs_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1058</span><span class="sd">         return dup_rr_prs_gcd(f, g, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1059</span><span class="sd"> </span>
+<span class="ne">-&gt; </span><span class="mi">1060</span><span class="sd">     result = _dmp_rr_trivial_gcd(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1061</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1062</span><span class="sd">     if result is not None:</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">_dmp_rr_trivial_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">909</span><span class="sd">         return dmp_one(u, K), f, g</span>
+<span class="g g-Whitespace">    </span><span class="mi">910</span><span class="sd">     elif query(&#39;USE_SIMPLIFY_GCD&#39;):</span>
+<span class="ne">--&gt; </span><span class="mi">911</span><span class="sd">         return _dmp_simplify_gcd(f, g, u, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">912</span><span class="sd">     else:</span>
+<span class="g g-Whitespace">    </span><span class="mi">913</span><span class="sd">         return None</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">_dmp_simplify_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">955</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">956</span><span class="sd">     v = u - 1</span>
+<span class="ne">--&gt; </span><span class="mi">957</span><span class="sd">     h = dmp_gcd(F, G, v, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">958</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">959</span><span class="sd">     cff = [ dmp_quo(cf, h, v, K) for cf in f ]</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dmp_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1623</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1624</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1625</span>     <span class="k">return</span> <span class="n">dmp_inner_gcd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1626</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1627</span> 
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dmp_inner_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1582</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1583</span>     <span class="n">J</span><span class="p">,</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">)</span> <span class="o">=</span> <span class="n">dmp_multi_deflate</span><span class="p">((</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">),</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1584</span>     <span class="n">h</span><span class="p">,</span> <span class="n">cff</span><span class="p">,</span> <span class="n">cfg</span> <span class="o">=</span> <span class="n">_dmp_inner_gcd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1585</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1586</span>     <span class="k">return</span> <span class="p">(</span><span class="n">dmp_inflate</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">J</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">),</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">_dmp_inner_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1555</span>                 <span class="k">pass</span>
+<span class="g g-Whitespace">   </span><span class="mi">1556</span> 
+<span class="ne">-&gt; </span><span class="mi">1557</span>         <span class="k">return</span> <span class="n">dmp_rr_prs_gcd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1558</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1559</span> 
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">dmp_rr_prs_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1058</span>         <span class="k">return</span> <span class="n">dup_rr_prs_gcd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1059</span> 
+<span class="ne">-&gt; </span><span class="mi">1060</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">_dmp_rr_trivial_gcd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1061</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1062</span>     <span class="k">if</span> <span class="n">result</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">_dmp_rr_trivial_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">909</span>         <span class="k">return</span> <span class="n">dmp_one</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">),</span> <span class="n">f</span><span class="p">,</span> <span class="n">g</span>
+<span class="g g-Whitespace">    </span><span class="mi">910</span>     <span class="k">elif</span> <span class="n">query</span><span class="p">(</span><span class="s1">&#39;USE_SIMPLIFY_GCD&#39;</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">911</span>         <span class="k">return</span> <span class="n">_dmp_simplify_gcd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">912</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">913</span>         <span class="k">return</span> <span class="kc">None</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">_dmp_simplify_gcd</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">958</span> 
+<span class="g g-Whitespace">    </span><span class="mi">959</span>     <span class="n">cff</span> <span class="o">=</span> <span class="p">[</span> <span class="n">dmp_quo</span><span class="p">(</span><span class="n">cf</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span> <span class="k">for</span> <span class="n">cf</span> <span class="ow">in</span> <span class="n">f</span> <span class="p">]</span>
+<span class="ne">--&gt; </span><span class="mi">960</span>     <span class="n">cfg</span> <span class="o">=</span> <span class="p">[</span> <span class="n">dmp_quo</span><span class="p">(</span><span class="n">cg</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span> <span class="k">for</span> <span class="n">cg</span> <span class="ow">in</span> <span class="n">g</span> <span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">961</span> 
+<span class="g g-Whitespace">    </span><span class="mi">962</span>     <span class="k">return</span> <span class="p">[</span><span class="n">h</span><span class="p">],</span> <span class="n">cff</span><span class="p">,</span> <span class="n">cfg</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/euclidtools.py</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
+<span class="g g-Whitespace">    </span><span class="mi">958</span> 
+<span class="g g-Whitespace">    </span><span class="mi">959</span>     <span class="n">cff</span> <span class="o">=</span> <span class="p">[</span> <span class="n">dmp_quo</span><span class="p">(</span><span class="n">cf</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span> <span class="k">for</span> <span class="n">cf</span> <span class="ow">in</span> <span class="n">f</span> <span class="p">]</span>
+<span class="ne">--&gt; </span><span class="mi">960</span>     <span class="n">cfg</span> <span class="o">=</span> <span class="p">[</span> <span class="n">dmp_quo</span><span class="p">(</span><span class="n">cg</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span> <span class="k">for</span> <span class="n">cg</span> <span class="ow">in</span> <span class="n">g</span> <span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">961</span> 
+<span class="g g-Whitespace">    </span><span class="mi">962</span>     <span class="k">return</span> <span class="p">[</span><span class="n">h</span><span class="p">],</span> <span class="n">cff</span><span class="p">,</span> <span class="n">cfg</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/densearith.py</span> in <span class="ni">dmp_quo</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1669</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1670</span>     <span class="s2">&quot;&quot;&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1671</span><span class="s2">     return dmp_div(f, g, u, K)[0]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1672</span><span class="s2"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1673</span><span class="s2"> </span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/densearith.py</span> in <span class="ni">dmp_div</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1627</span><span class="s2">         return dmp_ff_div(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1628</span><span class="s2">     else:</span>
+<span class="ne">-&gt; </span><span class="mi">1629</span><span class="s2">         return dmp_rr_div(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1630</span><span class="s2"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1631</span><span class="s2"> </span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/densearith.py</span> in <span class="ni">dmp_rr_div</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1387</span><span class="s2">     while True:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1388</span><span class="s2">         lc_r = dmp_LC(r, K)</span>
+<span class="ne">-&gt; </span><span class="mi">1389</span><span class="s2">         c, R = dmp_rr_div(lc_r, lc_g, v, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1390</span><span class="s2"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1391</span><span class="s2">         if not dmp_zero_p(R, v):</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/densearith.py</span> in <span class="ni">dmp_rr_div</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1387</span><span class="s2">     while True:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1388</span><span class="s2">         lc_r = dmp_LC(r, K)</span>
+<span class="ne">-&gt; </span><span class="mi">1389</span><span class="s2">         c, R = dmp_rr_div(lc_r, lc_g, v, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1390</span><span class="s2"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1391</span><span class="s2">         if not dmp_zero_p(R, v):</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/densearith.py</span> in <span class="ni">dmp_rr_div</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1387</span><span class="s2">     while True:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1388</span><span class="s2">         lc_r = dmp_LC(r, K)</span>
+<span class="ne">-&gt; </span><span class="mi">1389</span><span class="s2">         c, R = dmp_rr_div(lc_r, lc_g, v, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1390</span><span class="s2"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1391</span><span class="s2">         if not dmp_zero_p(R, v):</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/densearith.py</span> in <span class="ni">dmp_rr_div</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1387</span><span class="s2">     while True:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1388</span><span class="s2">         lc_r = dmp_LC(r, K)</span>
+<span class="ne">-&gt; </span><span class="mi">1389</span><span class="s2">         c, R = dmp_rr_div(lc_r, lc_g, v, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1390</span><span class="s2"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1391</span><span class="s2">         if not dmp_zero_p(R, v):</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/densearith.py</span> in <span class="ni">dmp_rr_div</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1387</span><span class="s2">     while True:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1388</span><span class="s2">         lc_r = dmp_LC(r, K)</span>
+<span class="ne">-&gt; </span><span class="mi">1389</span><span class="s2">         c, R = dmp_rr_div(lc_r, lc_g, v, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1390</span><span class="s2"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1391</span><span class="s2">         if not dmp_zero_p(R, v):</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/densearith.py</span> in <span class="ni">dmp_rr_div</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1395</span><span class="s2"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1396</span><span class="s2">         q = dmp_add_term(q, c, j, u, K)</span>
+<span class="ne">-&gt; </span><span class="mi">1397</span><span class="s2">         h = dmp_mul_term(g, c, j, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1398</span><span class="s2">         r = dmp_sub(r, h, u, K)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1399</span><span class="s2"> </span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/densearith.py</span> in <span class="ni">dmp_mul_term</span><span class="nt">(f, c, i, u, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">182</span><span class="s2">         return dmp_zero(u)</span>
+<span class="g g-Whitespace">    </span><span class="mi">183</span><span class="s2">     else:</span>
+<span class="nn">--&gt; 184         return [ dmp_mul(cf, c, v, K) for cf</span> in <span class="ni">f ] + dmp_zeros</span><span class="nt">(i, v, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">185</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">186</span><span class="s2"> </span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/densearith.py</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
+<span class="g g-Whitespace">    </span><span class="mi">182</span><span class="s2">         return dmp_zero(u)</span>
+<span class="g g-Whitespace">    </span><span class="mi">183</span><span class="s2">     else:</span>
+<span class="nn">--&gt; 184         return [ dmp_mul(cf, c, v, K) for cf</span> in <span class="ni">f ] + dmp_zeros</span><span class="nt">(i, v, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">185</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">186</span><span class="s2"> </span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/densearith.py</span> in <span class="ni">dmp_mul</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">826</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">827</span><span class="s2">         for j in range(max(0, i - dg), min(df, i) + 1):</span>
+<span class="ne">--&gt; </span><span class="mi">828</span><span class="s2">             coeff = dmp_add(coeff, dmp_mul(f[j], g[i - j], v, K), v, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">829</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">830</span><span class="s2">         h.append(coeff)</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/densearith.py</span> in <span class="ni">dmp_mul</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">826</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">827</span><span class="s2">         for j in range(max(0, i - dg), min(df, i) + 1):</span>
+<span class="ne">--&gt; </span><span class="mi">828</span><span class="s2">             coeff = dmp_add(coeff, dmp_mul(f[j], g[i - j], v, K), v, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">829</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">830</span><span class="s2">         h.append(coeff)</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/densearith.py</span> in <span class="ni">dmp_mul</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">826</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">827</span><span class="s2">         for j in range(max(0, i - dg), min(df, i) + 1):</span>
+<span class="ne">--&gt; </span><span class="mi">828</span><span class="s2">             coeff = dmp_add(coeff, dmp_mul(f[j], g[i - j], v, K), v, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">829</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">830</span><span class="s2">         h.append(coeff)</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/densearith.py</span> in <span class="ni">dmp_mul</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">826</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">827</span><span class="s2">         for j in range(max(0, i - dg), min(df, i) + 1):</span>
+<span class="ne">--&gt; </span><span class="mi">828</span><span class="s2">             coeff = dmp_add(coeff, dmp_mul(f[j], g[i - j], v, K), v, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">829</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">830</span><span class="s2">         h.append(coeff)</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/densearith.py</span> in <span class="ni">dmp_mul</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">826</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">827</span><span class="s2">         for j in range(max(0, i - dg), min(df, i) + 1):</span>
+<span class="ne">--&gt; </span><span class="mi">828</span><span class="s2">             coeff = dmp_add(coeff, dmp_mul(f[j], g[i - j], v, K), v, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">829</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">830</span><span class="s2">         h.append(coeff)</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/densearith.py</span> in <span class="ni">dmp_mul</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">826</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">827</span><span class="s2">         for j in range(max(0, i - dg), min(df, i) + 1):</span>
+<span class="ne">--&gt; </span><span class="mi">828</span><span class="s2">             coeff = dmp_add(coeff, dmp_mul(f[j], g[i - j], v, K), v, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">829</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">830</span><span class="s2">         h.append(coeff)</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/densearith.py</span> in <span class="ni">dmp_mul</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">826</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">827</span><span class="s2">         for j in range(max(0, i - dg), min(df, i) + 1):</span>
+<span class="ne">--&gt; </span><span class="mi">828</span><span class="s2">             coeff = dmp_add(coeff, dmp_mul(f[j], g[i - j], v, K), v, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">829</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">830</span><span class="s2">         h.append(coeff)</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/densearith.py</span> in <span class="ni">dmp_mul</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">826</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">827</span><span class="s2">         for j in range(max(0, i - dg), min(df, i) + 1):</span>
+<span class="ne">--&gt; </span><span class="mi">828</span><span class="s2">             coeff = dmp_add(coeff, dmp_mul(f[j], g[i - j], v, K), v, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">829</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">830</span><span class="s2">         h.append(coeff)</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/densearith.py</span> in <span class="ni">dmp_mul</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">826</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">827</span><span class="s2">         for j in range(max(0, i - dg), min(df, i) + 1):</span>
+<span class="ne">--&gt; </span><span class="mi">828</span><span class="s2">             coeff = dmp_add(coeff, dmp_mul(f[j], g[i - j], v, K), v, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">829</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">830</span><span class="s2">         h.append(coeff)</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/densearith.py</span> in <span class="ni">dmp_mul</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">826</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">827</span><span class="s2">         for j in range(max(0, i - dg), min(df, i) + 1):</span>
+<span class="ne">--&gt; </span><span class="mi">828</span><span class="s2">             coeff = dmp_add(coeff, dmp_mul(f[j], g[i - j], v, K), v, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">829</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">830</span><span class="s2">         h.append(coeff)</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/densearith.py</span> in <span class="ni">dmp_mul</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">826</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">827</span><span class="s2">         for j in range(max(0, i - dg), min(df, i) + 1):</span>
+<span class="ne">--&gt; </span><span class="mi">828</span><span class="s2">             coeff = dmp_add(coeff, dmp_mul(f[j], g[i - j], v, K), v, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">829</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">830</span><span class="s2">         h.append(coeff)</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/densearith.py</span> in <span class="ni">dmp_mul</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">826</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">827</span><span class="s2">         for j in range(max(0, i - dg), min(df, i) + 1):</span>
+<span class="ne">--&gt; </span><span class="mi">828</span><span class="s2">             coeff = dmp_add(coeff, dmp_mul(f[j], g[i - j], v, K), v, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">829</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">830</span><span class="s2">         h.append(coeff)</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/densearith.py</span> in <span class="ni">dmp_mul</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">826</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">827</span><span class="s2">         for j in range(max(0, i - dg), min(df, i) + 1):</span>
+<span class="ne">--&gt; </span><span class="mi">828</span><span class="s2">             coeff = dmp_add(coeff, dmp_mul(f[j], g[i - j], v, K), v, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">829</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">830</span><span class="s2">         h.append(coeff)</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/densearith.py</span> in <span class="ni">dmp_mul</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">826</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">827</span><span class="s2">         for j in range(max(0, i - dg), min(df, i) + 1):</span>
+<span class="ne">--&gt; </span><span class="mi">828</span><span class="s2">             coeff = dmp_add(coeff, dmp_mul(f[j], g[i - j], v, K), v, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">829</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">830</span><span class="s2">         h.append(coeff)</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/polys/densearith.py</span> in <span class="ni">dmp_add</span><span class="nt">(f, g, u, K)</span>
+<span class="g g-Whitespace">    </span><span class="mi">565</span><span class="s2">     df = dmp_degree(f, u)</span>
+<span class="g g-Whitespace">    </span><span class="mi">566</span><span class="s2"> </span>
+<span class="ne">--&gt; </span><span class="mi">567</span><span class="s2">     if df &lt; 0:</span>
+<span class="g g-Whitespace">    </span><span class="mi">568</span><span class="s2">         return g</span>
+<span class="g g-Whitespace">    </span><span class="mi">569</span><span class="s2"> </span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/core/decorators.py</span> in <span class="ni">_func</span><span class="nt">(self, other)</span>
+<span class="g g-Whitespace">    </span><span class="mi">265</span><span class="s2">             if not isinstance(other, expectedcls):</span>
+<span class="g g-Whitespace">    </span><span class="mi">266</span><span class="s2">                 return retval</span>
+<span class="ne">--&gt; </span><span class="mi">267</span><span class="s2">             return func(self, other)</span>
+<span class="g g-Whitespace">    </span><span class="mi">268</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">269</span><span class="s2">         return _func</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/core/expr.py</span> in <span class="ni">__lt__</span><span class="nt">(self, other)</span>
+<span class="g g-Whitespace">    </span><span class="mi">373</span><span class="s2">     def __lt__(self, other):</span>
+<span class="g g-Whitespace">    </span><span class="mi">374</span><span class="s2">         from .relational import StrictLessThan</span>
+<span class="ne">--&gt; </span><span class="mi">375</span><span class="s2">         return StrictLessThan(self, other)</span>
+<span class="g g-Whitespace">    </span><span class="mi">376</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">377</span><span class="s2">     def __trunc__(self):</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/sympy/core/relational.py</span> in <span class="ni">__new__</span><span class="nt">(cls, lhs, rhs, **options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">697</span><span class="s2">         if evaluate:</span>
+<span class="g g-Whitespace">    </span><span class="mi">698</span><span class="s2">             for me in (lhs, rhs):</span>
+<span class="ne">--&gt; </span><span class="mi">699</span><span class="s2">                 if me.is_extended_real is False:</span>
+<span class="g g-Whitespace">    </span><span class="mi">700</span><span class="s2">                     raise TypeError(&quot;Invalid comparison of non-real </span><span class="si">%s</span><span class="s2">&quot; % me)</span>
+<span class="g g-Whitespace">    </span><span class="mi">701</span><span class="s2">                 if me is S.NaN:</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
 </div>

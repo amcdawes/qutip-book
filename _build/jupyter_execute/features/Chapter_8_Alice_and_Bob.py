@@ -58,7 +58,7 @@ expect(tensor(Pa2,Pb2),psi)  # joint for A2, B2 (classically expect 0.09, QM say
 
 This is what we described in class.
 
-## What if the state was just $|H,H\rangle$?
+### What if the state was just $|H,H\rangle$?
 
 psi2=tensor(H,H)
 
@@ -75,7 +75,7 @@ expect(tensor(Pa2,Pb2),psi2)
 
 This is harder to interpret, but we clearly have different probabilities. Finally, check if we had used a mixed state:
 
-## A mixed state instead of the pure (entangled state).
+### A mixed state instead of the pure (entangled state).
 Here we have to use the density matrix (since a `ket` cannot describe a mixed state). First some background:
 QuTiP has a function that gives the density matrix from a `ket` state: `ket2dm`.
 
@@ -96,7 +96,7 @@ expect(tensor(Pa2,Pb2),rho_mix)
 
 We see that  $P(\theta_{B2},\theta_{A2}) >  P(\theta_{B1},\theta_{A1})$ as we said in class for a state that obeys realism.
 
-## Now repeat with the pure state but using density matrix techniques.
+### Now repeat with the pure state but using density matrix techniques.
 This isn't going to tell us anything new, but it shows how to work with the density matrix if you already know the `ket` state.
 
 rho_pure = ket2dm(psi)  # convert from a ket to a density matrix (dm)
@@ -118,7 +118,7 @@ expect(tensor(Pa2,Pb2),rho_pure)
 
 These all agree (as they should).
 
-## Explore the angles in more detail:
+### Explore the angles in more detail:
 Why these angles, 19 and 35?
 
 psi=sqrt(0.2)*tensor(H,H) + sqrt(0.8)*tensor(V,V)
@@ -145,7 +145,7 @@ plt.plot(angles,out,".")
 
 So only 19 and 35 work. Now, can you derive 19 and 35 given only the state $|\psi\rangle$? Try the first plot, i.e. calculate the joint probability $P(\theta_A,\theta_B)$
 
-# Solution
+### Solution
 Using the state, write the projection operators for a two photon state with angles $\theta_A$ and $\theta_B$. First, recall $$\big|\theta_i\big\rangle = \cos\theta_i\big|H\big\rangle + \sin\theta_i\big|V\big\rangle.$$ Next, form the two-photon state: $$\big|\theta_A,\theta_B\big\rangle = \big|\theta_A\big\rangle \otimes \big|\theta_B\big\rangle = \left(\cos\theta_A\big|H\big\rangle + \sin\theta_A\big|V\big\rangle\right) \otimes \left(\cos\theta_B\big|H\big\rangle + \sin\theta_B\big|V\big\rangle\right)$$
 which we can reduce to:
 $$=\cos\theta_A\cos\theta_B\big|H,H\big\rangle + \cos\theta_A\sin\theta_B\big|H,V\big\rangle + \sin\theta_A\cos\theta_B\big|V,H\big\rangle + \sin\theta_A\sin\theta_B\big|V,V\big\rangle.$$
@@ -160,7 +160,7 @@ Plot is shown below for $\theta_A = -\theta_B$ and it agrees perfectly with our 
 
 plt.plot(rad2deg(rads),(sqrt(0.2)*cos(-rads)*cos(rads) + sqrt(0.8)*sin(-rads)*sin(rads))**2)
 
-## Challenge:
+### Challenge:
 If we change the state to $\big|\psi\big\rangle = \sqrt{0.8} \big|H,H\big\rangle + \sqrt{0.2} \big|V,V\big\rangle$, the two angles that work for this state.
 
 # Solution

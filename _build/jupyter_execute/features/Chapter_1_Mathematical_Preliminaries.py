@@ -89,7 +89,9 @@ dot(rvec,cvec)
 
 outer(cvec,rvec)
 
-dot(cvec,rvec)  # This doesn't work!
-
-
+However, try running
+```
+dot(cvec,rvec)
+```
+it won't work (think about why not!)
 

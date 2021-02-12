@@ -1,4 +1,4 @@
-# Hydrogen functions
+# Ch 13 - Hydrogen functions
 Start with some imports fro Symbolic Python library:
 
 from sympy.physics.hydrogen import R_nl
@@ -58,7 +58,10 @@ find $\langle z \rangle(t)$. Use the same integral, but add a time-dependent pie
 psi = 1/sqrt(2)*(psi100*exp(1j*w1*t) + psi210*exp(1j*w2*t))
 psi_conj = 1/sqrt(2)*(psi100*exp(-1j*w1*t) + psi210*exp(-1j*w2*t))
 
-expect2 = integrate(r**2*sin(theta)* (r*cos(theta)) * psi*psi_conj,(r,0,oo),(theta,0,pi),(phi,0,2*pi))
+outer = (psi*psi_conj).simplify()
+outer
+
+expect2 = integrate( (r**2*sin(theta)*(r*cos(theta))) * outer,(r,0,oo),(theta,0,pi),(phi,0,2*pi))
 
 expect2
 

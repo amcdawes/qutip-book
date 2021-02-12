@@ -59,7 +59,7 @@ N = 100
 T = 2*np.pi/np.abs(α)   # period of oscillation
 tlist = np.linspace(0,T,N)
 proj_b = b.dag()*b
-solution = sesolve(H, a, tlist, proj_b)
+solution = sesolve(H, a, tlist, [proj_b])
 
 plt.plot(tlist/T,solution.expect[0],".")
 

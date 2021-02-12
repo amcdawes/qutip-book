@@ -85,8 +85,8 @@
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
     <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="features.html">
-   Title of book
+  <a class="reference internal" href="intro.html">
+   Quantum Mechanics with QuTiP
   </a>
  </li>
 </ul>
@@ -98,15 +98,12 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Chapter_2_In_Class_Problems.html">
-   2.3 Find the eigenvalues and vectors of J
-   <span class="math notranslate nohighlight">
-    \(_\theta\)
-   </span>
-   for
-   <span class="math notranslate nohighlight">
-    \(\theta\)
-   </span>
-   =45
+   Chapter 2 in-class problems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lab_2_Quantum_States_Solutions.html">
+   Quantum states
   </a>
  </li>
  <li class="toctree-l1">
@@ -126,7 +123,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Chapter_8_Two_Photon_States.html">
-   Entangled states
+   Chapter 8 - Two-photon States
   </a>
  </li>
  <li class="toctree-l1">
@@ -135,18 +132,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Chapter_8_Alice_and_Bob.html#solution">
-   Solution
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="Chapter_8A_Density_Matrix.html">
-   Example 8.A.1:
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Chapter_8A_Density_Matrix.html#example-8-a-2">
-   Example 8.A.2
+   Ch 8 - Examples
   </a>
  </li>
  <li class="toctree-l1">
@@ -161,7 +148,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Chapter_13_Hydrogen.html">
-   Hydrogen functions
+   Ch 13 - Hydrogen functions
   </a>
  </li>
 </ul>
@@ -430,17 +417,15 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dot</span><span class="p">(</span><span class="n">cv</span><span class="p">,</span><span class="n">rv</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+  <span class="n">dot</span><span class="p">(</span><span class="n">cv</span><span class="p">,</span><span class="n">rv</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="nn">&lt;ipython-input-6-aa042602721b&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">dot</span><span class="p">(</span><span class="n">cv</span><span class="p">,</span><span class="n">rv</span><span class="p">)</span>
-
-<span class="ne">ValueError</span>: shapes (2,1) and (2,) not aligned: 1 (dim 1) != 2 (dim 0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>shapes (2,1) and (2,) not aligned: 1 (dim 1) != 2 (dim 0)
 </pre></div>
 </div>
 </div>
@@ -500,7 +485,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 1.-2.j,  3.-2.j,  5.-1.j,  4.-0.j])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1.-2.j, 3.-2.j, 5.-1.j, 4.-0.j])
 </pre></div>
 </div>
 </div>
@@ -560,7 +545,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([ 3.,  0.]), array([[ 0.70710678, -0.4472136 ],
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([3., 0.]),
+ array([[ 0.70710678, -0.4472136 ],
         [ 0.70710678,  0.89442719]]))
 </pre></div>
 </div>
@@ -594,7 +580,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([ 3.,  0.]), matrix([[ 0.70710678, -0.4472136 ],
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([3., 0.]),
+ matrix([[ 0.70710678, -0.4472136 ],
          [ 0.70710678,  0.89442719]]))
 </pre></div>
 </div>
@@ -629,7 +616,8 @@ eig<span class="o">?</span>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([ 1.,  2.]), array([[-0.70710678, -0.4472136 ],
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([1., 2.]),
+ array([[-0.70710678, -0.4472136 ],
         [-0.70710678, -0.89442719]]))
 </pre></div>
 </div>
@@ -645,7 +633,7 @@ the eigenvectors are strange decimals, but we can check them against the stated 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.70710678118654746
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7071067811865475
 </pre></div>
 </div>
 </div>
@@ -657,7 +645,7 @@ the eigenvectors are strange decimals, but we can check them against the stated 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.44721359549995793
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.4472135954999579
 </pre></div>
 </div>
 </div>
@@ -669,7 +657,7 @@ the eigenvectors are strange decimals, but we can check them against the stated 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.89442719099991586
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.8944271909999159
 </pre></div>
 </div>
 </div>
@@ -681,7 +669,7 @@ the eigenvectors are strange decimals, but we can check them against the stated 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 1.,  2.])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1., 2.])
 </pre></div>
 </div>
 </div>
@@ -711,8 +699,8 @@ the eigenvectors are strange decimals, but we can check them against the stated 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-0.00000000-0.70710678j,  0.70710678+0.j        ],
-       [ 0.70710678+0.j        ,  0.00000000-0.70710678j]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-0.        -0.70710678j,  0.70710678+0.j        ],
+       [ 0.70710678+0.j        ,  0.        -0.70710678j]])
 </pre></div>
 </div>
 </div>
@@ -724,7 +712,7 @@ the eigenvectors are strange decimals, but we can check them against the stated 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.00000000-0.70710678j,  0.70710678+0.j        ])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.        -0.70710678j,  0.70710678+0.j        ])
 </pre></div>
 </div>
 </div>
@@ -736,7 +724,7 @@ the eigenvectors are strange decimals, but we can check them against the stated 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.70710678+0.j        ,  0.00000000-0.70710678j])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.70710678+0.j        , 0.        -0.70710678j])
 </pre></div>
 </div>
 </div>
@@ -880,14 +868,14 @@ The product will depend on the order, either inner or outer</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ Quantum object: dims = [[2], [1]], shape = (2, 1), type = ket
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([Quantum object: dims = [[2], [1]], shape = (2, 1), type = ket
 Qobj data =
 [[-0.70710678]
  [ 0.70710678]],
        Quantum object: dims = [[2], [1]], shape = (2, 1), type = ket
 Qobj data =
-[[ 0.70710678]
- [ 0.70710678]]], dtype=object)
+[[0.70710678]
+ [0.70710678]]], dtype=object)
 </pre></div>
 </div>
 </div>
@@ -928,7 +916,7 @@ Qobj data =
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 1.,  4.,  3.,  2.,  5.])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1., 4., 3., 2., 5.])
 </pre></div>
 </div>
 </div>

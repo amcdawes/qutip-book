@@ -1,8 +1,9 @@
 # A chapter w/ a collection of sections beneath it
-- file: features/features
+- file: features/intro
   sections:
   - file: features/Chapter_1_Mathematical_Preliminaries
   - file: features/Chapter_2_In_Class_Problems
+  - file: features/Lab_2_Quantum_States_Solutions
   - file: features/Chapter_4_In_Class_Problems
   - file: features/Chapter_6_Spin
   - file: features/Chapter_7_Angular_Momentum

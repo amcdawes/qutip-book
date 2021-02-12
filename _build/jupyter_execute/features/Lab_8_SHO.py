@@ -35,8 +35,12 @@ These are simple, just view the matrix representation of the operators
 ## Problem 12.7:
 First, define $\hat{X}$ and $\hat{P}$ operators
 
+```
 X=
 P=
+```
+
+
 
 psi = 1/sqrt(2)*(basis(N,1)+basis(N,2))
 
@@ -45,4 +49,6 @@ psi = 1/sqrt(2)*(basis(N,1)+basis(N,2))
 ## Problem 12.8:
 
 psi = 1/sqrt(2)*(basis(N,2)+basis(N,4))
+
+
 

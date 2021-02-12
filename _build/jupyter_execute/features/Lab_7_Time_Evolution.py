@@ -65,7 +65,7 @@ omega = 5
 H = -omega*tensor(Sz,Sz)
 
 expect_op = tensor(mz,pz)*tensor(mz,pz).dag()
-result3 = sesolve(H, psi, t, expect_op)
+result3 = sesolve(H, psi, t, [expect_op])
 
 for r,l in zip(result3.expect,labels):
     plt.plot(result3.times*omega/pi, r, label="$\langle -z,+z\\rangle$")
@@ -132,7 +132,7 @@ H = [H0, [H1, H1_coeff]]
 
 The next line calls a Schrödinger equation solver (`sesolve`). The arguments are the Hamiltonian, the starting state $\lvert+z\rangle$ (`pz`), the time values, a list of operators, and the arguments to the function `H_t`. `sesolve` returns many things, but the `expect` method is most useful, it gives the expectation values of the four operators in the operator list. Notice the fourth operator is the $\lvert-z\rangle$ projection operator. It's expectation value is $P(\lvert-z\rangle,t)$
 
-result5 = sesolve(H, pz, t, [Sx, Sy, Sz, mz*mz.dag()],args)
+result5 = sesolve(H, pz, t, [Sx, Sy, Sz, mz*mz.dag()])
 sx, sy, sz, Pmz = result5.expect
 
 Look at the Bloch sphere for this system:
@@ -178,7 +178,7 @@ def H1_coeff2(t, args):       # this function calculates H at each time step t
 
 H = [H0, [H1, H1_coeff2]]
 
-result6 = sesolve(H, pz, t, [Sx, Sy, Sz, mz*mz.dag()],args)
+result6 = sesolve(H, pz, t, [Sx, Sy, Sz, mz*mz.dag()])
 sx, sy, sz, Pz = result6.expect
 
 plt.plot(result6.times,Pz)
@@ -186,6 +186,3 @@ plt.ylim(-0.1,1.1)
 plt.xlim(-5,125)
 plt.xlabel("Time ($\Omega_R t/\pi$)", size=18)
 plt.ylabel("$P(-z, t)$", size=18)
-
-
-

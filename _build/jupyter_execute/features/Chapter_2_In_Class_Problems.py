@@ -1,3 +1,5 @@
+# Chapter 2 in-class problems
+
 ## 2.3 Find the eigenvalues and vectors of J$_\theta$ for $\theta$=45
 
 from qutip import *

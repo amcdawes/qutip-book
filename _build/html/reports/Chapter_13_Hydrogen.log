@@ -32,6 +32,6 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-expect2 = integrate(r**2*sin(theta)* (r*cos(theta)) * psi*psi_conj,(r,0,oo),(theta,0,pi),(phi,0,2*pi))
+expect2 = integrate( (r**2*sin(theta)*(r*cos(theta))) * outer,(r,0,oo),(theta,0,pi),(phi,0,2*pi))
 -------------------
 

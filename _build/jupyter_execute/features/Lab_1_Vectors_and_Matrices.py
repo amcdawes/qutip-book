@@ -19,7 +19,13 @@ Two kinds of vector products we'll see: inner product (dot product) and outer pr
 
 dot(rv,cv)
 
+Try running
+
+```
 dot(cv,rv)
+```
+
+it won't work (think about why not)
 
 ### 2) Use the function _outer(vector1, vector2)_ to find the outer product of rv and cv. Does the order of the arguments matter?
 
@@ -168,10 +174,20 @@ $$
 
 **Hint:** using sympy, we can calculate the relevant integral. The conds='none' asks the solver to ignore any strange conditions on the variables in the integral. This is fine for most of our integrals. Usually the variables are real and well-behaved numbers.
 
+Paste this partial solution into a cell, and fill in the rest
+
+```
 # Partial Solution:
 from sympy import *
 c,a,x = symbols("c a x")
 Q.positive((c,a))
-first = integrate( ... ,(x,0,oo),conds='none')  # put the function in ...
+first = integrate( ... ,(x,0,oo),conds='none')
 
-check = integrate(  ,(x,0,oo),conds='none')
+# put the function in for the ...
+```
+
+Then check the solution by integrating:
+
+```
+check = integrate( ... ,(x,0,oo),conds='none')
+```

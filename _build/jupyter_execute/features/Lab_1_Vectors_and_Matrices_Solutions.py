@@ -19,7 +19,10 @@ Two kinds of vector products we'll see: inner product (dot product) and outer pr
 
 dot(rv,cv)
 
-dot(cv,rv)
+try:
+  dot(cv,rv)
+except ValueError as err:
+  print(err)
 
 ### 2) Use the function _outer(vector1, vector2)_ to find the outer product of rv and cv. Does the order of the arguments matter?
 

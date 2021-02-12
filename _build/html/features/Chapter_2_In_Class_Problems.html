@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>2.3 Find the eigenvalues and vectors of J\(_\theta\) for \(\theta\)=45 &#8212; Quantum Mechanics with QuTiP</title>
+    <title>Chapter 2 in-class problems &#8212; Quantum Mechanics with QuTiP</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -56,7 +56,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Chapter 4 in-class problems" href="Chapter_4_In_Class_Problems.html" />
+    <link rel="next" title="Quantum states" href="Lab_2_Quantum_States_Solutions.html" />
     <link rel="prev" title="Chapter 1" href="Chapter_1_Mathematical_Preliminaries.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -87,8 +87,8 @@
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
     <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="features.html">
-   Title of book
+  <a class="reference internal" href="intro.html">
+   Quantum Mechanics with QuTiP
   </a>
  </li>
 </ul>
@@ -100,15 +100,12 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   2.3 Find the eigenvalues and vectors of J
-   <span class="math notranslate nohighlight">
-    \(_\theta\)
-   </span>
-   for
-   <span class="math notranslate nohighlight">
-    \(\theta\)
-   </span>
-   =45
+   Chapter 2 in-class problems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lab_2_Quantum_States_Solutions.html">
+   Quantum states
   </a>
  </li>
  <li class="toctree-l1">
@@ -128,7 +125,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Chapter_8_Two_Photon_States.html">
-   Entangled states
+   Chapter 8 - Two-photon States
   </a>
  </li>
  <li class="toctree-l1">
@@ -137,18 +134,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Chapter_8_Alice_and_Bob.html#solution">
-   Solution
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="Chapter_8A_Density_Matrix.html">
-   Example 8.A.1:
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Chapter_8A_Density_Matrix.html#example-8-a-2">
-   Example 8.A.2
+   Ch 8 - Examples
   </a>
  </li>
  <li class="toctree-l1">
@@ -163,7 +150,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Chapter_13_Hydrogen.html">
-   Hydrogen functions
+   Ch 13 - Hydrogen functions
   </a>
  </li>
 </ul>
@@ -248,6 +235,28 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#find-the-eigenvalues-and-vectors-of-j-theta-for-theta-45">
+   2.3 Find the eigenvalues and vectors of J
+   <span class="math notranslate nohighlight">
+    \(_\theta\)
+   </span>
+   for
+   <span class="math notranslate nohighlight">
+    \(\theta\)
+   </span>
+   =45
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -255,8 +264,10 @@
         
               <div>
                 
-  <div class="section" id="find-the-eigenvalues-and-vectors-of-j-theta-for-theta-45">
-<h1>2.3 Find the eigenvalues and vectors of J<span class="math notranslate nohighlight">\(_\theta\)</span> for <span class="math notranslate nohighlight">\(\theta\)</span>=45<a class="headerlink" href="#find-the-eigenvalues-and-vectors-of-j-theta-for-theta-45" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="chapter-2-in-class-problems">
+<h1>Chapter 2 in-class problems<a class="headerlink" href="#chapter-2-in-class-problems" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="find-the-eigenvalues-and-vectors-of-j-theta-for-theta-45">
+<h2>2.3 Find the eigenvalues and vectors of J<span class="math notranslate nohighlight">\(_\theta\)</span> for <span class="math notranslate nohighlight">\(\theta\)</span>=45<a class="headerlink" href="#find-the-eigenvalues-and-vectors-of-j-theta-for-theta-45" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">qutip</span> <span class="kn">import</span> <span class="o">*</span>
@@ -376,6 +387,7 @@
 </div>
 </div>
 </div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -406,7 +418,7 @@
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="Chapter_1_Mathematical_Preliminaries.html" title="previous page">Chapter 1</a>
-    <a class='right-next' id="next-link" href="Chapter_4_In_Class_Problems.html" title="next page">Chapter 4 in-class problems</a>
+    <a class='right-next' id="next-link" href="Lab_2_Quantum_States_Solutions.html" title="next page">Quantum states</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
