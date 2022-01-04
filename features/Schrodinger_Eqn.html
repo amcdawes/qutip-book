@@ -97,17 +97,17 @@
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Chapter_1_Mathematical_Preliminaries.html">
-   Chapter 1
+   Chapter 1: Mathematical Preliminaries
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Chapter_2_In_Class_Problems.html">
-   Chapter 2 in-class problems
+   Chapter 2: in-class problems
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Chapter_4_In_Class_Problems.html">
-   Chapter 4 in-class problems
+   Chapter 4: in-class problems
   </a>
  </li>
  <li class="toctree-l1">
@@ -117,12 +117,12 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Chapter_6_Spin.html">
-   Chapter 6 - Spin
+   Chapter 6: Spin
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Chapter_7_Angular_Momentum.html">
-   Chapter 7 - Angular Momentum
+   Chapter 7: Angular Momentum
   </a>
  </li>
  <li class="toctree-l1">
@@ -137,7 +137,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Chapter_8_Alice_and_Bob.html">
-   Chapter 8 - Local Realism
+   Chapter 8: Local Realism
   </a>
  </li>
  <li class="toctree-l1">
@@ -147,7 +147,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Chapter_10_Position_and_Momentum.html">
-   Chapter 10 - Position and Momentum
+   Chapter 10: Position and Momentum
   </a>
  </li>
  <li class="toctree-l1">
@@ -157,7 +157,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Chapter_12_SHO.html">
-   Chapter 12 - Simple Harmonic Oscillator
+   Chapter 12: Simple Harmonic Oscillator
   </a>
  </li>
  <li class="toctree-l1">
@@ -177,7 +177,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Lab_2_Quantum_States.html">
-   Lab 2 - Quantum States
+   Lab 2: Quantum States
   </a>
  </li>
  <li class="toctree-l1">
@@ -206,28 +206,33 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="Lab_4_Measurements.html">
+   Lab 4: Measurements
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="Lab_4_Measurements_Solutions.html">
    Lab 4 - Measurements
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Lab_5_Twoparticle_systems.html">
-   Two-particle systems
+   Lab 5: Two-particle systems
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Lab_6_Spin.html">
-   Lab 6 - Spin
+   Lab 6: Spin
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Lab_7_Time_Evolution.html">
-   Lab 7 - Time Evolution
+   Lab 7: Time Evolution
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Lab_8_SHO.html">
-   Lab 8 - Simple Harmonic Oscillator states
+   Lab 8: Simple Harmonic Oscillator states
   </a>
  </li>
  <li class="toctree-l1">
@@ -257,7 +262,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Minilab_1_Chapter_2_problems.html">
-   Minilab 1 - Jones Calculus
+   Minilab: Jones Calculus
   </a>
  </li>
  <li class="toctree-l1">
@@ -431,6 +436,23 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">UnboundLocalError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">bx</span><span class="o">/</span><span class="n">n6j_5v4x76j6c7f2njx6l_8dgpmt58</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_44679</span><span class="o">/</span><span class="mf">1272311899.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">result</span> <span class="o">=</span> <span class="n">sesolve</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">psi</span><span class="p">,</span> <span class="n">t_list</span><span class="p">,</span> <span class="n">e_list</span><span class="p">)</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/qutip/sesolve.py</span> in <span class="ni">sesolve</span><span class="nt">(H, psi0, tlist, e_ops, args, options, progress_bar, _safe_mode)</span>
+<span class="g g-Whitespace">    </span><span class="mi">163</span>     <span class="n">res</span> <span class="o">=</span> <span class="n">_generic_ode_solve</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">ode_args</span><span class="p">,</span> <span class="n">psi0</span><span class="p">,</span> <span class="n">tlist</span><span class="p">,</span> <span class="n">e_ops</span><span class="p">,</span> <span class="n">options</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">164</span>                              <span class="n">progress_bar</span><span class="p">,</span> <span class="n">dims</span><span class="o">=</span><span class="n">psi0</span><span class="o">.</span><span class="n">dims</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">165</span>     <span class="k">if</span> <span class="n">e_ops_dict</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">166</span>         <span class="n">res</span><span class="o">.</span><span class="n">expect</span> <span class="o">=</span> <span class="p">{</span><span class="n">e</span><span class="p">:</span> <span class="n">res</span><span class="o">.</span><span class="n">expect</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">167</span>                       <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">e</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">e_ops_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">())}</span>
+
+<span class="ne">UnboundLocalError</span>: local variable &#39;e_ops_dict&#39; referenced before assignment
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -439,16 +461,37 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1087f83d0&gt;]
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">bx</span><span class="o">/</span><span class="n">n6j_5v4x76j6c7f2njx6l_8dgpmt58</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_44679</span><span class="o">/</span><span class="mf">3580273498.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">plot</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">expect</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="ne">NameError</span>: name &#39;result&#39; is not defined
 </pre></div>
 </div>
-<img alt="../_images/Schrodinger_Eqn_9_1.png" src="../_images/Schrodinger_Eqn_9_1.png" />
 </div>
 </div>
 <p><span class="math notranslate nohighlight">\(&lt;\hat{S}_x&gt;\)</span> average oscillates - this is QM “precession”</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result2</span> <span class="o">=</span> <span class="n">sesolve</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">pz</span><span class="p">,</span> <span class="n">t_list</span><span class="p">,</span> <span class="n">e_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">UnboundLocalError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">bx</span><span class="o">/</span><span class="n">n6j_5v4x76j6c7f2njx6l_8dgpmt58</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_44679</span><span class="o">/</span><span class="mf">972120821.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">result2</span> <span class="o">=</span> <span class="n">sesolve</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">pz</span><span class="p">,</span> <span class="n">t_list</span><span class="p">,</span> <span class="n">e_list</span><span class="p">)</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.7/site-packages/qutip/sesolve.py</span> in <span class="ni">sesolve</span><span class="nt">(H, psi0, tlist, e_ops, args, options, progress_bar, _safe_mode)</span>
+<span class="g g-Whitespace">    </span><span class="mi">163</span>     <span class="n">res</span> <span class="o">=</span> <span class="n">_generic_ode_solve</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">ode_args</span><span class="p">,</span> <span class="n">psi0</span><span class="p">,</span> <span class="n">tlist</span><span class="p">,</span> <span class="n">e_ops</span><span class="p">,</span> <span class="n">options</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">164</span>                              <span class="n">progress_bar</span><span class="p">,</span> <span class="n">dims</span><span class="o">=</span><span class="n">psi0</span><span class="o">.</span><span class="n">dims</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">165</span>     <span class="k">if</span> <span class="n">e_ops_dict</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">166</span>         <span class="n">res</span><span class="o">.</span><span class="n">expect</span> <span class="o">=</span> <span class="p">{</span><span class="n">e</span><span class="p">:</span> <span class="n">res</span><span class="o">.</span><span class="n">expect</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">167</span>                       <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">e</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">e_ops_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">())}</span>
+
+<span class="ne">UnboundLocalError</span>: local variable &#39;e_ops_dict&#39; referenced before assignment
 </pre></div>
 </div>
 </div>
@@ -460,10 +503,14 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x108f27a10&gt;]
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">bx</span><span class="o">/</span><span class="n">n6j_5v4x76j6c7f2njx6l_8dgpmt58</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_44679</span><span class="o">/</span><span class="mf">120288034.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">plot</span><span class="p">(</span><span class="n">result2</span><span class="o">.</span><span class="n">expect</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="ne">NameError</span>: name &#39;result2&#39; is not defined
 </pre></div>
 </div>
-<img alt="../_images/Schrodinger_Eqn_12_1.png" src="../_images/Schrodinger_Eqn_12_1.png" />
 </div>
 </div>
 <p>Sx averages to zero at all times for a +Z state in a Bz field.</p>

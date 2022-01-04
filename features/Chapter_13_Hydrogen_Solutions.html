@@ -95,17 +95,17 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Chapter_1_Mathematical_Preliminaries.html">
-   Chapter 1
+   Chapter 1: Mathematical Preliminaries
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Chapter_2_In_Class_Problems.html">
-   Chapter 2 in-class problems
+   Chapter 2: in-class problems
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Chapter_4_In_Class_Problems.html">
-   Chapter 4 in-class problems
+   Chapter 4: in-class problems
   </a>
  </li>
  <li class="toctree-l1">
@@ -115,12 +115,12 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Chapter_6_Spin.html">
-   Chapter 6 - Spin
+   Chapter 6: Spin
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Chapter_7_Angular_Momentum.html">
-   Chapter 7 - Angular Momentum
+   Chapter 7: Angular Momentum
   </a>
  </li>
  <li class="toctree-l1">
@@ -135,7 +135,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Chapter_8_Alice_and_Bob.html">
-   Chapter 8 - Local Realism
+   Chapter 8: Local Realism
   </a>
  </li>
  <li class="toctree-l1">
@@ -145,7 +145,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Chapter_10_Position_and_Momentum.html">
-   Chapter 10 - Position and Momentum
+   Chapter 10: Position and Momentum
   </a>
  </li>
  <li class="toctree-l1">
@@ -155,7 +155,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Chapter_12_SHO.html">
-   Chapter 12 - Simple Harmonic Oscillator
+   Chapter 12: Simple Harmonic Oscillator
   </a>
  </li>
  <li class="toctree-l1">
@@ -175,7 +175,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Lab_2_Quantum_States.html">
-   Lab 2 - Quantum States
+   Lab 2: Quantum States
   </a>
  </li>
  <li class="toctree-l1">
@@ -204,28 +204,33 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="Lab_4_Measurements.html">
+   Lab 4: Measurements
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="Lab_4_Measurements_Solutions.html">
    Lab 4 - Measurements
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Lab_5_Twoparticle_systems.html">
-   Two-particle systems
+   Lab 5: Two-particle systems
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Lab_6_Spin.html">
-   Lab 6 - Spin
+   Lab 6: Spin
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Lab_7_Time_Evolution.html">
-   Lab 7 - Time Evolution
+   Lab 7: Time Evolution
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Lab_8_SHO.html">
-   Lab 8 - Simple Harmonic Oscillator states
+   Lab 8: Simple Harmonic Oscillator states
   </a>
  </li>
  <li class="toctree-l1">
@@ -255,7 +260,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Minilab_1_Chapter_2_problems.html">
-   Minilab 1 - Jones Calculus
+   Minilab: Jones Calculus
   </a>
  </li>
  <li class="toctree-l1">
@@ -439,9 +444,8 @@ Start with some imports fro Symbolic Python library:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2*exp(-r)
-</pre></div>
-</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 2 e^{- r}\]</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -451,9 +455,8 @@ Start with some imports fro Symbolic Python library:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sqrt(3)*cos(theta)/(2*sqrt(pi))
-</pre></div>
-</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{\sqrt{3} \cos{\left(\theta \right)}}{2 \sqrt{\pi}}\]</div>
 </div>
 </div>
 <p>Write the equation for the <span class="math notranslate nohighlight">\(|nlm\rangle = |100\rangle\)</span> state. Use the sympy method <code class="docutils literal notranslate"><span class="pre">.expand(func=True)</span></code> to convert to the actual expression. To create this state, we combine the Radial function and the Ylm function. Make sure to set n, l, and m to the correct values. The fourth argument to <code class="docutils literal notranslate"><span class="pre">R_nl</span></code> is <code class="docutils literal notranslate"><span class="pre">Z</span></code> which we set to 1 since we are talking about a 1-proton nucleus.</p>
@@ -474,9 +477,8 @@ Start with some imports fro Symbolic Python library:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>exp(-r)/sqrt(pi)
-</pre></div>
-</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{e^{- r}}{\sqrt{\pi}}\]</div>
 </div>
 </div>
 <p>##Integrating over all space
@@ -488,9 +490,8 @@ Remember spherical coordinate integrals of function <span class="math notranslat
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
-</pre></div>
-</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 1\]</div>
 </div>
 </div>
 </div>
@@ -510,9 +511,8 @@ Remember spherical coordinate integrals of function <span class="math notranslat
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sqrt(2)*r*exp(-r/2)*cos(theta)/(8*sqrt(pi))
-</pre></div>
-</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{\sqrt{2} r e^{- \frac{r}{2}} \cos{\left(\theta \right)}}{8 \sqrt{\pi}}\]</div>
 </div>
 </div>
 <p>Note, if you compare these to listed solutions (for example at <a class="reference external" href="http://hyperphysics.phy-astr.gsu.edu/hbase/quantum/hydwf.html#c3">http://hyperphysics.phy-astr.gsu.edu/hbase/quantum/hydwf.html#c3</a>) you see that there are not any factors of <span class="math notranslate nohighlight">\(a_0\)</span>. This is because the <code class="docutils literal notranslate"><span class="pre">R_nl</span></code> function is defined in units of <span class="math notranslate nohighlight">\(a_0\)</span>. <span class="math notranslate nohighlight">\(a_0\)</span> is the Bohr Radius: <a class="reference external" href="http://en.wikipedia.org/wiki/Bohr_radius">http://en.wikipedia.org/wiki/Bohr_radius</a></p>
@@ -534,9 +534,8 @@ Remember spherical coordinate integrals of function <span class="math notranslat
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
-</pre></div>
-</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 0\]</div>
 </div>
 </div>
 <p>No surprise, the average z position of the electron in the hydrogen atom is 0.</p>
@@ -566,7 +565,8 @@ Remember spherical coordinate integrals of function <span class="math notranslat
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x108eee190&gt;
+<img alt="../_images/Chapter_13_Hydrogen_Solutions_23_0.png" src="../_images/Chapter_13_Hydrogen_Solutions_23_0.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x7ff0f964ad10&gt;
 </pre></div>
 </div>
 </div>
@@ -594,10 +594,32 @@ Remember spherical coordinate integrals of function <span class="math notranslat
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">bx</span><span class="o">/</span><span class="n">n6j_5v4x76j6c7f2njx6l_8dgpmt58</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_44427</span><span class="o">/</span><span class="mf">822695643.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">psi320</span> <span class="o">=</span> <span class="n">R_nl</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">Ynm</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">theta</span><span class="p">,</span><span class="n">phi</span><span class="p">)</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">func</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">psi2</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">psi100</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">w1</span><span class="o">*</span><span class="n">t</span><span class="p">)</span> <span class="o">+</span> <span class="n">psi310</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">w2</span><span class="o">*</span><span class="n">t</span><span class="p">))</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">psi2_conj</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">psi100</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">w1</span><span class="o">*</span><span class="n">t</span><span class="p">)</span> <span class="o">+</span> <span class="n">psi310</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">w2</span><span class="o">*</span><span class="n">t</span><span class="p">))</span>
+
+<span class="ne">NameError</span>: name &#39;psi310&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">expect3</span> <span class="o">=</span> <span class="n">integrate</span><span class="p">(</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span> <span class="p">(</span><span class="n">r</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span> <span class="o">*</span> <span class="n">psi2</span><span class="o">*</span><span class="n">psi2_conj</span><span class="p">,(</span><span class="n">r</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">oo</span><span class="p">),(</span><span class="n">theta</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">pi</span><span class="p">),(</span><span class="n">phi</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">bx</span><span class="o">/</span><span class="n">n6j_5v4x76j6c7f2njx6l_8dgpmt58</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_44427</span><span class="o">/</span><span class="mf">61126846.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">expect3</span> <span class="o">=</span> <span class="n">integrate</span><span class="p">(</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span> <span class="p">(</span><span class="n">r</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span> <span class="o">*</span> <span class="n">psi2</span><span class="o">*</span><span class="n">psi2_conj</span><span class="p">,(</span><span class="n">r</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">oo</span><span class="p">),(</span><span class="n">theta</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">pi</span><span class="p">),(</span><span class="n">phi</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">))</span>
+
+<span class="ne">NameError</span>: name &#39;psi2&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -609,7 +631,12 @@ Remember spherical coordinate integrals of function <span class="math notranslat
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2*pi*(27*sqrt(2)*exp(-1.0*I*t*w1)*exp(1.0*I*t*w2)/(512*pi) + 27*sqrt(2)*exp(1.0*I*t*w1)*exp(-1.0*I*t*w2)/(512*pi))
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">bx</span><span class="o">/</span><span class="n">n6j_5v4x76j6c7f2njx6l_8dgpmt58</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_44427</span><span class="o">/</span><span class="mf">3283396056.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">expect3</span>
+
+<span class="ne">NameError</span>: name &#39;expect3&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -621,7 +648,12 @@ Remember spherical coordinate integrals of function <span class="math notranslat
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x1059f0490&gt;
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">bx</span><span class="o">/</span><span class="n">n6j_5v4x76j6c7f2njx6l_8dgpmt58</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_44427</span><span class="o">/</span><span class="mf">2949507276.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">plot</span><span class="p">(</span><span class="n">re</span><span class="p">(</span><span class="n">expect3</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="n">w2</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="n">w1</span><span class="p">:</span><span class="mi">1</span><span class="p">})),(</span><span class="n">t</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+
+<span class="ne">NameError</span>: name &#39;expect3&#39; is not defined
 </pre></div>
 </div>
 </div>
