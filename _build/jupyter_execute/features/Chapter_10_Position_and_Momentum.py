@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Chapter 10 - Position and Momentum
+# # Chapter 10: Position and Momentum
 # We can start using sympy to handle symbolic math (integrals and other calculus):
 
 # In[1]:

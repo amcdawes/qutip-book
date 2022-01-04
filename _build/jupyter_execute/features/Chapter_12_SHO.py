@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Chapter 12 - Simple Harmonic Oscillator
+# # Chapter 12: Simple Harmonic Oscillator
 # Several examples that make use of the built-in Simple Harmonic Oscillator tools:
 
 # In[1]:

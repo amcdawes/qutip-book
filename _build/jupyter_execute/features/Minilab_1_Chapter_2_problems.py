@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Minilab 1 - Jones Calculus
+# # Minilab: Jones Calculus
 # This notebook demonstrates the use the Jones calculus and provides you with additional practice in IPython.
 
 # ## Using QuTiP

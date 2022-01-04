@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Chapter 4 in-class problems
+# # Chapter 4: in-class problems
 # ## Using what you learned in Lab, answer questions 4.7, 4.8, 4.10, 4.11, 4.12, and 4.13
 
 # In[1]:

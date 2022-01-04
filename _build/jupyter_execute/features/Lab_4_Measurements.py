@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# #Lab 4 - Measurements
+# # Lab 4: Measurements
 # First our standard definitions:
 
 # In[1]:

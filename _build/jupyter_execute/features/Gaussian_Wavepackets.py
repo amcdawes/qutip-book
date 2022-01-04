@@ -34,25 +34,25 @@ x = arange(0,10,0.1)
 plot(x,Gaussian(x,5,0.5))
 
 
-# In[13]:
+# In[6]:
 
 
 import scipy.integrate as integ
 
 
-# In[14]:
+# In[7]:
 
 
 get_ipython().run_line_magic('pinfo', 'integ.quad')
 
 
-# In[15]:
+# In[8]:
 
 
 integ.quad(Gaussian, -numpy.inf, numpy.inf, (5,5))
 
 
-# In[62]:
+# In[9]:
 
 
 def eipx_Gaussian(x,p,chi,sigma):
@@ -60,7 +60,7 @@ def eipx_Gaussian(x,p,chi,sigma):
     
 
 
-# In[66]:
+# In[10]:
 
 
 def psip(p):
@@ -68,7 +68,7 @@ def psip(p):
     return result[0]
 
 
-# In[94]:
+# In[11]:
 
 
 get_ipython().run_line_magic('pinfo', 'plot')
@@ -80,25 +80,25 @@ get_ipython().run_line_magic('pinfo', 'plot')
 
 
 
-# In[83]:
+# In[12]:
 
 
 psip(0)
 
 
-# In[16]:
+# In[13]:
 
 
 from sympy import *
 
 
-# In[19]:
+# In[14]:
 
 
 z = symbols('z')
 
 
-# In[20]:
+# In[15]:
 
 
 integrate(Gaussian(z,5,0.5),(z,-oo,oo))

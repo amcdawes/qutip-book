@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Chapter 7 - Angular Momentum
+# # Chapter 7: Angular Momentum
 # 
 # We'll use $\hbar=1$ for numerical results, this is fairly standard practice, but can be tricky to remember.
 

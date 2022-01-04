@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Chapter 6 - Spin
+# # Chapter 6: Spin
 # A few new operators (or new names for the same ones!)
 # The three axes, x, y, z spin components can be measured with $SA_x$, $SA_y$, and $SA_z$ devices.
 # 

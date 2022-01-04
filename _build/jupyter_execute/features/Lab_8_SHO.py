@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Lab 8 - Simple Harmonic Oscillator states
+# # Lab 8: Simple Harmonic Oscillator states
 # Problems from Chapter 12
 
 # In[1]:

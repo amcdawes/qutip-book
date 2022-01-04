@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Chapter 1
+# # Chapter 1: Mathematical Preliminaries
 # ## 1.1 Probability
 # ### 1.1.1 Moments of Measured Data
 

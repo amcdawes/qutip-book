@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Chapter 8 - Local Realism
+# # Chapter 8: Local Realism
 # ## with Alice and Bob
 
 # In[1]:

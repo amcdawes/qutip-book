@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>&lt;no title&gt; &#8212; Quantum Mechanics with QuTiP</title>
+    <title>Lab 4: Measurements &#8212; Quantum Mechanics with QuTiP</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -94,20 +94,20 @@
   </a>
  </li>
 </ul>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Chapter_1_Mathematical_Preliminaries.html">
-   Chapter 1
+   Chapter 1: Mathematical Preliminaries
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Chapter_2_In_Class_Problems.html">
-   Chapter 2 in-class problems
+   Chapter 2: in-class problems
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Chapter_4_In_Class_Problems.html">
-   Chapter 4 in-class problems
+   Chapter 4: in-class problems
   </a>
  </li>
  <li class="toctree-l1">
@@ -117,12 +117,12 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Chapter_6_Spin.html">
-   Chapter 6 - Spin
+   Chapter 6: Spin
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Chapter_7_Angular_Momentum.html">
-   Chapter 7 - Angular Momentum
+   Chapter 7: Angular Momentum
   </a>
  </li>
  <li class="toctree-l1">
@@ -137,7 +137,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Chapter_8_Alice_and_Bob.html">
-   Chapter 8 - Local Realism
+   Chapter 8: Local Realism
   </a>
  </li>
  <li class="toctree-l1">
@@ -147,7 +147,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Chapter_10_Position_and_Momentum.html">
-   Chapter 10 - Position and Momentum
+   Chapter 10: Position and Momentum
   </a>
  </li>
  <li class="toctree-l1">
@@ -157,7 +157,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Chapter_12_SHO.html">
-   Chapter 12 - Simple Harmonic Oscillator
+   Chapter 12: Simple Harmonic Oscillator
   </a>
  </li>
  <li class="toctree-l1">
@@ -177,7 +177,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Lab_2_Quantum_States.html">
-   Lab 2 - Quantum States
+   Lab 2: Quantum States
   </a>
  </li>
  <li class="toctree-l1">
@@ -205,6 +205,11 @@
    Lab 3: Operators
   </a>
  </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Lab 4: Measurements
+  </a>
+ </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Lab_4_Measurements_Solutions.html">
    Lab 4 - Measurements
@@ -212,22 +217,22 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Lab_5_Twoparticle_systems.html">
-   Two-particle systems
+   Lab 5: Two-particle systems
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Lab_6_Spin.html">
-   Lab 6 - Spin
+   Lab 6: Spin
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Lab_7_Time_Evolution.html">
-   Lab 7 - Time Evolution
+   Lab 7: Time Evolution
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Lab_8_SHO.html">
-   Lab 8 - Simple Harmonic Oscillator states
+   Lab 8: Simple Harmonic Oscillator states
   </a>
  </li>
  <li class="toctree-l1">
@@ -257,7 +262,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Minilab_1_Chapter_2_problems.html">
-   Minilab 1 - Jones Calculus
+   Minilab: Jones Calculus
   </a>
  </li>
  <li class="toctree-l1">
@@ -358,14 +363,6 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="simple visible nav section-nav flex-column">
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -374,8 +371,9 @@
         
               <div>
                 
-  <p>#Lab 4 - Measurements
-First our standard definitions:</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="lab-4-measurements">
+<h1>Lab 4: Measurements<a class="headerlink" href="#lab-4-measurements" title="Permalink to this headline">¶</a></h1>
+<p>First our standard definitions:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -483,7 +481,7 @@ gives a list of 10 numbers, either 1 or -1 with the associated probability p:</p
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.599468
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.59995
 </pre></div>
 </div>
 </div>
@@ -495,7 +493,7 @@ gives a list of 10 numbers, either 1 or -1 with the associated probability p:</p
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6406381169760001
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6400599974999998
 </pre></div>
 </div>
 </div>
@@ -535,6 +533,7 @@ gives a list of 10 numbers, either 1 or -1 with the associated probability p:</p
 <div class="cell_output docutils container">
 <div class="output text_latex math notranslate nohighlight">
 \[\begin{split}Quantum object: dims = [[2], [2]], shape = (2, 2), type = oper, isherm = True\begin{equation*}\left(\begin{array}{*{11}c}0.0 &amp; -1.000j\\1.000j &amp; 0.0\\\end{array}\right)\end{equation*}\end{split}\]</div>
+</div>
 </div>
 </div>
 

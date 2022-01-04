@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Lab 2 - Quantum States
+# # Lab 2: Quantum States
 # Useful for working examples and problems with photon quantum states. You may notice some similarity to the Jones Calculus ;-)
 
 # In[1]:

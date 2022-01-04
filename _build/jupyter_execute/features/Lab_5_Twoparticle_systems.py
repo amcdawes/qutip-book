@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Two-particle systems
+# # Lab 5: Two-particle systems
 # An introduction to multi-particle spaces, starting with photon polarization states. This lab answers the question: How do we describe the state of two photons?
 
 # In[1]:

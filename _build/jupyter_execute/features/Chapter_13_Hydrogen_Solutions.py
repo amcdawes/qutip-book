@@ -106,13 +106,13 @@ psi = 1/sqrt(2)*(psi100*exp(1j*w1*t) + psi210*exp(1j*w2*t))
 psi_conj = 1/sqrt(2)*(psi100*exp(-1j*w1*t) + psi210*exp(-1j*w2*t))
 
 
-# In[17]:
+# In[13]:
 
 
 expect2 = integrate(r**2*sin(theta)* (r*cos(theta)) * psi*psi_conj,(r,0,oo),(theta,0,pi),(phi,0,2*pi))
 
 
-# In[24]:
+# In[14]:
 
 
 plot(re(expect2.subs({w2:2, w1:1})),(t,0,10))
@@ -132,7 +132,7 @@ plot(re(expect2.subs({w2:2, w1:1})),(t,0,10))
 # - What are the relavant frequencies in your expression for $\langle z \rangle$ and why?
 # - Simplify one of your $\langle z \rangle$ expressions and write the time dependence in terms of the frequencies w2 and w1.
 
-# In[30]:
+# In[15]:
 
 
 psi320 = R_nl(3, 2, r, 1)*Ynm(2,0,theta,phi).expand(func=True)
@@ -140,19 +140,19 @@ psi2 = 1/sqrt(2)*(psi100*exp(1j*w1*t) + psi310*exp(1j*w2*t))
 psi2_conj = 1/sqrt(2)*(psi100*exp(-1j*w1*t) + psi310*exp(-1j*w2*t))
 
 
-# In[33]:
+# In[16]:
 
 
 expect3 = integrate(r**2*sin(theta)* (r*cos(theta)) * psi2*psi2_conj,(r,0,oo),(theta,0,pi),(phi,0,2*pi))
 
 
-# In[34]:
+# In[17]:
 
 
 expect3
 
 
-# In[29]:
+# In[18]:
 
 
 plot(re(expect3.subs({w2:2, w1:1})),(t,0,10))

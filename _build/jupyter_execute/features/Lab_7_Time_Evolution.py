@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Lab 7 - Time Evolution
+# # Lab 7: Time Evolution
 # Exploring time evolution of quantum states. Run the usual imports, and use the spin-1/2 states as previously defined:
 
 # In[1]:

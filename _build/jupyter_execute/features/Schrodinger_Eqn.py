@@ -32,7 +32,7 @@ Sz = 1/2.0*sigmaz()
 H = -0.2*sigmaz()
 
 
-# In[11]:
+# In[4]:
 
 
 e_list = 0.5*sigmax()  # list of expectation values to calculate
@@ -50,13 +50,13 @@ t_list = linspace(0,100,1000)  # list of times to evaluate
 psi = px  # initial state
 
 
-# In[12]:
+# In[7]:
 
 
 result = sesolve(H, psi, t_list, e_list)
 
 
-# In[13]:
+# In[8]:
 
 
 plot(result.expect[0])
@@ -64,13 +64,13 @@ plot(result.expect[0])
 
 # $<\hat{S}_x>$ average oscillates - this is QM "precession"
 
-# In[14]:
+# In[9]:
 
 
 result2 = sesolve(H, pz, t_list, e_list)
 
 
-# In[15]:
+# In[10]:
 
 
 plot(result2.expect[0])

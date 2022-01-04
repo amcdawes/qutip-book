@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Chapter 2 in-class problems
+# # Chapter 2: in-class problems
 
 # ## 2.3 Find the eigenvalues and vectors of J$_\theta$ for $\theta$=45
 
