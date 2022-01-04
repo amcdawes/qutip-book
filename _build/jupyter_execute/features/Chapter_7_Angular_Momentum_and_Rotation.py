@@ -1,9 +1,19 @@
-## Chapter 7 - Angular Momentum and Rotation
+#!/usr/bin/env python
+# coding: utf-8
+
+# ## Chapter 7 - Angular Momentum and Rotation
+
+# In[1]:
+
 
 from numpy import sqrt, pi, exp, angle
 from qutip import *
 
-Our usual spin operators (spin-1/2)
+
+# Our usual spin operators (spin-1/2)
+
+# In[2]:
+
 
 pz = basis(2,0)
 mz = basis(2,1)
@@ -17,7 +27,11 @@ Sz = 1/2.0*sigmaz()
 Splus = Sx + 1j*Sy
 Sminus = Sx - 1j*Sy
 
-Define the spin-1 operators. We use J just to keep them apart. Could be S instead.
+
+# Define the spin-1 operators. We use J just to keep them apart. Could be S instead.
+
+# In[3]:
+
 
 Jx = 1/sqrt(2)*Qobj([[0,1,0],[1,0,1],[0,1,0]])
 Jy = 1/sqrt(2)*Qobj([[0,-1j,0],[1j,0,-1j],[0,1j,0]])
@@ -25,34 +39,70 @@ Jz = Qobj([[1,0,0],[0,0,0],[0,0,-1]])
 Jplus = Jx + 1j*Jy
 Jminus = Jx - 1j*Jy
 
+
+# In[4]:
+
+
 Jz
 
-## Rotations of spin-1/2
+
+# ## Rotations of spin-1/2
+
+# In[5]:
+
 
 Rz90 = (-1j*pi/2*Sz).expm()
 
+
+# In[6]:
+
+
 Rz90
+
+
+# In[7]:
+
 
 Rz90*px
 
-Doesn't look like example 7.4 because it's not simplified. How to check:
+
+# Doesn't look like example 7.4 because it's not simplified. How to check:
+
+# In[8]:
+
 
 exp(-1j*pi/4)*py
 
- Yes, this agrees.
 
-Can also use inner product:
+#  Yes, this agrees.
+
+# Can also use inner product:
+
+# In[9]:
+
 
 py.dag()*Rz90*px
 
+
+# In[10]:
+
+
 (py.dag()*Rz90*px).norm()
+
+
+# In[11]:
+
 
 angle(0.707 - 0.707j) == -pi/4
 
-## Find the spin-1 states (the eigenstates of the corresponding matrix)
-According to the postulates, the allowed values of an observable are the eigenvalues with corresponding eigenstates.
 
-We know the matrix representation of Jx, Jy, Jz in the Z-basis so we can find all 9 states (in the Z basis). Why nine? There are three possible values $\hbar$, 0, $-\hbar$ for each of three directions.
+# ## Find the spin-1 states (the eigenstates of the corresponding matrix)
+# According to the postulates, the allowed values of an observable are the eigenvalues with corresponding eigenstates.
+# 
+# We know the matrix representation of Jx, Jy, Jz in the Z-basis so we can find all 9 states (in the Z basis). Why nine? There are three possible values $\hbar$, 0, $-\hbar$ for each of three directions.
+
+# In[12]:
+
 
 yevals, (yd,y0,yu) = Jy.eigenstates()
 zevals, (zd,z0,zu) = Jz.eigenstates()
@@ -60,21 +110,59 @@ xevals, (xd,x0,xu) = Jx.eigenstates()
 xd = -xd  # fix the signs to match book
 yu = -yu  # fix the signs to match book
 
+
+# In[13]:
+
+
 y0
+
+
+# In[14]:
+
 
 Rz90 = (-1j*pi/2*Jz).expm()
 
+
+# In[15]:
+
+
 Rz90*x0
+
+
+# In[16]:
+
 
 (y0.dag()*Rz90*x0).norm()
 
-### 7.10 A spin-1 particle is measured to have $S_y=\hbar$. What is the probability that a subsequent measurement will yield $S_z=0$? $S_z=\hbar$? $S_z=-\hbar$?
+
+# ### 7.10 A spin-1 particle is measured to have $S_y=\hbar$. What is the probability that a subsequent measurement will yield $S_z=0$? $S_z=\hbar$? $S_z=-\hbar$?
+
+# In[17]:
+
 
 (z0.dag()*yu).norm()**2
 
+
+# In[18]:
+
+
 (zu.dag()*yu).norm()**2
+
+
+# In[19]:
+
 
 (zd.dag()*yu).norm()**2
 
+
+# In[20]:
+
+
 yu
+
+
+# In[ ]:
+
+
+
 

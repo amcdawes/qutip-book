@@ -1,15 +1,40 @@
-# A chapter w/ a collection of sections beneath it
-- file: features/intro
-  sections:
-  - file: features/Chapter_1_Mathematical_Preliminaries
-  - file: features/Chapter_2_In_Class_Problems
-  - file: features/Lab_2_Quantum_States_Solutions
-  - file: features/Chapter_4_In_Class_Problems
-  - file: features/Chapter_6_Spin
-  - file: features/Chapter_7_Angular_Momentum
-  - file: features/Chapter_8_Two_Photon_States
-  - file: features/Chapter_8_Alice_and_Bob
-  - file: features/Chapter_8A_Density_Matrix
-  - file: features/Chapter_10_Position_and_Momentum
-  - file: features/Chapter_12_SHO
-  - file: features/Chapter_13_Hydrogen
+format: jb-article
+root: features/intro
+sections:
+- file: features/Chapter_1_Mathematical_Preliminaries
+- file: features/Chapter_2_In_Class_Problems
+- file: features/Chapter_4_In_Class_Problems
+- file: features/Chapter_4_In_Class_Problems_Solutions
+- file: features/Chapter_6_Spin
+- file: features/Chapter_7_Angular_Momentum
+- file: features/Chapter_7_Angular_Momentum_and_Rotation
+- file: features/Chapter_8_Two_Photon_States
+- file: features/Chapter_8_Alice_and_Bob
+- file: features/Chapter_8A_Density_Matrix
+- file: features/Chapter_10_Position_and_Momentum
+- file: features/Chapter_10_Position_and_Momentum_blank
+- file: features/Chapter_12_SHO
+- file: features/Chapter_13_Hydrogen
+- file: features/Lab_1_Vectors_and_Matrices
+- file: features/Lab_1_Vectors_and_Matrices_Solutions
+- file: features/Lab_2_Quantum_States
+- file: features/Lab_2_Quantum_States_Blank
+- file: features/Lab_2_Quantum_States_Solutions
+- file: features/Lab_3_Operators
+- file: features/Lab_3_Operators_Solutions
+- file: features/Lab_3_Operators_Solutions_(old)
+- file: features/Lab_4_Measurements
+- file: features/Lab_4_Measurements_Solutions
+- file: features/Lab_5_Twoparticle_systems
+- file: features/Lab_6_Spin
+- file: features/Lab_7_Time_Evolution
+- file: features/Lab_8_SHO
+- file: features/Lab_8_SHO_Solutions
+- file: features/Schrodinger_Eqn
+- file: features/Coupled_systems
+- file: features/JonesCalculus
+- file: features/Simulating_measurements
+- file: features/Minilab_1_Chapter_2_problems
+- file: features/Gaussian_Wavepackets
+- file: features/Gaussian_WavepacketsSympy
+- file: features/HW_9_Redo

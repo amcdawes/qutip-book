@@ -1,5 +1,17 @@
-%pylab inline
+#!/usr/bin/env python
+# coding: utf-8
+
+# # Coupled Systems
+
+# In[1]:
+
+
+get_ipython().run_line_magic('pylab', 'inline')
 from qutip import *
+
+
+# In[2]:
+
 
 wc = 1 * 2*pi
 wa = 1 * 2*pi
@@ -16,7 +28,15 @@ sz = tensor(qeye(N),sigmaz())
 
 H = wc*a.dag()*a + wa*sm.dag()*sm + g*(a.dag()*sm + a*sm.dag())
 
+
+# In[3]:
+
+
 tlist = linspace(0,50,200)
+
+
+# In[4]:
+
 
 c_ops = []
 
@@ -35,8 +55,16 @@ rate = gamma
 if rate > 0.0:
     c_ops.append(sqrt(rate) * sm)
 
+
+# In[5]:
+
+
 psi0 = tensor(basis(N,0),basis(2,1))  # start with an excited atom
 output = mesolve(H, psi0, tlist, c_ops, [a.dag() * a, sm.dag() * sm])
+
+
+# In[6]:
+
 
 n_c = output.expect[0]
 n_a = output.expect[1]
@@ -49,6 +77,16 @@ axes.legend(loc=0)
 axes.set_xlabel('Time')
 axes.set_ylabel('Occupation probability')
 axes.set_title('Vacuum Rabi oscillations')
+
+
+# In[51]:
+
+
+
+
+
+# In[ ]:
+
 
 
 
