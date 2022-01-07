@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hydrogen functions &#8212; Quantum Mechanics with QuTiP</title>
+    <title>Chapter 13: Hydrogen functions &#8212; Quantum Mechanics with QuTiP</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -162,7 +162,7 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Hydrogen functions
+   Chapter 13: Hydrogen functions
   </a>
  </li>
  <li class="toctree-l1">
@@ -261,11 +261,6 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Minilab_1_Chapter_2_problems.html">
-   Minilab: Jones Calculus
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="Gaussian_Wavepackets.html">
    Gaussian Wavepackets
   </a>
@@ -273,11 +268,6 @@
  <li class="toctree-l1">
   <a class="reference internal" href="Gaussian_WavepacketsSympy.html">
    Gaussian Wavepackets (using Sympy)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="HW_9_Redo.html">
-   HW 9.14:
   </a>
  </li>
 </ul>
@@ -319,11 +309,14 @@
 
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/features/Chapter_13_Hydrogen.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+        <a class="dropdown-buttons"
+            href="../_sources/features/Chapter_13_Hydrogen.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/features/Chapter_13_Hydrogen.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -346,7 +339,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/features/Chapter_13_Hydrogen.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/features/Chapter_13_Hydrogen.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -417,8 +410,8 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="hydrogen-functions">
-<h1>Hydrogen functions<a class="headerlink" href="#hydrogen-functions" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="chapter-13-hydrogen-functions">
+<h1>Chapter 13: Hydrogen functions<a class="headerlink" href="#chapter-13-hydrogen-functions" title="Permalink to this headline">¶</a></h1>
 <p>Start with some imports fro Symbolic Python library:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -637,21 +630,9 @@
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi320</span> <span class="o">=</span> <span class="n">R_nl</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">Ynm</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">theta</span><span class="p">,</span><span class="n">phi</span><span class="p">)</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">func</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">psi2</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">psi100</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">w1</span><span class="o">*</span><span class="n">t</span><span class="p">)</span> <span class="o">+</span> <span class="n">psi310</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">w2</span><span class="o">*</span><span class="n">t</span><span class="p">))</span>
-<span class="n">psi2_conj</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">psi100</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">w1</span><span class="o">*</span><span class="n">t</span><span class="p">)</span> <span class="o">+</span> <span class="n">psi310</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">w2</span><span class="o">*</span><span class="n">t</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">bx</span><span class="o">/</span><span class="n">n6j_5v4x76j6c7f2njx6l_8dgpmt58</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_45182</span><span class="o">/</span><span class="mf">822695643.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">psi320</span> <span class="o">=</span> <span class="n">R_nl</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">Ynm</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">theta</span><span class="p">,</span><span class="n">phi</span><span class="p">)</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">func</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">psi2</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">psi100</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">w1</span><span class="o">*</span><span class="n">t</span><span class="p">)</span> <span class="o">+</span> <span class="n">psi310</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">w2</span><span class="o">*</span><span class="n">t</span><span class="p">))</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">psi2_conj</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">psi100</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">w1</span><span class="o">*</span><span class="n">t</span><span class="p">)</span> <span class="o">+</span> <span class="n">psi310</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">w2</span><span class="o">*</span><span class="n">t</span><span class="p">))</span>
-
-<span class="ne">NameError</span>: name &#39;psi310&#39; is not defined
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi210</span> <span class="o">=</span> <span class="n">R_nl</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">Ynm</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">theta</span><span class="p">,</span><span class="n">phi</span><span class="p">)</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">func</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">psi2</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">psi100</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">w1</span><span class="o">*</span><span class="n">t</span><span class="p">)</span> <span class="o">+</span> <span class="n">psi210</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">w2</span><span class="o">*</span><span class="n">t</span><span class="p">))</span>
+<span class="n">psi2_conj</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">psi100</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">w1</span><span class="o">*</span><span class="n">t</span><span class="p">)</span> <span class="o">+</span> <span class="n">psi210</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">w2</span><span class="o">*</span><span class="n">t</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -659,16 +640,6 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">expect3</span> <span class="o">=</span> <span class="n">integrate</span><span class="p">(</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span> <span class="p">(</span><span class="n">r</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span> <span class="o">*</span> <span class="n">psi2</span><span class="o">*</span><span class="n">psi2_conj</span><span class="p">,(</span><span class="n">r</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">oo</span><span class="p">),(</span><span class="n">theta</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">pi</span><span class="p">),(</span><span class="n">phi</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">bx</span><span class="o">/</span><span class="n">n6j_5v4x76j6c7f2njx6l_8dgpmt58</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_45182</span><span class="o">/</span><span class="mf">61126846.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">expect3</span> <span class="o">=</span> <span class="n">integrate</span><span class="p">(</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span> <span class="p">(</span><span class="n">r</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span> <span class="o">*</span> <span class="n">psi2</span><span class="o">*</span><span class="n">psi2_conj</span><span class="p">,(</span><span class="n">r</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">oo</span><span class="p">),(</span><span class="n">theta</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">pi</span><span class="p">),(</span><span class="n">phi</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">))</span>
-
-<span class="ne">NameError</span>: name &#39;psi2&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -680,14 +651,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">bx</span><span class="o">/</span><span class="n">n6j_5v4x76j6c7f2njx6l_8dgpmt58</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_45182</span><span class="o">/</span><span class="mf">3283396056.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">expect3</span>
-
-<span class="ne">NameError</span>: name &#39;expect3&#39; is not defined
-</pre></div>
-</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 2 \pi \left(- \frac{\left(- 27390260577042432 \sqrt{2} \pi^{11} e^{3.0 i t w_{1}} e^{5.0 i t w_{2}} - 141371459682435072 \pi^{11} e^{4.0 i t w_{1}} e^{4.0 i t w_{2}} - 27390260577042432 \sqrt{2} \pi^{11} e^{5.0 i t w_{1}} e^{3.0 i t w_{2}}\right) e^{- 4.0 i t w_{1}} e^{- 4.0 i t w_{2}}}{415989582513831936 \pi^{12}} + \frac{\left(27390260577042432 \sqrt{2} \pi^{11} e^{3.0 i t w_{1}} e^{5.0 i t w_{2}} - 141371459682435072 \pi^{11} e^{4.0 i t w_{1}} e^{4.0 i t w_{2}} + 27390260577042432 \sqrt{2} \pi^{11} e^{5.0 i t w_{1}} e^{3.0 i t w_{2}}\right) e^{- 4.0 i t w_{1}} e^{- 4.0 i t w_{2}}}{415989582513831936 \pi^{12}}\right)\]</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -697,12 +662,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">bx</span><span class="o">/</span><span class="n">n6j_5v4x76j6c7f2njx6l_8dgpmt58</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_45182</span><span class="o">/</span><span class="mf">2949507276.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">plot</span><span class="p">(</span><span class="n">re</span><span class="p">(</span><span class="n">expect3</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="n">w2</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="n">w1</span><span class="p">:</span><span class="mi">1</span><span class="p">})),(</span><span class="n">t</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
-
-<span class="ne">NameError</span>: name &#39;expect3&#39; is not defined
+<img alt="../_images/Chapter_13_Hydrogen_35_0.png" src="../_images/Chapter_13_Hydrogen_35_0.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x7fac34f40d50&gt;
 </pre></div>
 </div>
 </div>
