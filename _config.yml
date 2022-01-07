@@ -27,7 +27,8 @@ description: >-
 
 #######################################################################################
 # Jupyter Book settings
-#exclude_patterns: [README*]
+exclude_patterns: [_build, Thumbs.db, .DS_Store, "**.ipynb_checkpoints"]
+only_build_toc_files: true
 
 execute:
   execute_notebooks: cache

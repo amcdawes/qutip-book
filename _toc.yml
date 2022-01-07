@@ -34,7 +34,5 @@ sections:
 - file: features/Coupled_systems
 - file: features/JonesCalculus
 - file: features/Simulating_measurements
-- file: features/Minilab_1_Chapter_2_problems
 - file: features/Gaussian_Wavepackets
 - file: features/Gaussian_WavepacketsSympy
-- file: features/HW_9_Redo
