@@ -1,0 +1,57 @@
+name: Build Jupyter Book
+
+on:
+  push:
+    branches: ["main", "master"]
+  pull_request:
+    branches: ["main", "master"]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install Python dependencies
+        run: |
+          pip install --upgrade pip
+          pip install jupyter-book qutip numpy scipy matplotlib sympy
+
+      - name: Install LaTeX
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            texlive-latex-recommended \
+            texlive-latex-extra \
+            texlive-fonts-recommended \
+            texlive-fonts-extra \
+            texlive-xetex \
+            latexmk
+
+      - name: Build HTML book
+        run: jupyter-book build .
+
+      - name: Upload HTML artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: jupyter-book-html
+          path: _build/html/
+          if-no-files-found: error
+
+      - name: Build PDF book
+        run: jupyter-book build . --builder pdflatex
+
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: jupyter-book-pdf
+          path: _build/latex/*.pdf
+          if-no-files-found: warn
