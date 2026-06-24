@@ -4,14 +4,14 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.11.5
+    jupytext_version: 1.19.4
 kernelspec:
-  display_name: Python 3
+  display_name: Python 3 (ipykernel)
   language: python
   name: python3
 ---
 
-# Chapter 6: Spin
+# Chapter 6 - Spin
 A few new operators (or new names for the same ones!)
 The three axes, x, y, z spin components can be measured with $SA_x$, $SA_y$, and $SA_z$ devices.
 
@@ -41,7 +41,7 @@ py
 ## Example: determine $P(S_x = \frac{\hbar}{2} ||-y\rangle)$
 
 ```{code-cell} ipython3
-((px.dag()*my).norm())**2
+abs(px.dag() * my) ** 2
 ```
 
 ## Example: verify the commutation relation: $\left[\hat{S}_x,\hat{S}_z\right] = -i\hbar\hat{S}_y$

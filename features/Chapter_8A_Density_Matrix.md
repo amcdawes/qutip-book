@@ -4,16 +4,16 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.11.5
-kernelspec:
-  display_name: Python 3
-  language: python
+    jupytext_version: 1.19.4
+kernel_info:
   name: python3
+kernelspec:
+  name: python3
+  language: python
+  display_name: Python 3
 ---
 
-+++ {"nteract": {"transient": {"deleting": false}}}
-
-# Ch 8 - Examples
+# Chapter 8 - Density Matrix
 
 ```{code-cell} ipython3
 from numpy import sqrt

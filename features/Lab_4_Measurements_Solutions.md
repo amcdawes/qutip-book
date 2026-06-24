@@ -4,9 +4,9 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.11.5
+    jupytext_version: 1.19.4
 kernelspec:
-  display_name: Python 3
+  display_name: Python 3 (ipykernel)
   language: python
   name: python3
 ---
@@ -35,7 +35,7 @@ def sim_transform(o_basis1, o_basis2, n_basis1, n_basis2):
     b = n_basis1.dag()*o_basis2
     c = n_basis2.dag()*o_basis1
     d = n_basis2.dag()*o_basis2
-    return Qobj([[a.data[0,0],b.data[0,0]],[c.data[0,0],d.data[0,0]]])
+    return Qobj([[a,b],[c,d]])
 ```
 
 ```{code-cell} ipython3
@@ -43,7 +43,7 @@ def Delta(state, op):
     """Calculate std. dev. of an observable in a given state"""
     eO2 = state.dag()*op*op*state
     eO = state.dag()*op*state
-    return sqrt(eO2.data[0,0] - (eO.data[0,0])**2)
+    return sqrt(eO2 - (eO)**2)
 ```
 
 ### Q: Define the $\hat{\mathcal{P}}_{HV}$ operator
@@ -53,7 +53,7 @@ Phv = H*H.dag() - V*V.dag()
 Phv
 ```
 
-###Q: What is the expectation value $\langle \hat{\mathcal{P}}_{HV}\rangle$ for state $|\psi\rangle = \frac{1}{\sqrt{5}}|H\rangle + \frac{2}{\sqrt{5}}|V\rangle$? Interpret this result given the amplitudes in the state.
+### Q: What is the expectation value $\langle \hat{\mathcal{P}}_{HV}\rangle$ for state $|\psi\rangle = \frac{1}{\sqrt{5}}|H\rangle + \frac{2}{\sqrt{5}}|V\rangle$? Interpret this result given the amplitudes in the state.
 
 ```{code-cell} ipython3
 psi = 1/sqrt(5)*H + 2/sqrt(5)*V
@@ -63,7 +63,7 @@ psi = 1/sqrt(5)*H + 2/sqrt(5)*V
 psi.dag()*Phv*psi
 ```
 
-### Q: What is the variance of $\mathcal{P}_{HV}$?
+###Q: What is the variance of $\mathcal{P}_{HV}$?
 
 ```{code-cell} ipython3
 psi.dag()*Phv*Phv*psi
@@ -110,27 +110,27 @@ data.var()
 ### Q: Answer problems 5.11, 5.12, 5.13, 5.14, 5.17, 5.18, 5.19 from the textbook. These are an opportunity to practice with a new operator $\hat{\mathcal{P}}_{C}$
 
 ```{code-cell} ipython3
-#5.11
+# 5.11
 P_45 = P45*P45.dag() - M45*M45.dag()
 ```
 
 ```{code-cell} ipython3
-#5.12
+# 5.12
 P_c = L*L.dag() - R*R.dag()
 ```
 
 ```{code-cell} ipython3
-#5.13
+# 5.13
 (Phv*P_45 - P_45*Phv) == 2j * P_c
 ```
 
 ```{code-cell} ipython3
-#5.14
+# 5.14
 (Phv*P_c - P_c*Phv) == -2j * P_45
 ```
 
 ```{code-cell} ipython3
-#5.15
+# 5.15
 P_p45 = P45*P45.dag()
 P_v = V*V.dag()
 ```
@@ -151,7 +151,7 @@ Delta(psi,P_45)*Delta(psi,Phv)
 ```
 
 ```{code-cell} ipython3
-1/2j*(psi.dag()*(Phv*P_45 - P_45*Phv)*psi).data[0,0]
+1/2j*(psi.dag()*(Phv*P_45 - P_45*Phv)*psi)
 ```
 
 ```{code-cell} ipython3

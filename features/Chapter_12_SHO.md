@@ -4,7 +4,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.11.5
+    jupytext_version: 1.19.4
 kernel_info:
   name: python3
 kernelspec:
@@ -13,7 +13,7 @@ kernelspec:
   name: python3
 ---
 
-# Chapter 12: Simple Harmonic Oscillator
+# Chapter 12 - Simple Harmonic Oscillator
 Several examples that make use of the built-in Simple Harmonic Oscillator tools:
 
 ```{code-cell} ipython3

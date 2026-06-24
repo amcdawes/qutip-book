@@ -4,14 +4,14 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.11.5
+    jupytext_version: 1.19.4
 kernelspec:
-  display_name: Python 3
+  display_name: Python 3 (ipykernel)
   language: python
   name: python3
 ---
 
-# Chapter 4: in-class problems
+# Chapter 4 in-class problems
 ## Using what you learned in Lab, answer questions 4.7, 4.8, 4.10, 4.11, 4.12, and 4.13
 
 ```{code-cell} ipython3
@@ -48,7 +48,7 @@ def sim_transform(o_basis1, o_basis2, n_basis1, n_basis2):
     b = n_basis1.dag()*o_basis2
     c = n_basis2.dag()*o_basis1
     d = n_basis2.dag()*o_basis2
-    return Qobj([[a.data[0,0],b.data[0,0]],[c.data[0,0],d.data[0,0]]])
+    return Qobj([[a,b],[c,d]])
 ```
 
 ```{code-cell} ipython3
@@ -66,10 +66,6 @@ ShvLR*V
 ## 4.11: Express $\hat{R}_p(\theta)$ in ±45 basis
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: true
----
 def Rp(theta):
     return Qobj([[cos(theta),-sin(theta)],[sin(theta),cos(theta)]]).tidyup()
 ```
@@ -79,20 +75,12 @@ Rp(1.3)
 ```
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: true
----
 Shv45 = sim_transform(H,V,P45,M45)
 ```
 
 ## 4.12: 
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: true
----
 Rp45 = Shv45*Rp(pi/4)*Shv45.dag()
 ```
 
@@ -105,21 +93,9 @@ Rp45* Qobj([[1],[0]])
 ```
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: true
----
 ShvLR = sim_transform(H,V,L,R)
 ```
 
 ```{code-cell} ipython3
 ShvLR*Rp(pi/4)*ShvLR.dag()
-```
-
-```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: true
----
-
 ```

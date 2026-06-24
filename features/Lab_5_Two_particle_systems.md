@@ -4,23 +4,19 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.11.5
+    jupytext_version: 1.19.4
 kernel_info:
   name: python3
 kernelspec:
-  display_name: Python 3
-  language: python
   name: python3
+  language: python
+  display_name: Python 3
 ---
 
-# Lab 5: Two-particle systems
+# Two-particle systems
 An introduction to multi-particle spaces, starting with photon polarization states. This lab answers the question: How do we describe the state of two photons?
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: false
----
 import matplotlib.pyplot as plt
 from numpy import sqrt,pi,sin,cos,arange
 from qutip import *
@@ -29,10 +25,6 @@ from qutip import *
 ### The polarization states (in the HV-basis):
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: false
----
 H = basis(2,0)
 V = basis(2,1)
 P45 = 1/sqrt(2)*(H+V)
@@ -47,10 +39,6 @@ Mathematically, we are taking the tensor product of two vectors. That product is
 First, look at a generic pair of vectors and their tensor product:
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: false
----
 A = Qobj([[1],[2]])
 B = Qobj([[3],[4]])
 print(A)
@@ -61,10 +49,6 @@ print(tensor(A,B))
 So we see that the tensor product has the following elements: 1\*3 = 3, 1\*4 = 4, 2\*3 = 6, 2\*4 = 8. Essentially, we distributed the multiplication of the first vector through the second vector. Using the technical terms of vector spaces, the tensor product exists in a larger Hilbert space (the number of dimensions is the product of the dimensions of the original states). See this with larger initial states: two 3-dim vectors have a tensor product in 9-dim space:
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: false
----
 C = Qobj([[1],[2],[3]])
 D = Qobj([[4],[5],[6]])
 print(tensor(C,D))
@@ -73,10 +57,6 @@ print(tensor(C,D))
 Now, back to the quantum mechanics. Form the four different combinations of two photons:
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: false
----
 HH = tensor(H,H)
 HV = tensor(H,V)
 VH = tensor(V,H)
@@ -84,10 +64,6 @@ VV = tensor(V,V)
 ```
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: false
----
 # How do we represent HH? It is a vector with four elements.
 HH
 ```
@@ -99,10 +75,6 @@ So we interpret the state $|HH\rangle$ as the vector (1,0,0,0) in a four-dimensi
 Recall: The polarization measurement operator (for one photon):
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: false
----
 Phv = H*H.dag() - V*V.dag()
 Phv
 ```
@@ -110,20 +82,12 @@ Phv
 Also, the identity is defined as `qeye(n)` for `n` dimensions in qutip:
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: false
----
 qeye(2)  # 2-dimensional identity
 ```
 
 The two-photon operator, measuring the **signal** photon, is formed with the `tensor()` function. It is the tensor product of the projection operator `Phv` and the 2-dimensional identity operator `qeye(2)`. The trick is putting them in the correct order. The first element in the tensor product acts on the signal photon, the second acts on the idler photon. So to act on only the signal photon, we create a tensor product with the projection operator first, and the identity second:
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: false
----
 Phv_s = tensor(Phv,qeye(2))
 Phv_s
 ```
@@ -135,10 +99,6 @@ It can be hard to interpret these values visually but remember it was constructe
 Now construct the two-photon operator that measures the idler photon:
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: false
----
 Phv_i = tensor(qeye(2),Phv)
 Phv_i
 ```
@@ -146,10 +106,6 @@ Phv_i
 Next, construct a projection operator that projects the idler photon to H:
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: false
----
 Ph = H*H.dag()
 Ph_i = tensor(qeye(2),Ph)  # Ph for idler photon
 ```
@@ -157,10 +113,6 @@ Ph_i = tensor(qeye(2),Ph)  # Ph for idler photon
 And the same but for the signal photon:
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: false
----
 Ph_s = tensor(Ph,qeye(2))  # Ph for signal photon
 ```
 
@@ -173,38 +125,22 @@ Next we will do some example calculations.
 ### Example: find the probability of measuring a horizontal idler photon if the system is prepared in the state $|HH\rangle$
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: false
----
 HH.dag()*Ph_i*HH
 ```
 
 ### Example: find the probability of measuring a horizontal idler photon in the state $|\psi\rangle = |H,+45\rangle$
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: false
----
 psi = tensor(H,P45)  # the prepared state
 ```
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: false
----
 psi.dag()*Ph_i*psi
 ```
 
 ### Example 8.2 prob. of measuring vertical signal and horizontal idler if $|\psi\rangle = |R,+45\rangle$
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: false
----
 # First, form the prepared state:
 psi = tensor(R,P45)
 
@@ -220,48 +156,28 @@ psi.dag()*projection*psi
 A very interesting system can be set up where there are paired photons being created with unknown but correlated polarization. In this case, we can say the state is in a combination of $|HH\rangle$ and $|VV\rangle$. If either two-photon state is allowed, then the normalized state is $$\big|\phi^+\big\rangle = \frac{1}{\sqrt{2}}\big( \big|HH\big\rangle + \big|VV\big\rangle \big)$$
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: false
----
 phiPlus = 1/sqrt(2)*(HH + VV)
 ```
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: false
----
 phiPlus.dag()*Ph_i*phiPlus  # probability of measuring a horizontal idler photon:
 ```
 
 This is expected, because the HH state has 50% of the probability amplitude. Same for a horizontal signal photon:
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: false
----
 phiPlus.dag()*Ph_s*phiPlus  # probability of measuring a horizontal signal photon
 ```
 
 ## Now, find $P(H_s|H_i)$ (Example 8.5)
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: false
----
 # Projection operator for H idler and H signal:
 phh = HH*HH.dag()
 phiPlus.dag()*phh*phiPlus
 ```
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: false
----
 # Projection operator for H idler
 Pih = tensor(qeye(2),H*H.dag())
 phiPlus.dag()*Pih*phiPlus
@@ -270,30 +186,18 @@ phiPlus.dag()*Pih*phiPlus
 $P(H_s|H_i) = \frac{P(H_s,H_i)}{P(H_i)}$
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: false
----
 0.5/0.5
 ```
 
 Guaranteed to measure a horizontal signal photon whenever a horizontal idler photon is measured. What about vertical? Find the conditional probability of measuring a vertical signal photon if the idler photon is found to be vertical:
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: true
----
 
 ```
 
 Now, measure a different basis (use the +45 states) to show that the photons are always found in the same polarization even when measured at a different angle:
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: false
----
 # Solution
 
 # Probability that signal is +45 and idler +45
@@ -302,10 +206,6 @@ phiPlus.dag()*Pp45p45*phiPlus
 ```
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: false
----
 # Solution
 
 # Probability that the idler is +45 regardless of the signal
@@ -316,10 +216,6 @@ phiPlus.dag()*Pp45i*phiPlus
 Finally, to really drive this odd point home, show that they are **never** found in the $\big|+45,-45\big\rangle$ state:
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: false
----
 # Solution
 
 # Probability that they are in different 45 states:
@@ -331,9 +227,5 @@ phiPlus.dag()*Pp45m45*phiPlus
 ## Using these states solve problems 8.2, 8.3, 8.7, 8.8
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: false
----
 
 ```

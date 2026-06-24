@@ -4,9 +4,9 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.11.5
+    jupytext_version: 1.19.4
 kernelspec:
-  display_name: Python 3
+  display_name: Python 3 (ipykernel)
   language: python
   name: python3
 ---
@@ -126,7 +126,7 @@ H.dag()*Rp(pi/4).dag() == P45.dag()
 
 ```{code-cell} ipython3
 #4.18
-dag(Rp(pi/3)*Rp(pi/4)) == (Rp(pi/3)*Rp(pi/4)).dag() == Rp(pi/4).dag()*Rp(pi/3).dag()
+(Rp(pi/3)*Rp(pi/4)).dag() == (Rp(pi/3)*Rp(pi/4)).dag() == Rp(pi/4).dag()*Rp(pi/3).dag()
 ```
 
 ```{code-cell} ipython3
@@ -148,7 +148,7 @@ def sim_transform(o_basis1, o_basis2, n_basis1, n_basis2):
     b = n_basis1.dag()*o_basis2
     c = n_basis2.dag()*o_basis1
     d = n_basis2.dag()*o_basis2
-    return Qobj([[a.data[0,0],b.data[0,0]],[c.data[0,0],d.data[0,0]]])
+    return Qobj([[a,b],[c,d]])
 ```
 
 We can define a similarity transform that converts from $HV\rightarrow \pm 45$

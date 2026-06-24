@@ -4,9 +4,11 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.11.5
+    jupytext_version: 1.19.4
+kernel_info:
+  name: python3
 kernelspec:
-  display_name: Python 3
+  display_name: Python 3 (ipykernel)
   language: python
   name: python3
 ---
@@ -34,6 +36,10 @@ cv = array([[3],[4]])  # a column vector
 cv
 ```
 
+```{code-cell} ipython3
+rv
+```
+
 Two kinds of vector products we'll see: inner product (dot product) and outer product
 
 ### 1) Use the function _dot(vector1, vector2)_ to find the dot product of rv and cv. Does the order of the arguments matter?
@@ -42,17 +48,9 @@ Two kinds of vector products we'll see: inner product (dot product) and outer pr
 dot(rv,cv)
 ```
 
-+++ {"nteract": {"transient": {"deleting": false}}}
-
-Try running
-
+```{code-cell} ipython3
+# dot(cv,rv)
 ```
-dot(cv,rv)
-```
-
-it won't work (think about why not)
-
-+++
 
 ### 2) Use the function _outer(vector1, vector2)_ to find the outer product of rv and cv. Does the order of the arguments matter?
 
@@ -69,10 +67,12 @@ outer(cv,rv)
 ```{code-cell} ipython3
 # Complex numbers in python have a j term:
 a = 1+2j
+a
 ```
 
 ```{code-cell} ipython3
 v1 = array([1+2j, 3+2j, 5+1j, 4+0j])
+v1
 ```
 
 The complex conjugate changes the sign of the imaginary part:
@@ -91,7 +91,7 @@ dot(v1.conjugate(),v1)
 
 ```{code-cell} ipython3
 # a two-dimensional array
-m1 = array([[2,1],[2,1]])
+m1 = array([[0,1],[-2,3]])
 m1
 ```
 
@@ -116,7 +116,15 @@ m2.H
 ```
 
 ```{code-cell} ipython3
-eig(m2)
+evals, evec = eig(m2)
+```
+
+```{code-cell} ipython3
+evals
+```
+
+```{code-cell} ipython3
+evec
 ```
 
 ```{code-cell} ipython3
@@ -153,14 +161,14 @@ the eigenvectors are strange decimals, but we can check them against the stated 
 ```
 
 ```{code-cell} ipython3
-eigvals(M14)
+eig(M14)
 ```
 
 Signs are opposite compared to the book, but it turns out that (-) doesn't matter in the interpretation of eigenvectors: only "direction" matters (the relative size of the entries).
 
 +++
 
-## Example: Problem 1.16 using Ipython functions
+## Example: Problem 1.16 using Python functions
 
 ```{code-cell} ipython3
 M16 = array([[0,-1j],[1j,0]])
@@ -245,10 +253,41 @@ evecs
 ```
 
 ```{code-cell} ipython3
-evecs[1]
+evecs[0]
 ```
 
-# Practice:
+## Example from class:
+
+```{code-cell} ipython3
+qv = Qobj([[0,1],[-2,3]])
+qv
+```
+
+```{code-cell} ipython3
+evals, evecs = qv.eigenstates()
+```
+
+```{code-cell} ipython3
+evals
+```
+
+```{code-cell} ipython3
+evecs
+```
+
+```{code-cell} ipython3
+qv*evecs[0]
+```
+
+```{code-cell} ipython3
+qv*evecs[0] == evals[0]*evecs[0]
+```
+
+```{code-cell} ipython3
+qv*evecs[1] == evals[1]*evecs[1]
+```
+
+# Some additional examples we have already done by hand:
 
 +++
 
@@ -262,19 +301,6 @@ data = [10,13,14,14,6,8,7,9,12,14,13,11,10,7,7]
 n, bins, patches = hist(data, bins=9, range=(5,14))
 ```
 
-```{code-cell} ipython3
-bins+0.5
-```
-
-```{code-cell} ipython3
-# Solution
-hist?
-```
-
-```{code-cell} ipython3
-# Solution
-```
-
 ## Problem 1.8
 Find the constant $c$ that normalizes the probability density:
 $$p(x) =
@@ -286,22 +312,20 @@ $$
 
 **Hint:** using sympy, we can calculate the relevant integral. The conds='none' asks the solver to ignore any strange conditions on the variables in the integral. This is fine for most of our integrals. Usually the variables are real and well-behaved numbers.
 
-+++ {"nteract": {"transient": {"deleting": false}}}
-
-Paste this partial solution into a cell, and fill in the rest
-
-```
+```{code-cell} ipython3
 # Partial Solution:
 from sympy import *
 c,a,x = symbols("c a x")
 Q.positive((c,a))
-first = integrate( ... ,(x,0,oo),conds='none')
-
-# put the function in for the ...
+first = integrate( c*exp(-a*x) ,(x,0,oo),conds='none')
+first
 ```
 
-Then check the solution by integrating:
-
+```{code-cell} ipython3
+check = integrate( a*exp(-a*x) ,(x,0,oo),conds='none')
+check
 ```
-check = integrate( ... ,(x,0,oo),conds='none')
+
+```{code-cell} ipython3
+
 ```

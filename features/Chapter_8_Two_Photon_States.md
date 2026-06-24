@@ -4,14 +4,14 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.11.5
+    jupytext_version: 1.19.4
+kernel_info:
+  name: python3
 kernelspec:
   display_name: Python 3
   language: python
   name: python3
 ---
-
-+++ {"nteract": {"transient": {"deleting": false}}}
 
 # Chapter 8 - Two-photon States
 
@@ -103,6 +103,20 @@ P_45i = tensor(qeye(2),p45)*tensor(qeye(2),p45).dag()
 
 ```{code-cell} ipython3
 expect(P_45s45i,phip)/expect(P_45i,phip)
+```
+
+Delete me, this is scratch work from review session
+
+```{code-cell} ipython3
+psi = 1/sqrt(5)*tensor(L,R) + 2/sqrt(5)*tensor(R,L)
+```
+
+```{code-cell} ipython3
+psi.dag()*tensor(H,H)*tensor(H,H).dag()*psi
+```
+
+```{code-cell} ipython3
+9/20
 ```
 
 ```{code-cell} ipython3

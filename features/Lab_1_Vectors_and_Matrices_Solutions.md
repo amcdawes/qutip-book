@@ -4,9 +4,9 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.11.5
+    jupytext_version: 1.19.4
 kernelspec:
-  display_name: Python 3
+  display_name: Python 3 (ipykernel)
   language: python
   name: python3
 ---
@@ -21,10 +21,6 @@ from matplotlib.pyplot import hist
 ```
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: true
----
 %matplotlib inline
 ```
 
@@ -47,10 +43,8 @@ dot(rv,cv)
 ```
 
 ```{code-cell} ipython3
-try:
-  dot(cv,rv)
-except ValueError as err:
-  print(err)
+# uncomment and run this line, it should give an error, make sure you understand why
+# dot(cv,rv)
 ```
 
 ### 2) Use the function _outer(vector1, vector2)_ to find the outer product of rv and cv. Does the order of the arguments matter?

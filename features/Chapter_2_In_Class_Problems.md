@@ -4,18 +4,12 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.11.5
+    jupytext_version: 1.19.4
 kernelspec:
   display_name: Python 3
   language: python
   name: python3
 ---
-
-+++ {"nteract": {"transient": {"deleting": false}}}
-
-# Chapter 2: in-class problems
-
-+++ {"nteract": {"transient": {"deleting": false}}}
 
 ## 2.3 Find the eigenvalues and vectors of J$_\theta$ for $\theta$=45
 

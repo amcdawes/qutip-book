@@ -4,16 +4,16 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.11.5
+    jupytext_version: 1.19.4
 kernel_info:
   name: python3
 kernelspec:
-  display_name: Python 3
+  display_name: Python 3 (ipykernel)
   language: python
   name: python3
 ---
 
-# Lab 8: Simple Harmonic Oscillator states
+# Lab 8 - Simple Harmonic Oscillator states
 Problems from Chapter 12
 
 ```{code-cell} ipython3
@@ -66,13 +66,9 @@ These are simple, just view the matrix representation of the operators
 ## Problem 12.7:
 First, define $\hat{X}$ and $\hat{P}$ operators
 
-```
+```{code-cell} ipython3
 X=
 P=
-```
-
-```{code-cell} ipython3
-
 ```
 
 ```{code-cell} ipython3
@@ -90,17 +86,5 @@ psi = 1/sqrt(2)*(basis(N,2)+basis(N,4))
 ```
 
 ```{code-cell} ipython3
-
-```
-
-```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: false
-  source_hidden: false
-nteract:
-  transient:
-    deleting: false
----
 
 ```

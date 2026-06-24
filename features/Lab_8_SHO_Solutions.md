@@ -4,11 +4,11 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.11.5
+    jupytext_version: 1.19.4
 kernel_info:
   name: python3
 kernelspec:
-  display_name: Python 3
+  display_name: Python 3 (ipykernel)
   language: python
   name: python3
 ---
@@ -88,15 +88,15 @@ P = 1/2j * (a - a.dag())
 
 ```{code-cell} ipython3
 psi = 1/sqrt(2)*(basis(N,1)+basis(N,2))
-ex = psi.dag()*X*psi
-exq = psi.dag()*X*X*psi
-ep = psi.dag()*P*psi
-epq = psi.dag()*P*P*psi
+ex = psi.dag()*X*psi  # or expect(X, psi)
+exq = psi.dag()*X*X*psi  # expect(X*X, psi)
+ep = psi.dag()*P*psi  # expect(P, psi)
+epq = psi.dag()*P*P*psi  # or expect(P*P, psi)
 ```
 
 ```{code-cell} ipython3
-deltaX = sqrt(exq[0][0][0] - ex[0][0][0]**2)
-deltaP = sqrt(epq[0][0][0] - ep[0][0][0]**2)
+deltaX = sqrt(exq - ex**2)
+deltaP = sqrt(epq - ep**2)
 ```
 
 ```{code-cell} ipython3
@@ -107,7 +107,7 @@ deltaX * deltaP * 2 # compare to uncertainty relation (ΔxΔp >= 1/2)
 Alternatively, we can find the indeterminacy bound for ΔX and ΔP (the unitless operators): $$\Delta X \Delta P \geq \frac{1}{2}\left|\left\langle \left[\hat{X},\hat{P}\right] \right\rangle\right|$$
 
 ```{code-cell} ipython3
-1/2*(psi.dag()*commutator(X,P)*psi).norm()
+1/2*(psi.dag()*commutator(X,P)*psi)
 ```
 
 Which is also satisfied by the calculated value (1.41 > 0.25)
@@ -118,15 +118,15 @@ Which is also satisfied by the calculated value (1.41 > 0.25)
 
 ```{code-cell} ipython3
 psi = 1/sqrt(2)*(basis(N,2)+basis(N,4))
-ex = psi.dag()*X*psi
-exq = psi.dag()*X*X*psi
-ep = psi.dag()*P*psi
-epq = psi.dag()*P*P*psi
+ex = expect(X, psi)
+exq = expect(X*X, psi)
+ep = expect(P, psi)
+epq = expect(P*P, psi)
 ```
 
 ```{code-cell} ipython3
-deltaX = sqrt(exq[0][0][0] - ex[0][0][0]**2)
-deltaP = sqrt(epq[0][0][0] - ep[0][0][0]**2)
+deltaX = sqrt(exq - ex**2)
+deltaP = sqrt(epq - ep**2)
 ```
 
 ```{code-cell} ipython3

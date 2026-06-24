@@ -4,41 +4,29 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.11.5
+    jupytext_version: 1.19.4
 kernel_info:
   name: python3
 kernelspec:
-  display_name: Python 3
+  display_name: Python 3 (ipykernel)
   language: python
   name: python3
 ---
 
-# Lab 7: Time Evolution
+# Lab 7 - Time Evolution
 Exploring time evolution of quantum states. Run the usual imports, and use the spin-1/2 states as previously defined:
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: true
----
 import matplotlib.pyplot as plt
-from numpy import sqrt,pi,arange,cos,sin
+from numpy import sqrt,pi,arange,cos,sin,array
 from qutip import *
 ```
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: true
----
 %matplotlib inline
 ```
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: true
----
 pz = Qobj([[1],[0]])
 mz = Qobj([[0],[1]])
 px = Qobj([[1/sqrt(2)],[1/sqrt(2)]])
@@ -55,31 +43,19 @@ $$H= - \mathbf{\mu}\cdot \mathbf{B} =-\gamma S_z B$$
 $$\hat{H} = -\Omega \hat{S}_z$$
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: true
----
 Omega = 5
 H = -Omega*Sz
 ```
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: true
----
 t = arange(0,4*pi/Omega,0.05)
 ```
 
 The next line calls a Schrödinger equation solver (sesolve). It's arguments are the Hamiltonian, the starting state $\lvert+x\rangle$ (px), the time values, and a list of operators. `sesolve` returns many things, but the `expect` method is most useful, it gives the expectation values of the three operators in the operator list.
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: true
----
 expect_ops = [Sx,Sy,Sz]
-result1 = sesolve(H, px, t, expect_ops)
+result1 = sesolve(H, px, t, e_ops=expect_ops)
 ```
 
 ```{code-cell} ipython3
@@ -89,27 +65,24 @@ expect_ops[0] # TODO get name of variable to use in label
 ```{code-cell} ipython3
 labels = ['x','y','z']
 for r,l in zip(result1.expect,labels):
-    plt.plot(result1.times*Omega/pi, r, label="$\langle S_%c \\rangle $" % l)
+    result1_times = array(result1.times)
+    plt.plot(result1_times*Omega/pi, r, label="$\\langle S_%c \\rangle $" % l)
 
-plt.xlabel("Time ($\Omega t/\pi$)", size=18)
+plt.xlabel("Time ($\\Omega t/\\pi$)", size=18)
 plt.legend(fontsize=16) #TODO fix legend text size
 ```
 
 Now what if the system starts in $\lvert+z\rangle$?
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: true
----
-result2 = sesolve(H, pz, t, [Sx,Sy,Sz])
+result2 = sesolve(H, pz, t, e_ops=[Sx,Sy,Sz])
 ```
 
 ```{code-cell} ipython3
 for r,l in zip(result2.expect,labels):
-    plt.plot(result2.times*Omega/pi, r, label="$\langle S_%c \\rangle $" % l)
+    plt.plot(array(result2.times)*Omega/pi, r, label="$\\langle S_%c \\rangle $" % l)
 
-plt.xlabel("Time ($\Omega t/\pi$)", size=18)
+plt.xlabel("Time ($\\Omega t/\\pi$)", size=18)
 plt.legend(fontsize=16) #TODO fix legend text size
 ```
 
@@ -123,38 +96,26 @@ $\lvert\psi\rangle = \frac{1}{\sqrt{2}} \lvert+z,-z\rangle + \frac{1}{\sqrt{2}} 
 Use the `tensor` QuTiP function to form multi-particle states
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: true
----
 psi = 1/sqrt(2)*tensor(pz, mz) + 1/sqrt(2)*tensor(mz, pz)
 ```
 
 Hamiltonian is the same for both particles so we use the tensor to form $\hat{H}$ from individual operators
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: true
----
 omega = 5
 H = -omega*tensor(Sz,Sz)
 ```
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: true
----
 expect_op = tensor(mz,pz)*tensor(mz,pz).dag()
-result3 = sesolve(H, psi, t, [expect_op])
+result3 = sesolve(H, psi, t, e_ops=expect_op)
 ```
 
 ```{code-cell} ipython3
 for r,l in zip(result3.expect,labels):
-    plt.plot(result3.times*omega/pi, r, label="$\langle -z,+z\\rangle$")
+    plt.plot(array(result3.times)*omega/pi, r, label="$\\langle -z,+z\\rangle$")
 
-plt.xlabel("Time ($\Omega t/\pi$)", size=18)
+plt.xlabel("Time ($\\Omega t/\\pi$)", size=18)
 plt.legend(fontsize=16) #TODO fix legend text size
 ```
 
@@ -169,38 +130,26 @@ The value is constant since the state is initially in an eigenstate of $\hat{H}$
 Notice the Hamiltonian has an $x$ and a $z$ component:
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: true
----
 omega=2
 H = -omega/sqrt(2)*(Sz + Sx)
 t = arange(0,2*pi/omega,0.05)
 ```
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: true
----
-result4 = sesolve(H, px, t, [Sx, Sy, Sz])
+result4 = sesolve(H, px, t, e_ops=[Sx, Sy, Sz])
 ```
 
 ```{code-cell} ipython3
 for r,l in zip(result4.expect,labels):
-    plt.plot(result4.times*omega/pi, r, label="$\langle S_%c \\rangle $" % l)
+    plt.plot(array(result4.times)*omega/pi, r, label="$\\langle S_%c \\rangle $" % l)
 
-plt.xlabel("Time ($\Omega t/\pi$)", size=18)
+plt.xlabel("Time ($\\Omega t/\\pi$)", size=18)
 plt.legend(fontsize=16) #TODO fix legend text size
 ```
 
 Harder to interpret, so we'll use the Bloch sphere:
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: true
----
 sx, sy, sz = result4.expect
 ```
 
@@ -225,10 +174,6 @@ We also use the definition of the Rabi frequency: $\Omega_R = \sqrt{(\omega - \O
 Note that the time span is 3 units of $\frac{2\pi}{\Omega_R}$. Leave the scaling in place, but to plot a longer time period, change 3.0 to something larger. This lets us match the units in Fig. 9.A.1.
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: true
----
 omega0 = 2.0 * 2 * pi   # pick a nice value for a frequency, note this is 1 Hz
 omega1 = 0.25 * 2 * pi  # 25% of omega0
 w = 2.0 * 2 * pi        # the driving frequency
@@ -239,9 +184,9 @@ H1 = - omega1 * Sx      # the second term in H
 omegaR = sqrt((w - omega0)**2 + (omega1/2.0)**2)
 t = arange(0,3.0 * 2 * pi / omegaR,0.02)   # scale the time by omegaR, plot 3 units of 2pi/omegaR
 
-args = [H0, H1, w]      # parts of the Hamiltonian 
+args = {'w': w}         # args dict 
 
-def H1_coeff(t, args):
+def H1_coeff(t, w):
     return cos(w * t)
 
 H = [H0, [H1, H1_coeff]]
@@ -250,11 +195,7 @@ H = [H0, [H1, H1_coeff]]
 The next line calls a Schrödinger equation solver (`sesolve`). The arguments are the Hamiltonian, the starting state $\lvert+z\rangle$ (`pz`), the time values, a list of operators, and the arguments to the function `H_t`. `sesolve` returns many things, but the `expect` method is most useful, it gives the expectation values of the four operators in the operator list. Notice the fourth operator is the $\lvert-z\rangle$ projection operator. It's expectation value is $P(\lvert-z\rangle,t)$
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: true
----
-result5 = sesolve(H, pz, t, [Sx, Sy, Sz, mz*mz.dag()])
+result5 = sesolve(H, pz, t, e_ops=[Sx, Sy, Sz, mz*mz.dag()], args=args)
 sx, sy, sz, Pmz = result5.expect
 ```
 
@@ -271,8 +212,8 @@ Make a plot analogous to Fig 9.A.1:
 
 ```{code-cell} ipython3
 plt.tick_params(labelsize=18)
-plt.plot(result5.times*omegaR/pi,Pmz)
-plt.xlabel("Time ($\Omega_R t/\pi$)", size=18)
+plt.plot(array(result5.times)*omegaR/pi,Pmz)
+plt.xlabel("Time ($\\Omega_R t/\\pi$)", size=18)
 plt.ylabel("$P(-z, t)$", size=18)
 ```
 
@@ -295,10 +236,6 @@ plt.ylabel("$P(-z, t)$", size=18)
 ### Advanced topic: we can change the Hamiltonian so the applied field turns off at a certain time, and it is possible to get the spin to stay in a particular state. This is very useful in quantum optics where certain operations change the atomic state in a very specific way.
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: true
----
 omega0 = 1.0 * 2 * pi   # pick a nice value for a frequency, note this is 1 Hz
 omega1 = 0.05 * 2 * pi  # 25% of omega0
 w = 1.0 * 2 * pi        # the driving frequency
@@ -309,7 +246,12 @@ H1 = - omega1 * Sx      # the second term in H
 omegaR = sqrt((w - omega0)**2 + (omega1/2.0)**2)
 t = arange(0,3.0 * 2 * pi / omegaR,0.05)   # scale the time by omegaR, plot 3 units of 2pi/omegaR
 
-def H1_coeff2(t, args):       # this function calculates H at each time step t
+args = {
+    'w': w,
+    'omegaR': omegaR
+}
+
+def H1_coeff2(t, **kwargs):       # this function calculates H at each time step t
     if t < 2*pi/omegaR * 0.5:  # only add the H1 piece for the first chunk of time.
         coeff = cos(w * t)
     else:
@@ -320,11 +262,7 @@ H = [H0, [H1, H1_coeff2]]
 ```
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: true
----
-result6 = sesolve(H, pz, t, [Sx, Sy, Sz, mz*mz.dag()])
+result6 = sesolve(H, pz, t, e_ops=[Sx, Sy, Sz, mz*mz.dag()], args=args)
 sx, sy, sz, Pz = result6.expect
 ```
 
@@ -332,6 +270,22 @@ sx, sy, sz, Pz = result6.expect
 plt.plot(result6.times,Pz)
 plt.ylim(-0.1,1.1)
 plt.xlim(-5,125)
-plt.xlabel("Time ($\Omega_R t/\pi$)", size=18)
+plt.xlabel("Time ($\\Omega_R t/\\pi$)", size=18)
 plt.ylabel("$P(-z, t)$", size=18)
+```
+
+```{code-cell} ipython3
+---
+jupyter:
+  outputs_hidden: true
+---
+
+```
+
+```{code-cell} ipython3
+---
+jupyter:
+  outputs_hidden: true
+---
+
 ```

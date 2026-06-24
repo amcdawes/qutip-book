@@ -38,7 +38,7 @@ project:
     - file: features/Lab_3_Operators_Solutions_(old).md
     - file: features/Lab_4_Measurements.md
     - file: features/Lab_4_Measurements_Solutions.md
-    - file: features/Lab_5_Twoparticle_systems.md
+    - file: features/Lab_5_Two_particle_systems.md
     - file: features/Lab_6_Spin.md
     - file: features/Lab_7_Time_Evolution.md
     - file: features/Lab_8_SHO.md
