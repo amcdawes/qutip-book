@@ -1,6 +1,6 @@
 # QuTiP Book
 Authors:
-Andrew M.C. Dawes (dawes@pacificu.edu) github.com/amcdawes
+Andrew M.C. Dawes github.com/amcdawes
 
 **Mission:** This book is designed to be an introduction to QuTiP for anyone that is relatively new to numerical quantum mechanics (or to quantum mechanics in general). This isn’t a complete guide to the subject, but we aim to provide enough context to help you bridge a conceptual and theoretical foundation to a numerical/computational understanding of quantum mechanics.
 
