@@ -36,18 +36,8 @@ jobs:
             texlive-xetex \
             latexmk
 
-      - name: Build HTML book
-        run: jupyter-book build .
-
-      - name: Upload HTML artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: jupyter-book-html
-          path: _build/html/
-          if-no-files-found: error
-
       - name: Build PDF book
-        run: jupyter-book build . --builder pdflatex
+        run: jupyter book build --pdf
 
       - name: Upload PDF artifact
         uses: actions/upload-artifact@v4
