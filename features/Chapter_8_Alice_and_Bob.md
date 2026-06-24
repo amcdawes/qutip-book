@@ -214,7 +214,7 @@ for r in rads:
 plt.plot(angles,out,".") # plot in units of pi
 ```
 
-We see that the joint probabilities have a zero at 35˚. Now plug that in to one of the conditional probabilities and see what angle for the conditional probability gives 1:
+We see that the joint probabilities have a zero at 35°. Now plug that in to one of the conditional probabilities and see what angle for the conditional probability gives 1:
 
 ```{code-cell} ipython3
 out = []
