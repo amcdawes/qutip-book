@@ -97,30 +97,30 @@ psi.dag().dag()
 
 the `.dag()` python method computes the "daggar" or the complex transpose.
 
-+++
+
 
 ## 1) Is `psi` normalized? If not, find the normalization constant and confirm that constant normalizes `psi`.
 
-+++
+
 
 ## 2) Verify that the $|V\rangle$ state is normalized
 
-+++
+
 
 ## 3) Verify that the $|H\rangle$ and $|V\rangle$ states are orthogonal. Repeat for the other pairs of states.
 
-+++
+
 
 ## 4) Calculate the horizontal component $c_H$ of the state $\psi = \frac{1}{\sqrt{5}}|H\rangle + \frac{2}{\sqrt{5}}|V\rangle$
 
-+++
+
 
 ## 5) Verify Eq. (3.18), $P(H||45\rangle)=\frac{1}{2},$ (which states "The probability that a photon prepared in the +45 state will leave a PA_HV in the Horizontal state is one half.")
 
-+++
+
 
 ## 6) Demonstrate that a half-wave plate at 45-degrees converts $|H\rangle$ to $|V\rangle$
 
-+++
+
 
 ## 7) Re-create Figure 3.9 by plotting the probability P(+45) vs phase φ

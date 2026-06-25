@@ -105,7 +105,7 @@ psi.dag().dag()
 
 the `.dag()` python method computes the "daggar" or the complex transpose.
 
-+++
+
 
 ## 1) Is `psi` normalized? If not, find the normalization constant and confirm that constant normalizes `psi`.
 

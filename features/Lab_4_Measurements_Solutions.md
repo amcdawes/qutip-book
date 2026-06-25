@@ -105,7 +105,7 @@ data.var()
 
 10,000 does pretty well for getting to the predictions. "There is no substitute for an adequate sample size."
 
-+++
+
 
 ### Q: Answer problems 5.11, 5.12, 5.13, 5.14, 5.17, 5.18, 5.19 from the textbook. These are an opportunity to practice with a new operator $\hat{\mathcal{P}}_{C}$
 

@@ -70,7 +70,7 @@ HH
 
 So we interpret the state $|HH\rangle$ as the vector (1,0,0,0) in a four-dimensional space.
 
-+++
+
 
 Recall: The polarization measurement operator (for one photon):
 
@@ -94,7 +94,7 @@ Phv_s
 
 It can be hard to interpret these values visually but remember it was constructed by multiplying all the terms between two matrices with only diagonal elements. It makes sense that the result is also diagonal. Also, the sign of the diagonal depends on the state of the signal photon (the first one listed). Recall the states are in the order: HH, HV, VH, VV so the first two states have H signal photons and are therefore 1, and the second two states are V signal photons so -1 for those diagonals.
 
-+++
+
 
 Now construct the two-photon operator that measures the idler photon:
 
@@ -120,7 +120,7 @@ You start to see the pattern. Build these up from our earlier operators, just ap
 
 Next we will do some example calculations.
 
-+++
+
 
 ### Example: find the probability of measuring a horizontal idler photon if the system is prepared in the state $|HH\rangle$
 

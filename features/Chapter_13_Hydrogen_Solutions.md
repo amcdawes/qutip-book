@@ -71,7 +71,7 @@ psi210  # check how it looks
 
 Note, if you compare these to listed solutions (for example at http://hyperphysics.phy-astr.gsu.edu/hbase/quantum/hydwf.html#c3) you see that there are not any factors of $a_0$. This is because the `R_nl` function is defined in units of $a_0$. $a_0$ is the Bohr Radius: http://en.wikipedia.org/wiki/Bohr_radius
 
-+++
+
 
 ## Now calculate $\langle z \rangle$:
 To calculate $\langle z \rangle$ we need to convert to spherical coordinates: $z = r\cos\theta$. The terms in the following integral are the $r^2\sin\theta$ then $z$ (in spherical coords) then the wave function squared.
@@ -86,7 +86,7 @@ expect
 
 No surprise, the average z position of the electron in the hydrogen atom is 0.
 
-+++
+
 
 ## Now for problem 13.21
 find $\langle z \rangle(t)$. Use the same integral, but add a time-dependent piece to each term in the wavefunction, add them together and multiply by the complex conjugate.
@@ -106,15 +106,15 @@ plot(re(expect2.subs({w2:2, w1:1})),(t,0,10))
 
 We need to interpret this result. First you should show that this expression is simply a constant amplitude factor times $\cos((w2-w1)t)$, in other words $\langle z \rangle$ oscillates at frequency `w2-w1`.
 
-+++
+
 
 ## Your assignment:
 
-+++
+
 
 Explore other combinations of states and draw conclusions about the z behavior from the results. You may not be able to get these expressions to simplify, but the important thing is to look for the time dependence and simplify that part.
 
-+++
+
 
 - Does $\langle z \rangle$ oscillate for any combination of two Hydrogen states $|nlm\rangle$?
 - Are there restrictions on what n values give oscillating $\langle z \rangle$ expressions? (hint, to keep it simple, always let one state be the n=1 state)

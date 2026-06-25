@@ -19,8 +19,6 @@ An introduction to the Jupyter Notebook and some practice with probability ideas
 ## 1.1 Probability
 ### 1.1.1 Moments of Measured Data
 
-+++
-
 The Jupyter Notebook has two primary types of cells "Markdown" cells for text (like this one) and "Code" cells for running python code. The cell below this one is a code cell that loads the plotting functions into the `plt` namespace and loads several functions from the `numpy` library. The last line requests that all plots show up inline in the notebook (instead of in other windows or as files on your computer).
 
 ```{code-cell} ipython3
@@ -130,11 +128,11 @@ sqrt(281.3 - (15.1)**2) == x_m.std()
 
 Close enough!
 
-+++
+
 
 ### 1.1.2 Probability
 
-+++
+
 
 ### Example 1.2
 This is an illustration of how to implement the histogram from Example 1.2 in the text. Note the use of setting the number of bins. The `hist` command will pick for you, and you should try other values to see the impact. There is no one correct value, but the too many bins doesn't illustrate clusters of data, and too-few bins tends to oversimplify the data.
@@ -170,7 +168,7 @@ sum(_)
 
 Both of these results are close to the previous value, but not exact. Remember, the historgram is a representation of the data and the agreement will improve for larger data sets.
 
-+++
+
 
 ## 1.2 Linear Algebra
 ### 1.2.1 Vectors and Basis sets

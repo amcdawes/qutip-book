@@ -68,7 +68,7 @@ expect(Sx,px)
 
 Again, in units of $\hbar$.
 
-+++
+
 
 ## Lab instructions:
 

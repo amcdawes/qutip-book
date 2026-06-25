@@ -88,7 +88,7 @@ plt.legend(fontsize=16) #TODO fix legend text size
 
 Spin-up stays spin-up (i.e. no prescession)
 
-+++
+
 
 ## Two particle systems:
 $\lvert\psi\rangle = \frac{1}{\sqrt{2}} \lvert+z,-z\rangle + \frac{1}{\sqrt{2}} \lvert-z,+z\rangle$
@@ -121,11 +121,11 @@ plt.legend(fontsize=16) #TODO fix legend text size
 
 The value is constant since the state is initially in an eigenstate of $\hat{H}$.
 
-+++
+
 
 ## What if the magnetic field is not along an axis?
 
-+++
+
 
 Notice the Hamiltonian has an $x$ and a $z$ component:
 
@@ -219,19 +219,19 @@ plt.ylabel("$P(-z, t)$", size=18)
 
 ### Q) What happens in each unit of time ($\frac{2\pi}{\Omega_R}$)? Look at the plot of $P(-z,t)$ to interpret this. How is your figure different from the on in Fig. 9.A.1?
 
-+++
+
 
 ### Q) How does the evolution change if you double $\Omega_0$?
 
-+++
+
 
 ### Q) After doubling $\Omega_0$ what if you double the driving frequency ($\omega$) also? Interpret this observation in terms of Fig. 9.A.2. In practice, what experimental parameter changes $\Omega_0$?
 
-+++
+
 
 ### Q) How does $\Omega_1$ influence the dynamics? (Be careful reading the plots since the units are scaled by $\Omega_R$).
 
-+++
+
 
 ### Advanced topic: we can change the Hamiltonian so the applied field turns off at a certain time, and it is possible to get the spin to stay in a particular state. This is very useful in quantum optics where certain operations change the atomic state in a very specific way.
 

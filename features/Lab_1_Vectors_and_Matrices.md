@@ -166,7 +166,7 @@ eig(M14)
 
 Signs are opposite compared to the book, but it turns out that (-) doesn't matter in the interpretation of eigenvectors: only "direction" matters (the relative size of the entries).
 
-+++
+
 
 ## Example: Problem 1.16 using Python functions
 
@@ -289,7 +289,7 @@ qv*evecs[1] == evals[1]*evecs[1]
 
 # Some additional examples we have already done by hand:
 
-+++
+
 
 ## Problem 1.2 using the _hist()_ function.
 Create a histogram of the data and from it estimate the probability distribution. Use min and max values for the range of 5 and 14, and use 5 bins (5 and 6 go in the first bin).

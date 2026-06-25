@@ -53,7 +53,7 @@ Jz
 
 ## Rotations of spin-1/2
 
-+++
+
 
 To define an exponentiated operator, we apply the `.expm()` method to the argument. So to write the rotation operator: 
 
@@ -81,7 +81,7 @@ exp(-1j*pi/4)*py
 
  Yes, this agrees.
 
-+++
+
 
 Can also use inner product:
 

@@ -79,15 +79,15 @@ psi.dag().dag()
 
 ### 1) verify that the $|V\rangle$ state is normalized
 
-+++
+
 
 ### 2) Verify that the $|H\rangle$ and $|V\rangle$ states are orthogonal. Repeat for the other pairs of states.
 
-+++
+
 
 ### 3) Find the horizontal component $c_H$ of the state $\psi = \frac{1}{\sqrt{5}}|H\rangle + \frac{2}{\sqrt{5}}|V\rangle$
 
-+++
+
 
 ### 4) Verify Eq. (3.18) 
 

@@ -112,7 +112,7 @@ Alternatively, we can find the indeterminacy bound for ΔX and ΔP (the unitless
 
 Which is also satisfied by the calculated value (1.41 > 0.25)
 
-+++
+
 
 ## Problem 12.8:
 

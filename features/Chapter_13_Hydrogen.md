@@ -89,7 +89,7 @@ expect
 
 No surprise, the average z position of the electron in the hydrogen atom is 0.
 
-+++
+
 
 ## Now for problem 13.21
 find $\langle z \rangle(t)$. Use the same integral, but add a time-dependent piece to each term in the wavefunction, add them together and multiply by the complex conjugate.
@@ -121,15 +121,15 @@ expect2.simplify()
 
 We need to interpret this result. First you should show that this expression is simply a constant amplitude factor times $\cos((w2-w1)t)$, in other words $\langle z \rangle$ oscillates at frequency `w2-w1`.
 
-+++
+
 
 ## Your assignment:
 
-+++
+
 
 Explore other combinations of states and draw conclusions about the z behavior from the results. You may not be able to get these expressions to simplify, but the important thing is to look for the time dependence and simplify that part.
 
-+++
+
 
 - Does $\langle z \rangle$ oscillate for any combination of two Hydrogen states $|nlm\rangle$?
 - Are there restrictions on what n values give oscillating $\langle z \rangle$ expressions? (hint, to keep it simple, always let one state be the n=1 state)

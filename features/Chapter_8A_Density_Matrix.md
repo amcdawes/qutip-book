@@ -50,7 +50,7 @@ rho_mix = 0.5*tensor(H,H)*tensor(H,H).dag() + 0.5*tensor(V,V)*tensor(V,V).dag()
 
 ## Example 8.A.2
 
-+++
+
 
 Remember the 45 states:
 

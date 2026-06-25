@@ -92,7 +92,7 @@ expect(tensor(Pa2,Pb2),psi)  # joint for A2, B2 (classically expect 0.09, QM say
 
 This is what we described in class.
 
-+++
+
 
 ## What if the state was just $|H,H\rangle$?
 
@@ -121,7 +121,7 @@ expect(tensor(Pa2,Pb2),psi2)
 
 This is harder to interpret, but we clearly have different probabilities. Finally, check if we had used a mixed state:
 
-+++
+
 
 ## A mixed state instead of the pure (entangled state).
 Here we have to use the density matrix (since a `ket` cannot describe a mixed state). First some background:
@@ -154,7 +154,7 @@ expect(tensor(Pa2,Pb2),rho_mix)
 
 We see that  $P(\theta_{B2},\theta_{A2}) >  P(\theta_{B1},\theta_{A1})$ as we said in class for a state that obeys realism.
 
-+++
+
 
 ## Now repeat with the pure state but using density matrix techniques.
 This isn't going to tell us anything new, but it shows how to work with the density matrix if you already know the `ket` state.
@@ -188,7 +188,7 @@ expect(tensor(Pa2,Pb2),rho_pure)
 
 These all agree (as they should).
 
-+++
+
 
 ## Explore the angles in more detail:
 Why these angles, 19 and 35?
@@ -227,7 +227,7 @@ plt.plot(angles,out,".")
 
 So only 19 and 35 work. Now, can you derive 19 and 35 given only the state $|\psi\rangle$? Try the first plot, i.e. calculate the joint probability $P(\theta_A,\theta_B)$
 
-+++
+
 
 # Solution
 Using the state, write the projection operators for a two photon state with angles $\theta_A$ and $\theta_B$. First, recall $$\big|\theta_i\big\rangle = \cos\theta_i\big|H\big\rangle + \sin\theta_i\big|V\big\rangle.$$ Next, form the two-photon state: $$\big|\theta_A,\theta_B\big\rangle = \big|\theta_A\big\rangle \otimes \big|\theta_B\big\rangle = \left(\cos\theta_A\big|H\big\rangle + \sin\theta_A\big|V\big\rangle\right) \otimes \left(\cos\theta_B\big|H\big\rangle + \sin\theta_B\big|V\big\rangle\right)$$

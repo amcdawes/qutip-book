@@ -151,7 +151,7 @@ eigvals(M14)
 
 Signs are opposite compared to the book, but it turns out that (-) doesn't matter in the interpretation of eigenvectors: only "direction" matters (the relative size of the entries).
 
-+++
+
 
 ## Example: Problem 1.16 using Ipython functions
 
@@ -243,7 +243,7 @@ evecs[0]
 
 # Practice:
 
-+++
+
 
 ## Problem 1.2 using the _hist()_ function.
 

@@ -139,7 +139,7 @@ Which agrees with the book.
 
 This is about as far as we can go in sympy. Unfortunately, many other momentum integrals choke. There are a few hints to get through the rest here:
 
-+++
+
 
 ## Problem 10.3
 
@@ -169,7 +169,7 @@ integrate(psi2 * x**2 * psi2,(x,-oo,oo))
 
 So $\Delta x^2 = a^2 - 0^2$ therefore $\Delta x = a$
 
-+++
+
 
 ## Problem 10.17:
 Now find the momentum representation of the state from 10.3
@@ -186,7 +186,7 @@ B.simplify()
 
 This agrees with the book after we notice that we had to force $p$ to be positive in order to get the integral to converge. The book has $|p|$ in the argument of the exponent to reflect this constraint.
 
-+++
+
 
 ## Problem 10.13
 

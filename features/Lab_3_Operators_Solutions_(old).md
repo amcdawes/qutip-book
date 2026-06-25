@@ -31,7 +31,7 @@ L = Qobj([[1/sqrt(2)],[1j/sqrt(2)]])
 
 ## Example 1: the outer product and the projection operator
 
-+++
+
 
 We already have the $|H\rangle$ state represented as a vector in the HV basis, so the $\hat{P}_H$ operator is the outer product $|H\rangle\langle H|$:
 
