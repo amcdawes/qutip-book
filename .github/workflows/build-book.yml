@@ -10,6 +10,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/xu-cheng/texlive-full:latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -24,17 +26,6 @@ jobs:
         run: |
           pip install --upgrade pip
           pip install jupyter-book qutip numpy scipy matplotlib sympy
-
-      - name: Install LaTeX
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y \
-            texlive-latex-recommended \
-            texlive-latex-extra \
-            texlive-fonts-recommended \
-            texlive-fonts-extra \
-            texlive-xetex \
-            latexmk
 
       - name: Build PDF book
         run: jupyter book build --pdf
