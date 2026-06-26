@@ -1,0 +1,6 @@
+jupyter-book
+qutip
+numpy
+scipy
+matplotlib
+sympy
