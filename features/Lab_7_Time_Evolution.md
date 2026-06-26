@@ -275,17 +275,9 @@ plt.ylabel("$P(-z, t)$", size=18)
 ```
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: true
----
 
 ```
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: true
----
 
 ```

@@ -65,9 +65,5 @@ px.dag()*Sx*px
 Again, in units of $\hbar$.
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: true
----
 
 ```
