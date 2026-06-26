@@ -5,8 +5,6 @@ jupytext:
     format_name: myst
     format_version: 0.13
     jupytext_version: 1.19.4
-kernel_info:
-  name: python3
 kernelspec:
   name: python3
   language: python
