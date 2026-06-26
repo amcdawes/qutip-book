@@ -14,19 +14,11 @@ kernelspec:
 # Schrodinger Equation
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: false
----
 %pylab inline
 from qutip import *
 ```
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: false
----
 pz = Qobj([[1],[0]])
 mz = Qobj([[0],[1]])
 px = Qobj([[1/sqrt(2)],[1/sqrt(2)]])
@@ -41,68 +33,36 @@ Sz = 1/2.0*sigmaz()
 Schrödinger solver
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: false
----
 H = -0.2*sigmaz()
 ```
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: false
----
 e_list = 0.5*sigmax()  # list of expectation values to calculate
 ```
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: false
----
 t_list = linspace(0,100,1000)  # list of times to evaluate
 ```
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: false
----
 psi = px  # initial state
 ```
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: false
----
 result = sesolve(H, psi, t_list, e_list)
 ```
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: false
----
 plot(result.expect[0])
 ```
 
 $<\hat{S}_x>$ average oscillates - this is QM "precession"
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: false
----
 result2 = sesolve(H, pz, t_list, e_list)
 ```
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: false
----
 plot(result2.expect[0])
 ```
 
