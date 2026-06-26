@@ -53,8 +53,6 @@ psi = basis(N,2)
 ```
 
 ```{code-cell} ipython3
-:inputHidden: false
-:outputHidden: false
 
 psi
 ```
