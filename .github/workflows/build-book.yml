@@ -16,26 +16,26 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install lsb-release
-        run: apk add --no-cache lsb-release
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - name: Cache pip packages
+        uses: actions/cache@v4
         with:
-          python-version: "3.11"
+          path: /root/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements-build.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
 
       - name: Install Python dependencies
+        # --break-system-packages is safe here: the container is ephemeral and isolated
         run: |
-          python -m ensurepip --upgrade
-          python -m pip install --upgrade pip
-          python -m pip install jupyter-book qutip numpy scipy matplotlib sympy
+          apk add --no-cache py3-pip
+          pip3 install --break-system-packages -r requirements-build.txt
 
       - name: Build PDF book
-        run: jupyter book build --pdf
+        run: jupyter-book build --pdf
 
       - name: Upload PDF artifact
         uses: actions/upload-artifact@v4
         with:
           name: jupyter-book-pdf
-          path: _build/latex/*.pdf
+          path: exports/book.pdf
           if-no-files-found: warn
