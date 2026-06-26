@@ -93,8 +93,6 @@ plt.imshow(wigner(coherent(40,5j)+coherent(40,-5j),xvec,xvec), extent=[-10,10,-1
 ```
 
 ```{code-cell} ipython3
-:inputHidden: false
-:outputHidden: false
 
 
 ```

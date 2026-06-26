@@ -63,8 +63,6 @@ x**2
 ```
 
 ```{code-cell} ipython3
-:inputHidden: false
-:outputHidden: false
 
 (x**2).mean()
 ```
@@ -195,8 +193,6 @@ cvec*rvec # Actually the outer product:
 ```
 
 ```{code-cell} ipython3
-:inputHidden: false
-:outputHidden: false
 
 rvec*cvec # still the outer product... so this simple `*` doesn't respect the rules of linear algebra!
 ```
