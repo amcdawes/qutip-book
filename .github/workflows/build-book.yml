@@ -16,6 +16,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Install lsb-release
+        run: apk add --no-cache lsb-release
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
