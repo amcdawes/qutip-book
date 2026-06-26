@@ -27,7 +27,7 @@ jobs:
       - name: Install Python dependencies
         # --break-system-packages is safe here: the container is ephemeral and isolated
         run: |
-          apk add --no-cache py3-pip
+          apk add --no-cache py3-pip nodejs npm
           pip3 install --break-system-packages -r requirements-build.txt
 
       - name: Build PDF book
