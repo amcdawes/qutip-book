@@ -7,8 +7,20 @@ on:
     branches: ["main", "master"]
   workflow_dispatch:
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+env:
+  CUSTOM_DOMAIN: qutip.daweslab.com
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
-  build:
+  build-pdf:
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/xu-cheng/texlive-full:latest
@@ -39,3 +51,46 @@ jobs:
           name: jupyter-book-pdf
           path: exports/book.pdf
           if-no-files-found: warn
+
+  build-html:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install mystmd
+        run: pip install mystmd
+
+      - name: Build HTML site
+        run: myst build --html
+
+      - name: Add CNAME for custom domain
+        run: echo "${{ env.CUSTOM_DOMAIN }}" > _build/html/CNAME
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _build/html
+
+  deploy:
+    # Only deploy on push/dispatch; skip on pull_request builds
+    if: github.event_name != 'pull_request'
+    needs: build-html
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
