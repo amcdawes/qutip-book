@@ -72,7 +72,7 @@ jobs:
         run: pip install mystmd
 
       - name: Build HTML site
-        run: myst build --html --static
+        run: myst build --html --ci
 
       - name: Add CNAME for custom domain
         run: echo "${{ env.CUSTOM_DOMAIN }}" > _build/html/CNAME
