@@ -71,6 +71,14 @@ jobs:
       - name: Install mystmd
         run: pip install mystmd
 
+      # --- INJECT LOCAL FAVICON TO BYPASS REMOTE FETCH CRASHES ---
+      - name: Mock local favicon configuration
+        run: |
+          touch favicon.ico
+          if [ -f myst.yml ]; then
+            echo -e "site:\n  options:\n    favicon: favicon.ico" >> myst.yml
+          fi
+
       - name: Build HTML site
         run: myst build --html
 
