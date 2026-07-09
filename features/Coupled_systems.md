@@ -14,19 +14,11 @@ kernelspec:
 # Coupled Systems
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: false
----
 %pylab inline
 from qutip import *
 ```
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: false
----
 wc = 1 * 2*pi
 wa = 1 * 2*pi
 gamma = 0.05
@@ -44,18 +36,10 @@ H = wc*a.dag()*a + wa*sm.dag()*sm + g*(a.dag()*sm + a*sm.dag())
 ```
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: false
----
 tlist = linspace(0,50,200)
 ```
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: false
----
 c_ops = []
 
 # cavity relaxation
@@ -75,19 +59,11 @@ if rate > 0.0:
 ```
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: false
----
 psi0 = tensor(basis(N,0),basis(2,1))  # start with an excited atom
 output = mesolve(H, psi0, tlist, c_ops, [a.dag() * a, sm.dag() * sm])
 ```
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: true
----
 n_c = output.expect[0]
 n_a = output.expect[1]
 
@@ -102,17 +78,9 @@ axes.set_title('Vacuum Rabi oscillations')
 ```
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: false
----
 
 ```
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: false
----
 
 ```

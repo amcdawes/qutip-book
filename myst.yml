@@ -51,6 +51,5 @@ project:
     - file: features/Gaussian_WavepacketsSympy.md
 site:
   options:
-    favicon: images/logo/logo.png
     folders: true
   template: book-theme

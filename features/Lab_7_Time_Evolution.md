@@ -5,8 +5,6 @@ jupytext:
     format_name: myst
     format_version: 0.13
     jupytext_version: 1.19.4
-kernel_info:
-  name: python3
 kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
@@ -275,17 +273,9 @@ plt.ylabel("$P(-z, t)$", size=18)
 ```
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: true
----
 
 ```
 
 ```{code-cell} ipython3
----
-jupyter:
-  outputs_hidden: true
----
 
 ```

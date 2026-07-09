@@ -7,8 +7,52 @@ on:
     branches: ["main", "master"]
   workflow_dispatch:
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+env:
+  CUSTOM_DOMAIN: qutip.daweslab.com
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
-  build:
+  build-pdf:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/xu-cheng/texlive-full:latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Cache pip packages
+        uses: actions/cache@v4
+        with:
+          path: /root/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements-build.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      - name: Install Python dependencies
+        # --break-system-packages is safe here: the container is ephemeral and isolated
+        run: |
+          apk add --no-cache py3-pip nodejs npm
+          pip3 install --break-system-packages -r requirements-build.txt
+
+      - name: Build PDF book
+        run: jupyter-book build --pdf
+
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: jupyter-book-pdf
+          path: exports/book.pdf
+          if-no-files-found: warn
+
+  build-html:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -17,31 +61,36 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
-          cache: "pip"
+          python-version: '3.11'
 
-      - name: Install Python dependencies
-        run: |
-          pip install --upgrade pip
-          pip install jupyter-book qutip numpy scipy matplotlib sympy
-
-      - name: Install LaTeX
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y \
-            texlive-latex-recommended \
-            texlive-latex-extra \
-            texlive-fonts-recommended \
-            texlive-fonts-extra \
-            texlive-xetex \
-            latexmk
-
-      - name: Build PDF book
-        run: jupyter book build --pdf
-
-      - name: Upload PDF artifact
-        uses: actions/upload-artifact@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
-          name: jupyter-book-pdf
-          path: _build/latex/*.pdf
-          if-no-files-found: warn
+          node-version: '24'
+
+      - name: Install mystmd
+        run: pip install mystmd
+
+      - name: Build HTML site
+        run: myst build --html --ci
+
+      - name: Add CNAME for custom domain
+        run: echo "${{ env.CUSTOM_DOMAIN }}" > _build/html/CNAME
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _build/html
+
+  deploy:
+    # Only deploy on push/dispatch; skip on pull_request builds
+    if: github.event_name != 'pull_request'
+    needs: build-html
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
