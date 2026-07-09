@@ -22,4 +22,30 @@ For additions to the book, the following priorities should be observed:
  3. Concise
     - Rely on and refer to earlier content when adding new topics. Each chapter need not be self-contained, but should link to appropriate background information whenever possible.
 
+## Syncing from QMlabs
+
+This book uses the QMlabs notebooks as an upstream baseline, then evolves the
+book markdown independently.
+
+- Runbook: [SYNC_FROM_QMLABS.md](SYNC_FROM_QMLABS.md)
+- Sync script: `scripts/sync_from_qmlabs.sh`
+
+Quick start from this folder:
+
+```bash
+bash scripts/sync_from_qmlabs.sh
+```
+
+Then validate the book build:
+
+```bash
+uv run jupyter book build --pdf
+```
+
+If you want generated notebook outputs in rendered artifacts:
+
+```bash
+uv run jupyter book build --execute --pdf
+```
+
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code_of_conduct.md)
