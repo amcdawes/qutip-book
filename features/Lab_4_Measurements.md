@@ -38,14 +38,14 @@ def sim_transform(o_basis1, o_basis2, n_basis1, n_basis2):
     return Qobj([[a.data[0,0],b.data[0,0]],[c.data[0,0],d.data[0,0]]])
 ```
 
-### Q: Define the $\hat{\mathcal{P}}_{HV}$ operator
+### Q: Define the $\hat{\mathscr{P}}_{HV}$ operator
 
 ```{code-cell} ipython3
 Phv = H*H.dag() - V*V.dag()
 Phv
 ```
 
-### Q: What is the expectation value $\langle \hat{\mathcal{P}}_{HV}\rangle$ for state $|\psi\rangle = \frac{1}{\sqrt{5}}|H\rangle + \frac{2}{\sqrt{5}}|V\rangle$? Interpret this result given the amplitudes in the state.
+### Q: What is the expectation value $\langle \hat{\mathscr{P}}_{HV}\rangle$ for state $|\psi\rangle = \frac{1}{\sqrt{5}}|H\rangle + \frac{2}{\sqrt{5}}|V\rangle$? Interpret this result given the amplitudes in the state.
 
 ```{code-cell} ipython3
 psi = 1/sqrt(5)*H + 2/sqrt(5)*V
@@ -55,7 +55,7 @@ psi = 1/sqrt(5)*H + 2/sqrt(5)*V
 psi.dag()*Phv*psi
 ```
 
-### Q: What is the variance of $\mathcal{P}_{HV}$?
+### Q: What is the variance of $\mathscr{P}_{HV}$?
 
 ```{code-cell} ipython3
 psi.dag()*Phv*Phv*psi
@@ -83,7 +83,7 @@ data.mean()
 data.var()
 ```
 
-### Q: Answer problems 5.11, 5.12, 5.13, 5.14 from the textbook. These are an opportunity to practice with a new operator $\hat{\mathcal{P}}_{C}$
+### Q: Answer problems 5.11, 5.12, 5.13, 5.14 from the textbook. These are an opportunity to practice with a new operator $\hat{\mathscr{P}}_{C}$
 
 ```{code-cell} ipython3
 

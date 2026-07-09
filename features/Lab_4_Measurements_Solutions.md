@@ -46,14 +46,14 @@ def Delta(state, op):
     return sqrt(eO2 - (eO)**2)
 ```
 
-### Q: Define the $\hat{\mathcal{P}}_{HV}$ operator
+### Q: Define the $\hat{\mathscr{P}}_{HV}$ operator
 
 ```{code-cell} ipython3
 Phv = H*H.dag() - V*V.dag()
 Phv
 ```
 
-### Q: What is the expectation value $\langle \hat{\mathcal{P}}_{HV}\rangle$ for state $|\psi\rangle = \frac{1}{\sqrt{5}}|H\rangle + \frac{2}{\sqrt{5}}|V\rangle$? Interpret this result given the amplitudes in the state.
+### Q: What is the expectation value $\langle \hat{\mathscr{P}}_{HV}\rangle$ for state $|\psi\rangle = \frac{1}{\sqrt{5}}|H\rangle + \frac{2}{\sqrt{5}}|V\rangle$? Interpret this result given the amplitudes in the state.
 
 ```{code-cell} ipython3
 psi = 1/sqrt(5)*H + 2/sqrt(5)*V
@@ -63,7 +63,7 @@ psi = 1/sqrt(5)*H + 2/sqrt(5)*V
 psi.dag()*Phv*psi
 ```
 
-###Q: What is the variance of $\mathcal{P}_{HV}$?
+###Q: What is the variance of $\mathscr{P}_{HV}$?
 
 ```{code-cell} ipython3
 psi.dag()*Phv*Phv*psi
@@ -105,9 +105,9 @@ data.var()
 
 10,000 does pretty well for getting to the predictions. "There is no substitute for an adequate sample size."
 
++++
 
-
-### Q: Answer problems 5.11, 5.12, 5.13, 5.14, 5.17, 5.18, 5.19 from the textbook. These are an opportunity to practice with a new operator $\hat{\mathcal{P}}_{C}$
+### Q: Answer problems 5.11, 5.12, 5.13, 5.14, 5.17, 5.18, 5.19 from the textbook. These are an opportunity to practice with a new operator $\hat{\mathscr{P}}_{C}$
 
 ```{code-cell} ipython3
 # 5.11
