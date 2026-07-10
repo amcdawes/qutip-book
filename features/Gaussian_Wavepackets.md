@@ -54,7 +54,7 @@ def eipx_Gaussian(x,p,chi,sigma):
 
 ```{code-cell} ipython3
 def psip(p):
-    result = scipy.integrate.quad(eipx_Gaussian,-numpy.inf,numpy.inf,(p,5,0.5))
+    result = integ.quad(eipx_Gaussian,-numpy.inf,numpy.inf,(p,5,0.5))
     return result[0]
 ```
 
