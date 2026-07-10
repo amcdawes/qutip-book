@@ -68,11 +68,28 @@ jobs:
         with:
           node-version: '24'
 
-      - name: Install mystmd
-        run: pip install mystmd
+      - name: Cache pip packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-html-pip-${{ hashFiles('.github/workflows/build-book.yml') }}
+          restore-keys: |
+            ${{ runner.os }}-html-pip-
+
+      - name: Cache execution outputs
+        uses: actions/cache@v4
+        with:
+          path: _build/execute
+          key: ${{ runner.os }}-execute-${{ hashFiles('myst.yml', 'features/**/*.md') }}
+          restore-keys: |
+            ${{ runner.os }}-execute-
+
+      - name: Install HTML build + execution dependencies
+        run: |
+          pip install mystmd numpy scipy matplotlib sympy "qutip>=5" ipykernel jupyter-server
 
       - name: Build HTML site
-        run: myst build --html --ci
+        run: myst build --execute --html --ci
 
       - name: Add CNAME for custom domain
         run: echo "${{ env.CUSTOM_DOMAIN }}" > _build/html/CNAME
