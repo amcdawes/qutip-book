@@ -22,39 +22,35 @@ concurrency:
 jobs:
   build-pdf:
     runs-on: ubuntu-latest
+    needs: build-html
     container:
-      image: texlive/texlive:latest
+      image: ghcr.io/xu-cheng/texlive-full:latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v5
 
-      - name: Cache uv packages
+      - name: Download execution cache from HTML build
+        uses: actions/download-artifact@v5
+        with:
+          name: notebook-execute-cache
+          path: _build/execute
+
+      - name: Cache pip packages
         uses: actions/cache@v5
         with:
-          path: /root/.cache/uv
-          key: ${{ runner.os }}-pdf-uv-${{ hashFiles('requirements-build.txt') }}
+          path: /root/.cache/pip
+          key: ${{ runner.os }}-pdf-pip-${{ hashFiles('requirements-build.txt') }}
           restore-keys: |
-            ${{ runner.os }}-pdf-uv-
+            ${{ runner.os }}-pdf-pip-
 
-      - name: Install uv and Python dependencies
+      - name: Install Python dependencies
+        # --break-system-packages is safe here: the container is ephemeral and isolated
         run: |
-          apt-get update
-          apt-get install -y --no-install-recommends nodejs npm curl
-          curl -LsSf https://astral.sh/uv/install.sh | sh
-          export PATH="$HOME/.local/bin:$PATH"
-          uv pip install --system -r requirements-build.txt
-          uv pip install --system numpy scipy matplotlib sympy "qutip>=5" ipykernel jupyter-server
-
-      - name: Configure NumPy scalar display for executed notebooks
-        run: |
-          mkdir -p ~/.ipython/profile_default/startup
-          printf 'import numpy as np\nnp.set_printoptions(legacy="1.25")\n' \
-            > ~/.ipython/profile_default/startup/00-numpy-printoptions.py
+          apk add --no-cache py3-pip nodejs npm
+          pip3 install --break-system-packages -r requirements-build.txt
 
       - name: Build PDF book
-        run: |
-          export PATH="$HOME/.local/bin:$PATH"
-          jupyter-book build --execute --pdf
+        run: jupyter-book build --pdf
 
       - name: Upload PDF artifact
         uses: actions/upload-artifact@v5
@@ -107,6 +103,13 @@ jobs:
 
       - name: Build HTML site
         run: myst build --execute --html --ci
+
+      - name: Upload execution cache for PDF job
+        uses: actions/upload-artifact@v5
+        with:
+          name: notebook-execute-cache
+          path: _build/execute
+          if-no-files-found: warn
 
       - name: Add CNAME for custom domain
         run: echo "${{ env.CUSTOM_DOMAIN }}" > _build/html/CNAME
