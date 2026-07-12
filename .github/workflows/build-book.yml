@@ -23,25 +23,26 @@ jobs:
   build-pdf:
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/xu-cheng/texlive-full:latest
+      image: texlive/texlive:latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v5
 
-      - name: Cache pip packages
+      - name: Cache uv packages
         uses: actions/cache@v5
         with:
-          path: /root/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('requirements-build.txt') }}
+          path: /root/.cache/uv
+          key: ${{ runner.os }}-pdf-uv-${{ hashFiles('requirements-build.txt') }}
           restore-keys: |
-            ${{ runner.os }}-pip-
+            ${{ runner.os }}-pdf-uv-
 
-      - name: Install Python dependencies
-        # --break-system-packages is safe here: the container is ephemeral and isolated
+      - name: Install uv and Python dependencies
         run: |
-          apk add --no-cache py3-pip nodejs npm
-          pip3 install --break-system-packages -r requirements-build.txt
-          pip3 install --break-system-packages numpy scipy matplotlib sympy "qutip>=5" ipykernel jupyter-server
+          apt-get install -y --no-install-recommends nodejs npm curl
+          curl -LsSf https://astral.sh/uv/install.sh | sh
+          export PATH="$HOME/.local/bin:$PATH"
+          uv pip install --system -r requirements-build.txt
+          uv pip install --system numpy scipy matplotlib sympy "qutip>=5" ipykernel jupyter-server
 
       - name: Configure NumPy scalar display for executed notebooks
         run: |
@@ -50,7 +51,9 @@ jobs:
             > ~/.ipython/profile_default/startup/00-numpy-printoptions.py
 
       - name: Build PDF book
-        run: jupyter-book build --execute --pdf
+        run: |
+          export PATH="$HOME/.local/bin:$PATH"
+          jupyter-book build --execute --pdf
 
       - name: Upload PDF artifact
         uses: actions/upload-artifact@v5
