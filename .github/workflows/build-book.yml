@@ -88,6 +88,12 @@ jobs:
         run: |
           pip install mystmd numpy scipy matplotlib sympy "qutip>=5" ipykernel jupyter-server
 
+      - name: Configure NumPy scalar display for executed notebooks
+        run: |
+          mkdir -p ~/.ipython/profile_default/startup
+          printf 'import numpy as np\nnp.set_printoptions(legacy="1.25")\n' \
+            > ~/.ipython/profile_default/startup/00-numpy-printoptions.py
+
       - name: Build HTML site
         run: myst build --execute --html --ci
 
