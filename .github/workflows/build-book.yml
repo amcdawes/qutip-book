@@ -38,6 +38,7 @@ jobs:
 
       - name: Install uv and Python dependencies
         run: |
+          apt-get update
           apt-get install -y --no-install-recommends nodejs npm curl
           curl -LsSf https://astral.sh/uv/install.sh | sh
           export PATH="$HOME/.local/bin:$PATH"
