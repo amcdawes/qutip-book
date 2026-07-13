@@ -20,45 +20,6 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build-pdf:
-    runs-on: ubuntu-latest
-    needs: build-html
-    container:
-      image: ghcr.io/xu-cheng/texlive-full:latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v5
-
-      - name: Download execution cache from HTML build
-        uses: actions/download-artifact@v5
-        with:
-          name: notebook-execute-cache
-          path: _build/execute
-
-      - name: Cache pip packages
-        uses: actions/cache@v5
-        with:
-          path: /root/.cache/pip
-          key: ${{ runner.os }}-pdf-pip-${{ hashFiles('requirements-build.txt') }}
-          restore-keys: |
-            ${{ runner.os }}-pdf-pip-
-
-      - name: Install Python dependencies
-        # --break-system-packages is safe here: the container is ephemeral and isolated
-        run: |
-          apk add --no-cache py3-pip nodejs npm
-          pip3 install --break-system-packages -r requirements-build.txt
-
-      - name: Build PDF book
-        run: jupyter-book build --pdf
-
-      - name: Upload PDF artifact
-        uses: actions/upload-artifact@v5
-        with:
-          name: jupyter-book-pdf
-          path: exports/book.pdf
-          if-no-files-found: warn
-
   build-html:
     runs-on: ubuntu-latest
     steps:
@@ -91,7 +52,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-execute-
 
-      - name: Install HTML build + execution dependencies
+      - name: Install Python build + execution dependencies
         run: |
           pip install mystmd numpy scipy matplotlib sympy "qutip>=5" ipykernel jupyter-server
 
@@ -102,14 +63,19 @@ jobs:
             > ~/.ipython/profile_default/startup/00-numpy-printoptions.py
 
       - name: Build HTML site
-        run: myst build --execute --html --ci
+        run: myst build --execute --html
 
-      - name: Upload execution cache for PDF job
-        uses: actions/upload-artifact@v5
-        with:
-          name: notebook-execute-cache
-          path: _build/execute
-          if-no-files-found: warn
+      # PDF build is intentionally disabled in CI while formatting is being tuned.
+      # Run locally with: myst build --execute --pdf
+      # - name: Build HTML site and PDF
+      #   run: myst build --execute --html --pdf
+
+      # - name: Upload PDF artifact
+      #   uses: actions/upload-artifact@v5
+      #   with:
+      #     name: jupyter-book-pdf
+      #     path: exports/book.pdf
+      #     if-no-files-found: warn
 
       - name: Add CNAME for custom domain
         run: echo "${{ env.CUSTOM_DOMAIN }}" > _build/html/CNAME
